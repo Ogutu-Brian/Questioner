@@ -21,3 +21,14 @@ nav .right{
     float: right;
     margin-right: 0.5em;
 }
+footer{
+    background-color: teal;
+    height: 2em;
+    margin-top: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
