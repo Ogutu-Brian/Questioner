@@ -125,3 +125,7 @@ td .button{
         left: 1em;
     }
 }
+.meetups p{
+    font-weight: bolder;
+    font-size: 2em;
+}
