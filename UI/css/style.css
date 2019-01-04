@@ -93,3 +93,35 @@ form input{
     color: white;
     background-color: teal;
 }
+.meetups{
+    width: 80%;
+    margin-top: 2em;
+    position:relative;
+    left: 20%;
+}
+table{
+    border-color: wheat;
+    border-style:solid;
+    column-gap: 2em;
+    border-collapse: collapse;
+    width: 60%;
+    text-align: left;
+}
+th{
+    font-weight: bolder;
+    font-size: 1em;
+}
+td,th{
+    border-style: solid;
+    border-color: wheat;
+    height: 2em;
+    padding: 0.5em;
+}
+td .button{
+    text-align: center;
+}
+@media only screen and (max-width:600px){
+    .meetups{
+        left: 1em;
+    }
+}
