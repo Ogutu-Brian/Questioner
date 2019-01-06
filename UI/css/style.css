@@ -195,3 +195,31 @@ textarea{
     margin-left: 1em;
     margin-top: 2em
 }
+.admin-panel{
+    font-weight:bolder;
+    margin-left:1em
+}
+.create-meetup-btn{
+    background-color:teal;
+    color:white;
+    font-weight: bolder
+}
+.bold{
+    font-weight: bolder;
+}
+.login-text{
+    font-weight:bolder;
+    font-size: 2em;
+    left: 30%;
+}
+#post-btn{
+    width: 60.5%;
+}
+.cell{
+    width: 2em;
+}
+#login-msg{
+    font-weight:bolder;
+    font-size: 2em;
+    left: 30%;
+}
