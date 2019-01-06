@@ -143,6 +143,7 @@ tr{
 }
 td .button{
     text-align: center;
+    font-weight: bolder;
 }
 .question{
     width: 100%;
@@ -179,4 +180,10 @@ td .button{
     content:"";
     clear: both;
     display: table;
+}
+.meetup_form{
+    font-weight: bolder;
+    float:left;
+    margin-left: 1em;
+    margin-top: 2em
 }
