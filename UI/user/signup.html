@@ -17,12 +17,13 @@
         <span class="nav left">
             <a href="../index.html" class="fas fa-home"></a>
         </span>
-        <a href="meetups.html" class="left">MEETUPS</a>
-        <a href="login.html" class="right">LOGIN</a>
+        <span class="nav right">
+            <a href="login.html" class="fas fa-sign-in-alt">Sign In</a>
+        </span>
     </nav>
     <div class="form-container">
-        <p style="font-weight:bolder;font-size: 2em;left: 30%;">Create Account</p>
-        <form action="">
+        <p id="login-msg">Create Account</p>
+        <form action="" class="bold">
             <label for="">First name</label><br>
             <input type="text"><br>
             <label for="">Last name</label><br>
@@ -31,7 +32,7 @@
             <input type="text"><br>
             <label for="">Password</label><br>
             <input type="password"><br><br>
-            <input type="button" class="button" value="Signup">
+            <input type="button" class="button bold" value="Sign Up" onclick="location.href='login.html'">
         </form>
     </div>
     <footer>

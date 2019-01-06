@@ -11,7 +11,7 @@ nav{
     background-color: teal;
     color: white;
     font-size: 1em;
-    height: 2em;
+    height: 3.5em;
 }
 nav a{
     color: white;
@@ -21,10 +21,11 @@ nav a{
 nav .right{
     float: right;
     margin-right: 0.5em;
+    margin-left: 2em;
 }
 nav .left{
     float: left;
-    margin-left: 0.5em;
+    margin-right: 2em;
 }
 footer{
     background-color: teal;
@@ -194,4 +195,44 @@ textarea{
     float:left;
     margin-left: 1em;
     margin-top: 2em
+}
+.admin-panel{
+    font-weight:bolder;
+    margin-left:1em
+}
+.create-meetup-btn{
+    background-color:teal;
+    color:white;
+    font-weight: bolder
+}
+.bold{
+    font-weight: bolder;
+}
+.login-text{
+    font-weight:bolder;
+    font-size: 2em;
+    left: 30%;
+}
+#post-btn{
+    width: 60.5%;
+}
+.cell{
+    width: 2em;
+}
+#login-msg{
+    font-weight:bolder;
+    font-size: 2em;
+    left: 10%;
+}
+.profile{
+    margin-top: 1em; 
+    margin-left: 1em;
+    width:90%;
+    float: left;
+    position: absolute;
+}
+.profile table{
+    border-style: solid;
+    border-color: wheat;
+    width: 50%;
 }
