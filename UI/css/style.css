@@ -37,6 +37,7 @@ nav .right{
 nav .left{
     float: left;
     margin-right: 2em;
+    margin-left: 1em;
 }
 footer{
     background-color: teal;
