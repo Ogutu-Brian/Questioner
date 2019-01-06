@@ -7,9 +7,15 @@ html,body{
     background-color: #00b3b3;
 }
 body{
-    min-height: 400px;
-    margin-bottom: 50em;
+    min-height: 30em;
+    margin-bottom: 30em;
     clear: both;
+}
+@media only screen and (min-width:600px){
+    /*hide scroll bar*/
+    ::-webkit-scrollbar{
+        display: none;
+    }
 }
 nav{
     width: 100%;
