@@ -207,8 +207,10 @@ td .button{
 } */
 .comment-btn{
     font-weight:bolder;
-    background-color: #00b3b3;
+    color: white;
+    background-color:teal;
     width: 5em;
+    cursor: pointer;
 }
 textarea{
     height: 3em;
