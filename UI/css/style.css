@@ -157,3 +157,30 @@ td .button{
     float:right;
     width: 80%;
 }
+/*Comment containers*/
+.comment{
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+/*Darker comment container*/
+.darker-comment{
+    border-color: #ccc;
+    background-color: #dedede;
+}
+.container::after{
+    content:"";
+    clear: both;
+    display: table;
+}
+/*styles time text*/
+.time-right{
+    float: right;
+    color: #aaa;
+}
+.time-left{
+    float: left;
+    color: #999;
+}
