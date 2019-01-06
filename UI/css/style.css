@@ -102,10 +102,18 @@ form textarea{
     width: 60%;
 }
 .form-container{
-    width: 50%;
+    width: 30%;
     position: absolute;
-    left: 20%;
+    left: 30%;
     margin-top: 2em;
+}
+@media only screen and (max-width:600px){
+    .form-container{
+        width: 10em;
+    }
+    .login-text{
+        font-size: 2em;
+    }
 }
 .button{
     color: white;
@@ -225,7 +233,7 @@ textarea{
 }
 .login-text{
     font-weight:bolder;
-    font-size: 2em;
+    font-size: 1em;
     left: 30%;
 }
 #post-btn{
