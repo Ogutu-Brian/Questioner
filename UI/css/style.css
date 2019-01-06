@@ -157,3 +157,26 @@ td .button{
     float:right;
     width: 80%;
 }
+/*Comment containers*/
+.comment{
+    width: 60%;
+    background-color: #f1f1f1;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    color: black;
+    margin-left: 4em;
+    float: left;
+    position: relative;
+}
+/*Darker comment container*/
+.darker-comment{
+    border-color: #ccc;
+    background-color: #dedede;
+}
+.container::after{
+    content:"";
+    clear: both;
+    display: table;
+}
