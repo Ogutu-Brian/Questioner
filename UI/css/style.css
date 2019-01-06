@@ -159,11 +159,16 @@ td .button{
 }
 /*Comment containers*/
 .comment{
-    border: 2px solid #dedede;
+    width: 60%;
     background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    color: black;
+    margin-left: 4em;
+    float: left;
+    position: relative;
 }
 /*Darker comment container*/
 .darker-comment{
@@ -174,13 +179,4 @@ td .button{
     content:"";
     clear: both;
     display: table;
-}
-/*styles time text*/
-.time-right{
-    float: right;
-    color: #aaa;
-}
-.time-left{
-    float: left;
-    color: #999;
 }
