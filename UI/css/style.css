@@ -143,6 +143,7 @@ tr{
 }
 td .button{
     text-align: center;
+    font-weight: bolder;
 }
 .question{
     width: 100%;
@@ -175,8 +176,22 @@ td .button{
     border-color: #ccc;
     background-color: #dedede;
 }
-.container::after{
+/* .comment::after{
     content:"";
     clear: both;
     display: table;
+} */
+.comment-btn{
+    font-weight:bolder;
+    background-color: #00b3b3;
+    width: 5em;
+}
+textarea{
+    height: 3em;
+}
+.meetup_form{
+    font-weight: bolder;
+    float:left;
+    margin-left: 1em;
+    margin-top: 2em
 }
