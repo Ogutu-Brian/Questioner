@@ -120,8 +120,8 @@ form textarea{
     font-size: 2em;
 }
 table{
-    border-color: wheat;
-    border-style:solid;
+    /* border-color: wheat;
+    border-style:solid; */
     column-gap: 2em;
     border-collapse: collapse;
     width: 60%;
@@ -132,10 +132,14 @@ th{
     font-size: 1em;
 }
 td,th{
-    border-style: solid;
-    border-color: wheat;
+    /* border-style: solid;
+    border-color: wheat; */
     height: 2em;
     padding: 0.5em;
+}
+tr{
+    /* border-style: solid;
+    border-color: wheat; */
 }
 td .button{
     text-align: center;
