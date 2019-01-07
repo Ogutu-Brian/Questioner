@@ -132,6 +132,10 @@ form textarea{
     position:relative;
     left: 20%;
 }
+.meetups form{
+    float: left;
+    margin-left: 0em;
+}
 @media only screen and (max-width:600px){
     .meetups{
         left: 1em;
@@ -223,9 +227,10 @@ textarea{
 }
 .meetup_form{
     font-weight: bolder;
-    float:left;
+    margin-right: 3em;
+    /* float:left;
     margin-left: 1em;
-    margin-top: 2em
+    margin-top: 2em */
 }
 .admin-panel{
     font-weight:bolder;
