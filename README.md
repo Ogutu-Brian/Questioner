@@ -1,4 +1,5 @@
 # Questioner
+[![Build Status](https://travis-ci.com/Ogutu-Brian/Questioner.svg?branch=gh-pages)](https://travis-ci.com/Ogutu-Brian/Questioner)
 Questioner helps the meetup organizer prioritize questions to be answered   
 ## Built with
 * [HTML](https://www.w3schools.com/html/) - The markup language used
