@@ -5,6 +5,7 @@ html,body{
     margin-top: 0em;
     color: white;
     background-color: #00b3b3;
+    font-size: 95%;
 }
 body{
     min-height: 30em;
@@ -15,6 +16,11 @@ body{
     /*hide scroll bar*/
     ::-webkit-scrollbar{
         display: none;
+    }
+}
+@media only screen and (max-width:600px){
+    body{
+        font-size: 90%;
     }
 }
 nav{
@@ -31,12 +37,12 @@ nav a{
 }
 nav .right{
     float: right;
-    margin-right: 0.5em;
-    margin-left: 2em;
+    margin-right: 1em;
+    /* margin-left: 2em; */
 }
 nav .left{
     float: left;
-    margin-right: 2em;
+    /* margin-right: 0em; */
     margin-left: 1em;
 }
 footer{
