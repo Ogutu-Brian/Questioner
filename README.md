@@ -1,5 +1,5 @@
 # Questioner
-[![Build Status](https://travis-ci.com/Ogutu-Brian/Questioner.svg?branch=gh-pages)](https://travis-ci.com/Ogutu-Brian/Questioner)
+[![Build Status](https://travis-ci.com/Ogutu-Brian/Questioner.svg?branch=develop)](https://travis-ci.com/Ogutu-Brian/Questioner)
 [![Coverage Status](https://coveralls.io/repos/github/Ogutu-Brian/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/Ogutu-Brian/Questioner?branch=develop)   
 Questioner helps the meetup organizer prioritize questions to be answered   
 ## Built with
