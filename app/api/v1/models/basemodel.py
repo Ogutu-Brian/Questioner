@@ -4,7 +4,7 @@ from typing import Dict
 class BaseModel(object):
     """Contains properties shared accorss all the models"""
 
-    def __init__(self, id_=-1, created_on=""):
+    def __init__(self, id_="", created_on=""):
         self.id = id_
         self.created_on = created_on
 
