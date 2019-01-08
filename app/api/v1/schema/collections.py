@@ -1,6 +1,3 @@
-from .import User, Question, Meetup, Rsvp
-
-
 class BaseCollection(object):
     """Defines the shared database operations"""
 
@@ -20,10 +17,10 @@ class BaseCollection(object):
         return self.data
 
     def query_by_field(self, field, value):
-        """Query an item by a given field value"""
-        if field not in self.data[0].to_dictionary():
-            """Checkiing if the field value given actually exist"""
-            print("Item with field {} does not exist".format(field))
+        """Query an item by a given field value
+        """
+        if not self.data[0].to_dictionary().get(field):
+            print("This schema has no field {}".format(field))
             return None
         for item in self.data.values():
             if item.to_dictionary().get(field) == value:
@@ -47,10 +44,6 @@ class UserCollection(BaseCollection):
 
     def is_valid(self, item):
         errors = []
-        if not item.get("id"):
-            errors.append({
-                "message": "id must be provided"
-            })
         if not item.get("firstname"):
             errors.append({
                 "message": "First name must be provided"
@@ -88,4 +81,28 @@ class UserCollection(BaseCollection):
             errors.append({
                 "message": "Password must be provided"
             })
-        return len(errors) == 0,errors
+        return len(errors) == 0, errors
+
+
+class MeetupCollection(BaseCollection):
+    """Overrides the methods from BaseCollection to refine operations specific to Meetup records"""
+
+    def is_valid(self, item):
+        errors = []
+        if not item.get("loation"):
+            errors.append({
+                "message":"Location of meetup must be provided",
+            })
+        if not item.get("topic"):
+            errors.append({
+                "message":"topic must be provided"
+            })
+        if not item.get("Tags"):
+            errors.append({
+                "message":"Tags must be provided"
+            })
+        if not item.get("happeningOn"):
+            errors.append({
+                "message":"Happening date must be provided"
+            })
+        return len(errors) == 0, errors
