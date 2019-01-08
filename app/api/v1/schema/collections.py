@@ -106,16 +106,19 @@ class MeetupCollection(BaseCollection):
                 "message": "Happening hodling date must be provided"
             })
         return len(errors) == 0, errors
+
+
 class QuestionCollection(BaseCollection):
     """Refines operations to meetup requirements of Question records"""
-    def is_valid(self,item):
+
+    def is_valid(self, item):
         errors = []
         if not item.get("createdBy"):
             errors.append({
-                "message":"User asking the question must be provided"
+                "message": "User asking the question must be provided"
             })
         if not item.get("meetup"):
             errors.append({
-                "message":"The meetup the question is for must be provided"
+                "message": "The meetup the question is for must be provided"
             })
-        return len(errors) == 0,errors
+        return len(errors) == 0, errors
