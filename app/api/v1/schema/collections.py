@@ -91,18 +91,31 @@ class MeetupCollection(BaseCollection):
         errors = []
         if not item.get("loation"):
             errors.append({
-                "message":"Location of meetup must be provided",
+                "message": "Location of meetup must be provided",
             })
         if not item.get("topic"):
             errors.append({
-                "message":"topic must be provided"
+                "message": "topic must be provided"
             })
         if not item.get("Tags"):
             errors.append({
-                "message":"Tags must be provided"
+                "message": "Tags must be provided"
             })
         if not item.get("happeningOn"):
             errors.append({
-                "message":"Happening date must be provided"
+                "message": "Happening hodling date must be provided"
             })
         return len(errors) == 0, errors
+class QuestionCollection(BaseCollection):
+    """Refines operations to meetup requirements of Question records"""
+    def is_valid(self,item):
+        errors = []
+        if not item.get("createdBy"):
+            errors.append({
+                "message":"User asking the question must be provided"
+            })
+        if not item.get("meetup"):
+            errors.append({
+                "message":"The meetup the question is for must be provided"
+            })
+        return len(errors) == 0,errors
