@@ -1,6 +1,1 @@
-from app.run import app
-
-
-def client():
-    client = app.test_client()
-    return client
+from app.api.v1.views.userviews import user_view
