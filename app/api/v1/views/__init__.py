@@ -10,6 +10,9 @@ class Status(object):
         self.not_json = 422
         self.created = 201
         self.invalid_data = 406
+        self.success = 200
+
+
 status = Status()
 
 db = Database()
