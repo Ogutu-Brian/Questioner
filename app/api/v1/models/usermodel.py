@@ -21,8 +21,6 @@ class User(BaseModel):
 
     def to_dictionary(self)->Dict:
         """Overrides the basemodel's method to present user object data in dictionary format"""
-        if self.registred:
-            self.registred = self.registred.strftime('%d-%m-%Y')
         dict_data = {
             "id": self.id,
             "firstname": self.first_name,
