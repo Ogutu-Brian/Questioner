@@ -1,5 +1,5 @@
 import unittest
-from .import client, user_data
+from .import client, user_data, status
 import json
 from .import db
 
@@ -26,7 +26,7 @@ class TestUser(unittest.TestCase):
         url = user_data.get("sign_up_url")
         result = self.sign_up(url=url, data=data, headers=headers)
         db.tear_down()
-        self.assertEqual("success", result.get("status"))
+        self.assertEqual(status.created, result.get("status"))
 
     def test_missing_email(self):
         headers = {
@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
         result = self.sign_up(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         db.tear_down()
-        self.assertEqual("error", result.get("status"))
+        self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_passworord(self):
         headers = {
@@ -62,7 +62,7 @@ class TestUser(unittest.TestCase):
         result = self.sign_up(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         db.tear_down()
-        self.assertEqual("error", result.get("status"))
+        self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_first_name(self):
         headers = {
@@ -80,7 +80,7 @@ class TestUser(unittest.TestCase):
         result = self.sign_up(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         db.tear_down()
-        self.assertEqual("error", result.get("status"))
+        self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_last_name(self):
         headers = {
@@ -98,7 +98,7 @@ class TestUser(unittest.TestCase):
         result = self.sign_up(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         db.tear_down()
-        self.assertEqual("error", result.get("status"))
+        self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_phone_number(self):
         headers = {
@@ -116,7 +116,7 @@ class TestUser(unittest.TestCase):
         result = self.sign_up(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         db.tear_down()
-        self.assertEqual("error", result.get("status"))
+        self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_user_name(self):
         headers = {
@@ -134,4 +134,4 @@ class TestUser(unittest.TestCase):
         result = self.sign_up(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         db.tear_down()
-        self.assertEqual("error", result.get("status"))
+        self.assertEqual(status.invalid_data, result.get("status"))

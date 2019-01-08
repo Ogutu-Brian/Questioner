@@ -1,4 +1,4 @@
-from .import user_view, User, db
+from .import user_view, User, db, status
 from flask import jsonify, request
 import bcrypt
 
@@ -9,9 +9,9 @@ def sign_up():
         valid, errors = db.users.is_valid(request.json)
         if not valid:
             return jsonify({
-                "status": "error",
+                "status": status.invalid_data,
                 "data": errors
-            }), 406
+            }), status.invalid_data
         else:
             data = request.json
             first_name = data.get("firstname")
@@ -27,11 +27,11 @@ def sign_up():
             db.users.insert(user)
             return jsonify({
                 "message": "Successuflly signed up",
-                "status": "success",
+                "status": status.created,
                 "data": user.to_dictionary()
-            }), 201
+            }), status.created
     else:
         return jsonify({
             "message": "The data needs to be in JSON",
-            "status": "error"
-        }), 422
+            "status": status.not_json
+        }), status.not_json

@@ -1,6 +1,6 @@
 from app.run import app
 import pytest
-from app.api.v1.views import db
+from app.api.v1.views import db,status
 
 app.config['TESTING'] = True
 
