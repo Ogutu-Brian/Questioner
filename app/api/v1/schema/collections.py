@@ -122,3 +122,23 @@ class QuestionCollection(BaseCollection):
                 "message": "The meetup the question is for must be provided"
             })
         return len(errors) == 0, errors
+
+
+class RsvpCollection(BaseCollection):
+    """Adds operations specific to RSVp records"""
+
+    def is_valid(self, item):
+        errors = []
+        if not item.get("meetup"):
+            errors.append({
+                "message": "The meetup being responded to must be provided"
+            })
+        if not item.get("response"):
+            errors.append({
+                "message": "A response must be provided"
+            })
+        elif item.get("response").lower() not in ["yes", "no", "maybe"]:
+            errors.append({
+                "message": "The response should be either yes, no or maybe"
+            })
+        return len(errors) == 0, errors
