@@ -20,6 +20,7 @@ user_data = {
         "othername": "Okinyi",
         "phoneNumber": "0703812914",
         "username": "Brian",
+        "email": "codingbrian58@gmail.com",
         "password": "password"
     },
     "sign_up_url": "/api/v1/users/sign-up"
