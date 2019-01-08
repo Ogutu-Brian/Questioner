@@ -24,4 +24,4 @@ class TestUser(unittest.TestCase):
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
         result = self.sign_up(url=url, data=data, headers=headers)
-        self.assertEqual("success",result.get("status"))
+        self.assertEqual("success", result.get("status"))
