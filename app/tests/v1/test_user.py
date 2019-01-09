@@ -67,7 +67,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_first_name(self):
-        """Tests for data that lacks firsr name during creation of user"""
+        """Tests for data that lacks first name during creation of user"""
         headers = {
             "Content-Type": "application/json"
         }

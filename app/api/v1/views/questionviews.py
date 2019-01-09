@@ -50,3 +50,20 @@ def upvote(question_id):
             "status": status.created,
             "data": [question.to_dictionary()]
         }), status.created
+
+
+@question_view.route('/questions/<question_id>/downvote', methods=["PATCH"])
+def downvote(question_id):
+    """Decreases the votes by 1"""
+    question = db.questions.query_by_field("id", int(question_id))
+    if not question:
+        return jsonify({
+            "message": "A question with that id does not exist",
+            "status": status.not_found
+        }), status.not_found
+    question.votes -= 1
+    return jsonify({
+        "message": "Successfully downvoted",
+        "status": status.created,
+        "data": [question.to_dictionary()]
+    }), status.created
