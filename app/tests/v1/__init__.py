@@ -1,6 +1,6 @@
 from app.run import app
 import pytest
-from app.api.v1.views import db,status
+from app.api.v1.views import db, status
 
 app.config['TESTING'] = True
 
@@ -24,4 +24,17 @@ user_data = {
         "password": "password"
     },
     "sign_up_url": "/api/v1/users/sign-up"
+}
+meetup_data = {
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "data": {
+        "location": "Andela Campus",
+        "images": ["/images/important", "/images/meetup"],
+        "topic": "Responsive Web Design",
+        "Tags": ["User Interface", "Responsive Design"],
+        "happeningOn":"2018-04-23T18:25:43.511Z"
+    },
+    "url": "/api/v1/meetups"
 }

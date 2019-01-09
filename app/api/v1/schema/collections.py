@@ -89,7 +89,7 @@ class MeetupCollection(BaseCollection):
 
     def is_valid(self, item):
         errors = []
-        if not item.get("loation"):
+        if not item.get("location"):
             errors.append({
                 "message": "Location of meetup must be provided",
             })
