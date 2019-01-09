@@ -18,6 +18,11 @@ def create_meetup():
         meetup = data.get("meetup")
         title = data.get("title")
         body = data.get("body")
+        if not db.users.query_by_field("id", created_by):
+            return jsonify({
+                "message": "user with that id does not exist",
+                "status": status.invalid_data
+            }), status.invalid_data
         question = Question(created_by=created_by,
                             meet_up=meetup, title=title, body=body)
         db.questions.insert(question)
