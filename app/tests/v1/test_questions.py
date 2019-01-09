@@ -107,3 +107,13 @@ class TestQuestion(unittest.TestCase):
         url = "/api/v1/questions/0/upvote"
         result = json.loads(client().patch(url).get_data(as_text=True))
         self.assertGreaterEqual(status.not_found, result.get("status"))
+
+    def test_successful_downvote(self):
+        """Tests the endpoint for downvoting a question in Questioner"""
+        question = self.create_question(url=question_data.get(
+            "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        self.assertEqual(status.created, question.get("status"))
+        question_id = question.get("data")[0].get("id")
+        url = "/api/v1/questions/{}/downvote".format(question_id)
+        result = json.loads(client().patch(url).get_data(as_text=True))
+        self.assertEqual(status.created, result.get("status"))
