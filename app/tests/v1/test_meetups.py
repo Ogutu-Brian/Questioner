@@ -156,3 +156,11 @@ class TestMeetup(unittest.TestCase):
         get_url = "/api/v1/meetups/upcoming/"
         result = json.loads(client().get(get_url).get_data(as_text=True))
         self.assertEqual(status.success, result.get("status"))
+        db.tear_down()
+
+    def test_nill_result(self):
+        """tests for nill result when fetching all upcoming meetup records"""
+        url = "/api/v1/meetups/upcoming/"
+        result = client().get(url)
+        self.assertEqual(status.no_content, result.status_code)
+        db.tear_down()

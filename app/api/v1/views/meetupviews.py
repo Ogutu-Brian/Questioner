@@ -56,6 +56,7 @@ def get_all_meetups():
     """An endpoint to get all upcoming meetup records"""
     meetups = db.meetups.query_all()
     if not meetups:
+        print("No content")
         return jsonify({
             "message": "There are not meetups in the record",
             "status": status.no_content
@@ -64,7 +65,7 @@ def get_all_meetups():
     for meetup in meetups:
         result_set.append(meetup.to_dictionary())
     return jsonify({
-        "status":status.success,
-        "data":result_set,
-        "message":"Successfully got all upcoming meetup records"
+        "status": status.success,
+        "data": result_set,
+        "message": "Successfully got all upcoming meetup records"
     })
