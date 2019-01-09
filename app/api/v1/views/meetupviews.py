@@ -4,4 +4,4 @@ from flask import jsonify, request
 
 @meetup_view.route('/meetups', methods=['POST'])
 def create_meetup():
-    pass
+    if request

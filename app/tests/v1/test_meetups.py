@@ -6,7 +6,7 @@ import json
 class TestMeetup(unittest.TestCase):
     """Testst the operations performed on meetup records"""
 
-    def create_meetup(self, url, data, headers):
+    def create_meetup(self, url="", data={}, headers={}):
         """Used for creating a meetup"""
         data = json.dumps(data)
         result = client().post(url=url, data=data, headers=headers)

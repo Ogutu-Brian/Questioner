@@ -135,3 +135,18 @@ class TestUser(unittest.TestCase):
             "sign_up_url"), data=data, headers=headers)
         db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
+
+    def test_data_not_json(self):
+        data = {
+            "firstname": "Ogutu",
+            "lastname": "Brian",
+            "othername": "Okinyi",
+            "phoneNumber": "0703812914",
+            "username": "Brian",
+            "email": "codingbrian58@gmail.com",
+            "password": "password"
+        }
+        result = self.sign_up(url=user_data.get(
+            "sign_up_url"), data=data)
+        db.tear_down()
+        self.assertEqual(status.not_json, result.get("status"))
