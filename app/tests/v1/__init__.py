@@ -38,3 +38,13 @@ meetup_data = {
     },
     "url": "/api/v1/meetups"
 }
+question_data = {
+    "headers":{
+        "Content-Type":"application/json"
+    },
+    "data":{
+        "createdBy":0,
+        "response":"yes",
+    },
+    "url":"/api/v1/questions"
+}

@@ -121,6 +121,14 @@ class QuestionCollection(BaseCollection):
             errors.append({
                 "message": "The meetup the question is for must be provided"
             })
+        if not item.get("title"):
+            errors.append({
+                "message":"Title of question must be provided"
+            })
+        if not item.get("body"):
+            errors.append({
+                "message":"Body of question must be provoded"
+            })
         return len(errors) == 0, errors
 
 
