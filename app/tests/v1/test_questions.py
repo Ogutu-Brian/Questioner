@@ -106,7 +106,7 @@ class TestQuestion(unittest.TestCase):
         db.tear_down()
         self.assertEqual(status.created, result.get("status"))
 
-    def test_unexsiting_question(self):
+    def test_unexsiting_upvote_question(self):
         """Tests for a patch to a question that does not exist"""
         url = "/api/v1/questions/0/upvote"
         result = json.loads(client().patch(url).get_data(as_text=True))
@@ -123,3 +123,9 @@ class TestQuestion(unittest.TestCase):
         result = json.loads(client().patch(url).get_data(as_text=True))
         db.tear_down()
         self.assertEqual(status.created, result.get("status"))
+
+    def test_unexisting_downvote_question(self):
+        """Tests if the question being downvotest is not existing"""
+        url = "/api/v1/questions/0/downvote"
+        result = json.loads(client().patch(url).get_data(as_text=True))
+        self.assertEqual(status.not_found, result.get("status"))
