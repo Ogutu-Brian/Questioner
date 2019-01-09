@@ -21,8 +21,8 @@ class Meetup(BaseModel):
         Overrides the method from Basemodel to convert object properties into a dictionary
         data structure
         """
-        if self.happening_on:
-            self.happening_on = self.happening_on.strftime('%d-%m-%Y')
+        # if self.happening_on:
+        #     self.happening_on = self.happening_on.strftime('%d-%m-%Y')
         dictionary_data = {
             "id": self.id,
             "createdOn": self.created_date(),
@@ -30,7 +30,7 @@ class Meetup(BaseModel):
             "images": self.images,
             "topic": self.topic,
             "happendingOn": self.happening_on,
-            "Tags": self.tags,
-            "creatdBy": self.created_by
+            "tags": self.tags,
+            # "creatdBy": self.created_by
         }
         return dictionary_data
