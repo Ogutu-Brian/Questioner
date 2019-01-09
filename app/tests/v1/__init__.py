@@ -34,7 +34,19 @@ meetup_data = {
         "images": ["/images/important", "/images/meetup"],
         "topic": "Responsive Web Design",
         "Tags": ["User Interface", "Responsive Design"],
-        "happeningOn":"2018-04-23T18:25:43.511Z"
+        "happeningOn": "2018-04-23T18:25:43.511Z"
     },
     "url": "/api/v1/meetups"
+}
+question_data = {
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "data": {
+        "title": "Responnsive Web design",
+        "createdBy": 1,
+        "body": "What is the best way of getting around responsiveness of a website",
+        "meetup": 1
+    },
+    "url": "/api/v1/questions"
 }

@@ -7,7 +7,7 @@ class Question(BaseModel):
     """Defines the properties specific to a Question object"""
 
     def __init__(self, id_="", created_on=date.today(), created_by="", meet_up="",
-                 title="", body="", votes=""):
+                 title="", body="", votes=0):
         super().__init__(id_=id_, created_on=created_on)
         self.created_by = created_by
         self.meet_up = meet_up

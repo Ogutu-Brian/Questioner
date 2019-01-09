@@ -2,7 +2,7 @@ class BaseCollection(object):
     """Defines the shared database operations"""
 
     def __init__(self):
-        self.index = 0
+        self.index = 1
         self.data = {}
         self.errors = []
 
@@ -14,16 +14,13 @@ class BaseCollection(object):
 
     def query_all(self):
         """Queries all the data from the database"""
-        return self.data
+        return self.data.values()
 
     def query_by_field(self, field, value):
         """Query an item by a given field value
         """
-        if not self.data[0].to_dictionary().get(field):
-            print("This schema has no field {}".format(field))
-            return None
         for item in self.data.values():
-            if item.to_dictionary().get(field) == value:
+            if item.to_dictionary().get(field)==value:
                 return item
         return None
 
@@ -120,6 +117,14 @@ class QuestionCollection(BaseCollection):
         if not item.get("meetup"):
             errors.append({
                 "message": "The meetup the question is for must be provided"
+            })
+        if not item.get("title"):
+            errors.append({
+                "message": "Title of question must be provided"
+            })
+        if not item.get("body"):
+            errors.append({
+                "message": "Body of question must be provoded"
             })
         return len(errors) == 0, errors
 

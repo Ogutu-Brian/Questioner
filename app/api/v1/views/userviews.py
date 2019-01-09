@@ -29,7 +29,7 @@ def sign_up():
                         other_name=other_name, email=email, phone_number=phone_number, user_name=user_name, password=password)
             db.users.insert(user)
             result_set = []
-            for user_ in db.users.query_all().values():
+            for user_ in db.users.query_all():
                 result_set.append(user_.to_dictionary())
             return jsonify({
                 "message": "Successuflly signed up",
