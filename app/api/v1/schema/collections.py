@@ -2,7 +2,7 @@ class BaseCollection(object):
     """Defines the shared database operations"""
 
     def __init__(self):
-        self.index = 0
+        self.index = 1
         self.data = {}
         self.errors = []
 

@@ -21,3 +21,22 @@ class TestQuestion(unittest.TestCase):
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         self.assertEqual(status.created, result.get("status"))
+
+    def test_unexisting_user(self):
+        """tests for a user that is not in the system"""
+        question_data = {
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": {
+                "title": "Responnsive Web design",
+                "createdBy": 4,
+                "response": "yes",
+                "body": "What is the best way of getting around responsiveness of a website",
+                "meetup": 5
+            },
+            "url": "/api/v1/questions"
+        }
+        result = self.create_question(url=question_data.get(
+            "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        self.assertEqual(status.invalid_data, result.get("status"))
