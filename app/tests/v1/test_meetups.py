@@ -130,3 +130,17 @@ class TestMeetup(unittest.TestCase):
         result = self.create_meetup(url=url, data=data, headers=headers)
         db.tear_down()
         self.assertEqual(status.not_json, result.get("status"))
+
+    def test_get_meetup_record(self):
+        """Tests for get request for a specific meetup given a meetup id"""
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        get_url = "/api/v1/meetups/{}".format(meetup_id)
+        print(get_url)
+        result = json.loads(client().get(get_url).get_data(as_text=True))
+        self.assertEqual(status.success, result.get("status"))
+        db.tear_down()

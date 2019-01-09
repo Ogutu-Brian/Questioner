@@ -4,7 +4,8 @@ import json
 
 
 @question_view.route('/questions', methods=["POST"])
-def create_meetup():
+def create_question():
+    """A post endpoint for creating a question for a given meetup"""
     if request.is_json:
         valid, errors = db.questions.is_valid(request.json)
         if not valid:
@@ -21,12 +22,9 @@ def create_meetup():
         question = Question(created_by=created_by,
                             meet_up=meetup, title=title, body=body)
         db.questions.insert(question)
-        result_set = []
-        for item in db.questions.query_all():
-            result_set.append(item.to_dictionary())
         return jsonify({
             "message": "Successfully created a question",
-            "data": result_set,
+            "data": [question.to_dictionary()],
             "status": status.created
         }), status.created
     else:

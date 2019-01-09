@@ -13,6 +13,7 @@ class Status(object):
         self.created = 201
         self.invalid_data = 406
         self.success = 200
+        self.not_found = 404
 
 
 status = Status()

@@ -5,6 +5,7 @@ import bcrypt
 
 @user_view.route('/sign-up', methods=['POST'])
 def sign_up():
+    """A post endpoint for creating a user or for sign up"""
     if request.is_json:
         valid, errors = db.users.is_valid(request.json)
         if not valid:
@@ -28,13 +29,10 @@ def sign_up():
             user = User(first_name=first_name, last_name=last_name,
                         other_name=other_name, email=email, phone_number=phone_number, user_name=user_name, password=password)
             db.users.insert(user)
-            result_set = []
-            for user_ in db.users.query_all():
-                result_set.append(user_.to_dictionary())
             return jsonify({
                 "message": "Successuflly signed up",
                 "status": status.created,
-                "data": result_set
+                "data": [user.to_dictionary()]
             }), status.created
     else:
         return jsonify({
