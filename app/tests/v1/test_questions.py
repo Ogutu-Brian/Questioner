@@ -11,7 +11,6 @@ class TestQuestion(unittest.TestCase):
         """Creates a user and a meetup and creartes questions using those details"""
         data = json.dumps(data)
         result = client().post(url, data=data, headers=headers)
-        db.tear_down()
         return json.loads(result.get_data(as_text=True))
 
     def test_correct_question_post(self):
