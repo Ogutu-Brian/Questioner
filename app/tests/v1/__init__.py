@@ -43,8 +43,11 @@ question_data = {
         "Content-Type":"application/json"
     },
     "data":{
+        "title":"Responnsive Web design",
         "createdBy":0,
         "response":"yes",
+        "body":"What is the best way of getting around responsiveness of a website",
+        "meetup":0
     },
     "url":"/api/v1/questions"
 }
