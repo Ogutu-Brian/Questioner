@@ -25,7 +25,7 @@ user_data = {
     },
     "sign_up_url": "/api/v1/users/sign-up"
 }
-meetu_data = {
+meetup_data = {
     "headers": {
         "Content-Type": "application/json"
     },
@@ -33,7 +33,8 @@ meetu_data = {
         "location": "Andela Campus",
         "images": ["/images/important", "/images/meetup"],
         "topic": "Responsive Web Design",
-        "Tags": ["User Interface", "Responsive Design"]
+        "Tags": ["User Interface", "Responsive Design"],
+        "happeningOn":"2018-04-23T18:25:43.511Z"
     },
     "url": "/api/v1/meetups"
 }
