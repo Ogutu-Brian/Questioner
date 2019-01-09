@@ -50,3 +50,12 @@ question_data = {
     },
     "url": "/api/v1/questions"
 }
+rsvp_data = {
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "data": {
+        "user": 1,
+        "response": "yes"
+    }
+}

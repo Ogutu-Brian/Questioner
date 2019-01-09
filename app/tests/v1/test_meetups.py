@@ -1,4 +1,4 @@
-from .import client, db, meetup_data, status
+from .import (client, db, meetup_data, status, user_data)
 import unittest
 import json
 
@@ -10,6 +10,13 @@ class TestMeetup(unittest.TestCase):
         """Used for creating a meetup"""
         data = json.dumps(data)
         result = client().post(url, data=data, headers=headers)
+        return json.loads(result.get_data(as_text=True))
+
+    def create_user(self, url, data={}, headers={}):
+        """
+        user sign up method by test client
+        """
+        result = client().post(url, data=json.dumps(data), headers=headers)
         return json.loads(result.get_data(as_text=True))
 
     def test_successful_meetup(self):
@@ -163,4 +170,29 @@ class TestMeetup(unittest.TestCase):
         url = "/api/v1/meetups/upcoming/"
         result = client().get(url)
         self.assertEqual(status.no_content, result.status_code)
+        db.tear_down()
+
+    def test_successful_rsvp_response(self):
+        """Tests for a successful creation of rsvp by a user"""
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        data = user_data.get("sign_up")
+        url = user_data.get("sign_up_url")
+        user = self.create_user(url=url, data=data, headers=headers)
+        user_id = user.get("data")[0].get("id")
+        self.assertEqual(status.created, user.get("status"))
+        rsvp_data = {
+            "data": {
+                "user": user_id,
+                "response": "yes"
+            },
+            "url": "/api/v1/{}/rsvps".format(meetup_id)
+        }
+        result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
+            data), headers=headers).get_data(as_text=True))
+        self.assertEqual(status.created, result.get("status"))
         db.tear_down()

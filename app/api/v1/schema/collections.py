@@ -134,9 +134,9 @@ class RsvpCollection(BaseCollection):
 
     def is_valid(self, item):
         errors = []
-        if not item.get("meetup"):
+        if not item.get("user"):
             errors.append({
-                "message": "The meetup being responded to must be provided"
+                "message": "A user responding to rsvp must be provided",
             })
         if not item.get("response"):
             errors.append({
