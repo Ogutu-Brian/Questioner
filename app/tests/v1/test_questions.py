@@ -36,7 +36,6 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
-
         self.assertEqual(status.not_json, result.get("status"))
 
     def test_missing_creator(self):
@@ -92,7 +91,6 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
-
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_successful_upvote(self):
@@ -104,3 +102,9 @@ class TestQuestion(unittest.TestCase):
         url = "/api/v1/questions/{}/upvote".format(question_id)
         result = json.loads(client().patch(url).get_data(as_text=True))
         self.assertEqual(status.created, result.get("status"))
+
+    def test_unexsiting_question(self):
+        """Tests for a patch to a question that does not exist"""
+        url = "/api/v1/questions/0/upvote"
+        result = json.loads(client().patch(url).get_data(as_text=True))
+        self.assertGreaterEqual(status.not_found, result.get("status"))
