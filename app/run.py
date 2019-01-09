@@ -1,6 +1,6 @@
 from flask import (Flask)
 from instance.config import secret_key
-from .import user_view,meetup_view
+from .import user_view,meetup_view,question_view
 
 
 def create_app():
@@ -9,6 +9,7 @@ def create_app():
     app.secret_key = secret_key
     app.register_blueprint(user_view, url_prefix="/api/v1/users")
     app.register_blueprint(meetup_view,url_prefix="/api/v1")
+    app.register_blueprint(question_view,url_prefix="/api/v1")
     return app
 
 
