@@ -44,10 +44,10 @@ question_data = {
     },
     "data": {
         "title": "Responnsive Web design",
-        "createdBy": 0,
+        "createdBy": 1,
         "response": "yes",
         "body": "What is the best way of getting around responsiveness of a website",
-        "meetup": 0
+        "meetup": 1
     },
     "url": "/api/v1/questions"
 }
