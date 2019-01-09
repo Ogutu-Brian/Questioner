@@ -11,7 +11,6 @@ class TestQuestion(unittest.TestCase):
         """Creates a user and a meetup and creartes questions using those details"""
         data = json.dumps(data)
         result = client().post(url, data=data, headers=headers)
-        db.tear_down()
         return json.loads(result.get_data(as_text=True))
 
     def test_correct_question_post(self):
@@ -36,7 +35,6 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
-        print(result)
         self.assertEqual(status.not_json, result.get("status"))
 
     def test_missing_creator(self):
@@ -55,7 +53,7 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
-        print(result)
+
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_body(self):
@@ -74,7 +72,6 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
-        print(result)
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_meetup(self):
@@ -93,5 +90,20 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
-        print(result)
         self.assertEqual(status.invalid_data, result.get("status"))
+
+    def test_successful_upvote(self):
+        """Tests the endpoint for upvoting a question in questioner"""
+        question = self.create_question(url=question_data.get(
+            "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        self.assertEqual(status.created, question.get("status"))
+        question_id = question.get("data")[0].get("id")
+        url = "/api/v1/questions/{}/upvote".format(question_id)
+        result = json.loads(client().patch(url).get_data(as_text=True))
+        self.assertEqual(status.created, result.get("status"))
+
+    def test_unexsiting_question(self):
+        """Tests for a patch to a question that does not exist"""
+        url = "/api/v1/questions/0/upvote"
+        result = json.loads(client().patch(url).get_data(as_text=True))
+        self.assertGreaterEqual(status.not_found, result.get("status"))

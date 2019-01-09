@@ -32,3 +32,21 @@ def create_question():
             "message": "The data must be in JSOn",
             "status": status.not_json
         }), status.not_json
+
+
+@question_view.route('/questions/<question_id>/upvote', methods=["PATCH"])
+def upvote(question_id):
+    """Increates a question's vote by 1"""
+    question = db.questions.query_by_field("id", int(question_id))
+    if not question:
+        return jsonify({
+            "message": "A question with that id does not exist",
+            "status": status.not_found
+        }), status.not_found
+    else:
+        question.votes += 1
+        return jsonify({
+            "message": "successfully upvoted",
+            "status": status.created,
+            "data": [question.to_dictionary()]
+        }), status.created
