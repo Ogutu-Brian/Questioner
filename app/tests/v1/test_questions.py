@@ -35,6 +35,7 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        db.tear_down()
         self.assertEqual(status.not_json, result.get("status"))
 
     def test_missing_creator(self):
@@ -53,7 +54,7 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
-
+        db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_body(self):
@@ -72,6 +73,7 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_meetup(self):
@@ -90,6 +92,7 @@ class TestQuestion(unittest.TestCase):
         }
         result = self.create_question(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_successful_upvote(self):
@@ -100,12 +103,14 @@ class TestQuestion(unittest.TestCase):
         question_id = question.get("data")[0].get("id")
         url = "/api/v1/questions/{}/upvote".format(question_id)
         result = json.loads(client().patch(url).get_data(as_text=True))
+        db.tear_down()
         self.assertEqual(status.created, result.get("status"))
 
     def test_unexsiting_question(self):
         """Tests for a patch to a question that does not exist"""
         url = "/api/v1/questions/0/upvote"
         result = json.loads(client().patch(url).get_data(as_text=True))
+        db.tear_down()
         self.assertGreaterEqual(status.not_found, result.get("status"))
 
     def test_successful_downvote(self):
@@ -116,4 +121,5 @@ class TestQuestion(unittest.TestCase):
         question_id = question.get("data")[0].get("id")
         url = "/api/v1/questions/{}/downvote".format(question_id)
         result = json.loads(client().patch(url).get_data(as_text=True))
+        db.tear_down()
         self.assertEqual(status.created, result.get("status"))
