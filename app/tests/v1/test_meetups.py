@@ -141,4 +141,5 @@ class TestMeetup(unittest.TestCase):
         meetup_id = meetup.get("data").get("id")
         get_url = "/api/v1/{}".format(meetup_id)
         result = json.loads(client().get(get_url).get_data(as_text=True))
+        self.assertEqual(status.success, result.get("status"))
         db.tear_down()
