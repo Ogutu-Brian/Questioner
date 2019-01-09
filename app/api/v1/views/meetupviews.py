@@ -4,6 +4,7 @@ from flask import jsonify, request
 
 @meetup_view.route('/meetups', methods=['POST'])
 def create_meetup():
+    """A post endpoint for creating a meetup"""
     if request.is_json:
         valid, errors = db.meetups.is_valid(request.json)
         if not valid:
@@ -21,12 +22,9 @@ def create_meetup():
         meetup = Meetup(location=location, images=images,
                         topic=topic, happening_on=happening_on, tags=tags)
         db.meetups.insert(meetup)
-        result_set = []
-        for meetup_ in db.meetups.query_all():
-            result_set.append(meetup_.to_dictionary())
         return jsonify({
             "message": "Successfully created a meetup",
-            "data": result_set,
+            "data": [meetup.to_dictionary()],
             "status": status.created
         }), status.created
     else:
@@ -34,3 +32,20 @@ def create_meetup():
             "mesaage": "The data must be in JSON",
             "status": status.not_json
         }), status.not_json
+
+
+@meetup_view.route('/meetups/<meetup_id>', methods=["GET"])
+def get_meetup(meetup_id):
+    """ A get endpoint for getting a specific meetup given an id"""
+    meetup = db.meetups.query_by_field("id", int(meetup_id))
+    if not meetup:
+        return jsonify({
+            "message": "A meetup with that id does not exist",
+            "status": status.not_found
+        }), status.not_found
+    else:
+        return jsonify({
+            "message": "A meetup was successfully found",
+            "data": meetup.to_dictionary(),
+            "status": status.success
+        }), status.success
