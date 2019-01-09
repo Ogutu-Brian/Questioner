@@ -47,7 +47,7 @@ question_data = {
         "createdBy": 1,
         "response": "yes",
         "body": "What is the best way of getting around responsiveness of a website",
-        "meetup": 1
+        "meetup": 3
     },
     "url": "/api/v1/questions"
 }

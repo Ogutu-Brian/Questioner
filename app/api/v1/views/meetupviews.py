@@ -22,7 +22,7 @@ def create_meetup():
                         topic=topic, happening_on=happening_on, tags=tags)
         db.meetups.insert(meetup)
         result_set = []
-        for meetup_ in db.meetups.query_all().values():
+        for meetup_ in db.meetups.query_all():
             result_set.append(meetup_.to_dictionary())
         return jsonify({
             "message": "Successfully created a meetup",

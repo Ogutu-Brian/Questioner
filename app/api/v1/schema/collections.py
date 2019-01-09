@@ -14,7 +14,7 @@ class BaseCollection(object):
 
     def query_all(self):
         """Queries all the data from the database"""
-        return self.data
+        return self.data.values()
 
     def query_by_field(self, field, value):
         """Query an item by a given field value
