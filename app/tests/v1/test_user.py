@@ -29,6 +29,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.created, result.get("status"))
 
     def test_missing_email(self):
+        """Tets for data that does not contain an email"""
         headers = {
             "Content-Type": "application/json"
         }
@@ -47,6 +48,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_passworord(self):
+        """tests for data that is missing password during creation of user"""
         headers = {
             "Content-Type": "application/json"
         }
@@ -65,6 +67,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_first_name(self):
+        """Tests for data that lacks firsr name during creation of user"""
         headers = {
             "Content-Type": "application/json"
         }
@@ -83,6 +86,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_last_name(self):
+        """Tests for data that misses last name during sign up"""
         headers = {
             "Content-Type": "application/json"
         }
@@ -101,6 +105,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_phone_number(self):
+        """Tests for data that misses phone number during creation of a user"""
         headers = {
             "Content-Type": "application/json"
         }
@@ -119,6 +124,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_user_name(self):
+        """tests for data that misses username during creation of user"""
         headers = {
             "Content-Type": "application/json"
         }
@@ -137,6 +143,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_data_not_json(self):
+        """tests for data that is not in json format"""
         data = {
             "firstname": "Ogutu",
             "lastname": "Brian",

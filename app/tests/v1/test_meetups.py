@@ -22,6 +22,7 @@ class TestMeetup(unittest.TestCase):
         self.assertEqual(status.created, result.get("status"))
 
     def test_missing_tags(self):
+        """Tests for data that does not contain tags"""
         meetup_data = {
             "headers": {
                 "Content-Type": "application/json"
@@ -43,6 +44,7 @@ class TestMeetup(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_location(self):
+        """tests for data that does not contain location of meetup"""
         meetup_data = {
             "headers": {
                 "Content-Type": "application/json"
@@ -64,6 +66,7 @@ class TestMeetup(unittest.TestCase):
         self.assertEqual(status.invalid_data, result.get("status"))
 
     def test_missing_meetup_date(self):
+        """Test data that does not contain meetup date"""
         meetup_data = {
             "headers": {
                 "Content-Type": "application/json"

@@ -21,8 +21,12 @@ def create_meetup():
         question = Question(created_by=created_by,
                             meet_up=meetup, title=title, body=body)
         db.questions.insert(question)
+        result_set = []
+        for item in db.questions.query_all():
+            result_set.append(item.to_dictionary())
         return jsonify({
-            "message": "Successfully created a meetup",
+            "message": "Successfully created a question",
+            "data": result_set,
             "status": status.created
         }), status.created
     else:
