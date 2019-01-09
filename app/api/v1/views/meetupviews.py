@@ -49,3 +49,22 @@ def get_meetup(meetup_id):
             "data": meetup.to_dictionary(),
             "status": status.success
         }), status.success
+
+
+@meetup_view.route('/meetups/upcoming/', methods=["GET"])
+def get_all_meetups():
+    """An endpoint to get all upcoming meetup records"""
+    meetups = db.meetups.query_all()
+    if not meetups:
+        return jsonify({
+            "message": "There are not meetups in the record",
+            "status": status.no_content
+        }), status.no_content
+    result_set = []
+    for meetup in meetups:
+        result_set.append(meetup.to_dictionary())
+    return jsonify({
+        "status":status.success,
+        "data":result_set,
+        "message":"Successfully got all upcoming meetup records"
+    })

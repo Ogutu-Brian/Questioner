@@ -14,6 +14,7 @@ class Status(object):
         self.invalid_data = 406
         self.success = 200
         self.not_found = 404
+        self.no_content = 204
 
 
 status = Status()
