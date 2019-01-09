@@ -20,7 +20,6 @@ class BaseCollection(object):
         """Query an item by a given field value
         """
         for item in self.data.values():
-            print(item.to_dictionary())
             if item.to_dictionary().get(field)==value:
                 return item
         return None
