@@ -18,6 +18,7 @@ class Status(object):
         self.no_content = 204
         self.method_not_allowed = 405
         self.denied_access = 401
+        self.timeout = 408
 
 
 status = Status()
