@@ -1,6 +1,8 @@
 # Questioner
 [![Build Status](https://travis-ci.com/Ogutu-Brian/Questioner.svg?branch=develop)](https://travis-ci.com/Ogutu-Brian/Questioner)
-[![Coverage Status](https://coveralls.io/repos/github/Ogutu-Brian/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/Ogutu-Brian/Questioner?branch=develop)   
+[![Coverage Status](https://coveralls.io/repos/github/Ogutu-Brian/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/Ogutu-Brian/Questioner?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a09c24e8ea08899e153f/maintainability)](https://codeclimate.com/github/Ogutu-Brian/Questioner/maintainability)
+
 Questioner helps the meetup organizer prioritize questions to be answered   
 ## Built with
 * [HTML](https://www.w3schools.com/html/) - The markup language used
