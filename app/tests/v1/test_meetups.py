@@ -19,6 +19,12 @@ class TestMeetup(unittest.TestCase):
         result = client().post(url, data=json.dumps(data), headers=headers)
         return json.loads(result.get_data(as_text=True))
 
+    def create_rsvp(self, url="", data={}, headers={}):
+        """Creates rsvp for testing"""
+        data = json.dumps(data)
+        result = client().post(url, data=data, headers=headers)
+        return json.loads(result.get_data(as_text=True))
+
     def test_successful_meetup(self):
         """Tests for successful creation of a meetup"""
         data = meetup_data.get("data")
@@ -192,8 +198,8 @@ class TestMeetup(unittest.TestCase):
             },
             "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
         }
-        result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
-            rsvp_data.get("data")), headers=headers).get_data(as_text=True))
+        result = self.create_rsvp(url=rsvp_data.get(
+            "url"), data=rsvp_data.get("data"), headers=headers)
         self.assertEqual(status.created, result.get("status"))
         db.tear_down()
 
@@ -218,8 +224,8 @@ class TestMeetup(unittest.TestCase):
             },
             "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
         }
-        result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
-            rsvp_data.get("data")), headers=headers).get_data(as_text=True))
+        result = self.create_rsvp(url=rsvp_data.get(
+            "url"), data=rsvp_data.get("data"), headers=headers)
         self.assertEqual(status.not_found, result.get("status"))
         db.tear_down()
 
@@ -244,8 +250,8 @@ class TestMeetup(unittest.TestCase):
             },
             "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
         }
-        result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
-            rsvp_data.get("data")), headers=headers).get_data(as_text=True))
+        result = self.create_rsvp(url=rsvp_data.get(
+            "url"), data=rsvp_data.get("data"), headers=headers)
         self.assertEqual(status.invalid_data, result.get("status"))
         db.tear_down()
 
@@ -270,8 +276,8 @@ class TestMeetup(unittest.TestCase):
             },
             "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
         }
-        result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
-            rsvp_data.get("data")), headers=headers).get_data(as_text=True))
+        result = self.create_rsvp(url=rsvp_data.get(
+            "url"), data=rsvp_data.get("data"), headers=headers)
         self.assertEqual(status.invalid_data, result.get("status"))
         db.tear_down()
 
@@ -297,7 +303,7 @@ class TestMeetup(unittest.TestCase):
             },
             "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
         }
-        result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
-            rsvp_data.get("data")), headers=headers).get_data(as_text=True))
+        result = self.create_rsvp(url=rsvp_data.get(
+            "url"), data=rsvp_data.get("data"), headers=headers)
         self.assertEqual(status.not_json, result.get("status"))
         db.tear_down()
