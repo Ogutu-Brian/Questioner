@@ -173,6 +173,7 @@ class TestMeetup(unittest.TestCase):
 
     def test_nill_result(self):
         """tests for nill result when fetching all upcoming meetup records"""
+        db.tear_down()
         url = "/api/v1/meetups/upcoming/"
         result = client().get(url)
         self.assertEqual(status.no_content, result.status_code)
@@ -207,7 +208,7 @@ class TestMeetup(unittest.TestCase):
         """Tests for invalid meetup id during creation of rsvp"""
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
-        url = meetup_data.get("url")
+        #url = meetup_data.get("url")
         # meetup = self.create_meetup(url=url, data=data, headers=headers)
         # self.assertEqual(status.created, meetup.get("status"))
         # meetup_id = meetup.get("data")[0].get("id")
@@ -238,7 +239,7 @@ class TestMeetup(unittest.TestCase):
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         data = user_data.get("sign_up")
-        url = user_data.get("sign_up_url")
+        #url = user_data.get("sign_up_url")
         # user = self.create_user(url=url, data=data, headers=headers)
         # user_id = user.get("data")[0].get("id")
         # self.assertEqual(status.created, user.get("status"))
@@ -268,7 +269,6 @@ class TestMeetup(unittest.TestCase):
         user = self.create_user(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
-        user_id = 0
         rsvp_data = {
             "data": {
                 "user": user_id,
@@ -294,7 +294,6 @@ class TestMeetup(unittest.TestCase):
         user = self.create_user(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
-        user_id = 0
         headers = {}
         rsvp_data = {
             "data": {
@@ -306,4 +305,54 @@ class TestMeetup(unittest.TestCase):
         result = self.create_rsvp(url=rsvp_data.get(
             "url"), data=rsvp_data.get("data"), headers=headers)
         self.assertEqual(status.not_json, result.get("status"))
+        db.tear_down()
+
+    def test_missing_user_in_rsvp(self):
+        """Tests if user id is not provided when creating rsvp"""
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        data = user_data.get("sign_up")
+        # url = user_data.get("sign_up_url")
+        # user = self.create_user(url=url, data=data, headers=headers)
+        # user_id = user.get("data")[0].get("id")
+        #self.assertEqual(status.created, user.get("status"))
+        rsvp_data = {
+            "data": {
+                # "user": user_id,
+                "response": "yes"
+            },
+            "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
+        }
+        result = self.create_rsvp(url=rsvp_data.get(
+            "url"), data=rsvp_data.get("data"), headers=headers)
+        self.assertEqual(status.invalid_data, result.get("status"))
+        db.tear_down()
+
+    def test_missing_response_in_rsvp(self):
+        """Tests if response is not given in rsvp"""
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        data = user_data.get("sign_up")
+        url = user_data.get("sign_up_url")
+        user = self.create_user(url=url, data=data, headers=headers)
+        user_id = user.get("data")[0].get("id")
+        self.assertEqual(status.created, user.get("status"))
+        rsvp_data = {
+            "data": {
+                "user": user_id,
+                # "response": "yes"
+            },
+            "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
+        }
+        result = self.create_rsvp(url=rsvp_data.get(
+            "url"), data=rsvp_data.get("data"), headers=headers)
+        self.assertEqual(status.invalid_data, result.get("status"))
         db.tear_down()
