@@ -190,9 +190,10 @@ class TestMeetup(unittest.TestCase):
                 "user": user_id,
                 "response": "yes"
             },
-            "url": "/api/v1/{}/rsvps".format(meetup_id)
+            "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
         }
         result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
-            data), headers=headers).get_data(as_text=True))
+            rsvp_data.get("data")), headers=headers).get_data(as_text=True))
+        print(result)
         self.assertEqual(status.created, result.get("status"))
         db.tear_down()
