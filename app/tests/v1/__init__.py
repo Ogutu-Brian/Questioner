@@ -24,7 +24,7 @@ user_data = {
         "password": "password"
     },
     "sign_up_url": "/api/v1/users/sign-up",
-    "log_in_url": "/api/v1/users/login"
+    "log_in_url": "/api/v1/users/log-in"
 }
 meetup_data = {
     "headers": {

@@ -171,11 +171,12 @@ class TestUser(unittest.TestCase):
             "sign_up_url"), data=data, headers=headers)
         self.assertEqual(status.created, user.get("status"))
         login_data = {
-            "emal": "codingbrian58@gmail.com",
+            "email": "codingbrian58@gmail.com",
             "password": "password"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers=headers)
+        print(result)
         self.assertEqual(status.success, result.get("status"))
         login_data = {
             "username": "Brian",
