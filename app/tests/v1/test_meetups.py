@@ -197,3 +197,30 @@ class TestMeetup(unittest.TestCase):
         print(result)
         self.assertEqual(status.created, result.get("status"))
         db.tear_down()
+
+    def test_ivalid_meetup_for_rsvp(self):
+        """Tests for invalid meetup id during creation of rsvp"""
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        # meetup = self.create_meetup(url=url, data=data, headers=headers)
+        # self.assertEqual(status.created, meetup.get("status"))
+        # meetup_id = meetup.get("data")[0].get("id")
+        meetup_id = 0
+        data = user_data.get("sign_up")
+        url = user_data.get("sign_up_url")
+        user = self.create_user(url=url, data=data, headers=headers)
+        user_id = user.get("data")[0].get("id")
+        self.assertEqual(status.created, user.get("status"))
+        rsvp_data = {
+            "data": {
+                "user": user_id,
+                "response": "yes"
+            },
+            "url": "/api/v1/meetups/{}/rsvps".format(meetup_id)
+        }
+        result = json.loads(client().post(rsvp_data.get("url"), data=json.dumps(
+            rsvp_data.get("data")), headers=headers).get_data(as_text=True))
+        print(result)
+        self.assertEqual(status.not_found, result.get("status"))
+        db.tear_down()
