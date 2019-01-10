@@ -1,4 +1,4 @@
-from .import meetup_view, status, db, Meetup
+from .import meetup_view, status, db, Meetup, Rsvp
 from flask import jsonify, request
 
 
@@ -69,3 +69,44 @@ def get_all_meetups():
         "data": result_set,
         "message": "Successfully got all upcoming meetup records"
     })
+
+
+@meetup_view.route('/meetups/<meetup_id>/rsvps', methods=["POST"])
+def create_svp(meetup_id):
+    """Endpoint that allows a user to respond to a meetup"""
+    if request.is_json:
+        valid, errors = db.rsvps.is_valid(request.json)
+        if not valid:
+            return jsonify({
+                "message": "You encountered {} errors".format(len(errors)),
+                "status": status.invalid_data
+            }), status.invalid_data
+        meetup = db.meetups.query_by_field("id", int(meetup_id))
+        data = request.json
+        if not meetup:
+            return jsonify({
+                "message": "meetup with that id does not exist",
+                "status": status.not_found
+            }), status.not_found
+        if not db.users.query_by_field("id", data.get("user")):
+            return jsonify({
+                "message": "a user with that id does not exist",
+                "status": status.invalid_data
+            }), status.invalid_data
+        rsvp = Rsvp(meetup=meetup_id, user=data.get(
+            "user"), response=data.get("response"))
+        db.rsvps.insert(rsvp)
+        return jsonify({
+            "message": "successfully created Rsvp",
+            "status": status.created,
+            "data": [{
+                "meetup": meetup_id,
+                "topic": meetup.to_dictionary().get("topic"),
+                "status": rsvp.response
+            }]
+        }), status.created
+    else:
+        return jsonify({
+            "message": "The data must be in JSOn",
+            "status": status.not_json
+        }), status.not_json
