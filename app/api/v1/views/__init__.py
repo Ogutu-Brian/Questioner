@@ -17,6 +17,7 @@ class Status(object):
         self.not_found = 404
         self.no_content = 204
         self.method_not_allowed = 405
+        self.denied_access = 401
 
 
 status = Status()

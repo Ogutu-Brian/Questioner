@@ -14,13 +14,13 @@ class TestUser(unittest.TestCase):
         result = client().post(url, data=json.dumps(data), headers=headers)
         return json.loads(result.get_data(as_text=True))
 
-    def test_valid_post_data(self):
+    def test_valid_sign_up(self):
         """tests for a valid user sign up given correct data"""
         headers = user_data.get("headers")
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
-        result = self.post_data(url=url, data=data, headers=headers)
         db.tear_down()
+        result = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, result.get("status"))
 
     def test_missing_email(self):
@@ -155,4 +155,33 @@ class TestUser(unittest.TestCase):
 
     def test_successful_user_login(self):
         """Tests for a successful user log in into Questioner"""
-        pass
+        headers = {
+            "Content-Type": "application/json"
+        }
+        data = {
+            "firstname": "Ogutu",
+            "lastname": "Brian",
+            "othername": "Okinyi",
+            "phoneNumber": "0703812914",
+            "username": "Brian",
+            "email": "codingbrian58@gmail.com",
+            "password": "password"
+        }
+        user = self.post_data(url=user_data.get(
+            "sign_up_url"), data=data, headers=headers)
+        self.assertEqual(status.created, user.get("status"))
+        login_data = {
+            "emal": "codingbrian58@gmail.com",
+            "password": "password"
+        }
+        result = self.post_data(url=user_data.get(
+            "log_in_url"), data=login_data, headers=headers)
+        self.assertEqual(status.success, result.get("status"))
+        login_data = {
+            "username": "Brian",
+            "password": "password"
+        }
+        result = self.post_data(url=user_data.get(
+            "log_in_url"), data=login_data, headers=headers)
+        self.assertEqual(status.success, result.get("status"))
+        db.tear_down()
