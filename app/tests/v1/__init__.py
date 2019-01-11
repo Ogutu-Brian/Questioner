@@ -23,7 +23,8 @@ user_data = {
         "email": "codingbrian58@gmail.com",
         "password": "password"
     },
-    "sign_up_url": "/api/v1/users/sign-up"
+    "sign_up_url": "/api/v1/users/sign-up",
+    "log_in_url": "/api/v1/users/log-in"
 }
 meetup_data = {
     "headers": {

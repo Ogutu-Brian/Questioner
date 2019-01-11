@@ -8,23 +8,10 @@ import json
 class TestQuestion(unittest.TestCase):
     """Class for testing operations on Question records"""
 
-    def create_question(self, url="", data={}, headers={}):
-        """Creates a user and a meetup and creartes questions using those details"""
+    def post_data(self, url="", data={}, headers={}):
+        """Posts data to various endpoints"""
         data = json.dumps(data)
         result = client().post(url, data=data, headers=headers)
-        return json.loads(result.get_data(as_text=True))
-
-    def create_meetup(self, url="", data={}, headers={}):
-        """Used for creating a meetup"""
-        data = json.dumps(data)
-        result = client().post(url, data=data, headers=headers)
-        return json.loads(result.get_data(as_text=True))
-
-    def create_user(self, url, data={}, headers={}):
-        """
-        user sign up method by test client
-        """
-        result = client().post(url, data=json.dumps(data), headers=headers)
         return json.loads(result.get_data(as_text=True))
 
     def test_correct_question_post(self):
@@ -32,12 +19,12 @@ class TestQuestion(unittest.TestCase):
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         url = meetup_data.get("url")
-        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        meetup = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
-        user = self.create_user(url=url, data=data, headers=headers)
+        user = self.post_data(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
         question_data = {
@@ -52,7 +39,7 @@ class TestQuestion(unittest.TestCase):
             },
             "url": "/api/v1/questions"
         }
-        result = self.create_question(url=question_data.get(
+        result = self.post_data(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         self.assertEqual(status.created, result.get("status"))
         db.tear_down()
@@ -62,12 +49,12 @@ class TestQuestion(unittest.TestCase):
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         url = meetup_data.get("url")
-        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        meetup = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
-        user = self.create_user(url=url, data=data, headers=headers)
+        user = self.post_data(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
         question_data = {
@@ -82,7 +69,7 @@ class TestQuestion(unittest.TestCase):
             },
             "url": "/api/v1/questions"
         }
-        result = self.create_question(url=question_data.get(
+        result = self.post_data(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         db.tear_down()
         self.assertEqual(status.not_json, result.get("status"))
@@ -92,12 +79,12 @@ class TestQuestion(unittest.TestCase):
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         url = meetup_data.get("url")
-        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        meetup = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         # data = user_data.get("sign_up")
         # url = user_data.get("sign_up_url")
-        # user = self.create_user(url=url, data=data, headers=headers)
+        # user = self.post_data(url=url, data=data, headers=headers)
         # user_id = user.get("data")[0].get("id")
         # self.assertEqual(status.created, user.get("status"))
         question_data = {
@@ -112,7 +99,7 @@ class TestQuestion(unittest.TestCase):
             },
             "url": "/api/v1/questions"
         }
-        result = self.create_question(url=question_data.get(
+        result = self.post_data(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
@@ -122,12 +109,12 @@ class TestQuestion(unittest.TestCase):
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         url = meetup_data.get("url")
-        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        meetup = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
-        user = self.create_user(url=url, data=data, headers=headers)
+        user = self.post_data(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
         question_data = {
@@ -142,7 +129,7 @@ class TestQuestion(unittest.TestCase):
             },
             "url": "/api/v1/questions"
         }
-        result = self.create_question(url=question_data.get(
+        result = self.post_data(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
@@ -152,12 +139,12 @@ class TestQuestion(unittest.TestCase):
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         # url = meetup_data.get("url")
-        # meetup = self.create_meetup(url=url, data=data, headers=headers)
+        # meetup = self.post_data(url=url, data=data, headers=headers)
         # self.assertEqual(status.created, meetup.get("status"))
         # meetup_id = meetup.get("data")[0].get("id")
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
-        user = self.create_user(url=url, data=data, headers=headers)
+        user = self.post_data(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
         question_data = {
@@ -172,7 +159,7 @@ class TestQuestion(unittest.TestCase):
             },
             "url": "/api/v1/questions"
         }
-        result = self.create_question(url=question_data.get(
+        result = self.post_data(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
@@ -182,12 +169,12 @@ class TestQuestion(unittest.TestCase):
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         url = meetup_data.get("url")
-        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        meetup = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
-        user = self.create_user(url=url, data=data, headers=headers)
+        user = self.post_data(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
         question_data = {
@@ -202,7 +189,7 @@ class TestQuestion(unittest.TestCase):
             },
             "url": "/api/v1/questions"
         }
-        question = self.create_question(url=question_data.get(
+        question = self.post_data(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         self.assertEqual(status.created, question.get("status"))
         question_id = question.get("data")[0].get("id")
@@ -223,12 +210,12 @@ class TestQuestion(unittest.TestCase):
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         url = meetup_data.get("url")
-        meetup = self.create_meetup(url=url, data=data, headers=headers)
+        meetup = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         data = user_data.get("sign_up")
         url = user_data.get("sign_up_url")
-        user = self.create_user(url=url, data=data, headers=headers)
+        user = self.post_data(url=url, data=data, headers=headers)
         user_id = user.get("data")[0].get("id")
         self.assertEqual(status.created, user.get("status"))
         question_data = {
@@ -243,7 +230,7 @@ class TestQuestion(unittest.TestCase):
             },
             "url": "/api/v1/questions"
         }
-        question = self.create_question(url=question_data.get(
+        question = self.post_data(url=question_data.get(
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         self.assertEqual(status.created, question.get("status"))
         question_id = question.get("data")[0].get("id")
