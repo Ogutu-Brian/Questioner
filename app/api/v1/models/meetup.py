@@ -16,6 +16,9 @@ class Meetup(BaseModel):
         self.images = images
         self.created_by = creaed_by
 
+    def __str__(self):
+        return self.topic + " happening on " + self.happening_on
+
     def to_dictionary(self)->Dict:
         """
         Overrides the method from Basemodel to convert object properties into a dictionary
