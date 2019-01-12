@@ -36,7 +36,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             # "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -76,7 +76,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -95,7 +95,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -114,7 +114,7 @@ class TestUser(unittest.TestCase):
             # "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -133,7 +133,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             # "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -152,7 +152,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -171,7 +171,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -183,7 +183,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "test@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -202,7 +202,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -214,7 +214,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Ogutu",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -232,21 +232,21 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         user = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         self.assertEqual(status.created, user.get("status"))
         login_data = {
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers=headers)
         self.assertEqual(status.success, result.get("status"))
         login_data = {
             "username": "Brian",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers=headers)
@@ -265,14 +265,14 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         user = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         self.assertEqual(status.created, user.get("status"))
         login_data = {
             # "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers=headers)
@@ -291,7 +291,7 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         user = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
@@ -317,14 +317,14 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         user = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         self.assertEqual(status.created, user.get("status"))
         login_data = {
             "email": "codingbrian58@gmail.com",
-            "password": "passw"
+            "password": "password12#B4"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers=headers)
@@ -343,14 +343,14 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         user = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         self.assertEqual(status.created, user.get("status"))
         login_data = {
             "username": "HenkDebruin",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers=headers)
@@ -369,14 +369,14 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         user = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         self.assertEqual(status.created, user.get("status"))
         login_data = {
             "email": "testmail.@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers=headers)
@@ -394,14 +394,14 @@ class TestUser(unittest.TestCase):
             "phoneNumber": "0703812914",
             "username": "Brian",
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         user = self.post_data(url=user_data.get(
             "sign_up_url"), data=data, headers=headers)
         self.assertEqual(status.created, user.get("status"))
         login_data = {
             "email": "codingbrian58@gmail.com",
-            "password": "password"
+            "password": "password12#B"
         }
         result = self.post_data(url=user_data.get(
             "log_in_url"), data=login_data, headers={})
