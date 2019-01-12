@@ -1,3 +1,6 @@
+import re
+
+
 class BaseCollection(object):
     """Defines the shared database operations"""
 
@@ -78,6 +81,28 @@ class UserCollection(BaseCollection):
             errors.append({
                 "message": "Password must be provided"
             })
+        else:
+            password = item.get("password")
+            if len(password) < 6:
+                errors.append({
+                    "message": "The password is too short"
+                })
+            elif len(password) > 12:
+                errors.append({
+                    "message": "Password length should be between 6 and 11"
+                })
+            elif not re.search('[A-Z]', password):
+                errors.append({
+                    "message": "The password should at least contain an Uppercase Letter"
+                })
+            elif not re.search('[$#@]', password):
+                errors.append({
+                    "message": "The password needs to contain at least #,$ or @ symbols"
+                })
+            elif not re.search('[0-9]', password):
+                errors.append({
+                    "message": "The password needs to contain a number"
+                })
         return len(errors) == 0, errors
 
 

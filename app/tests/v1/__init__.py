@@ -21,7 +21,7 @@ user_data = {
         "phoneNumber": "0703812914",
         "username": "Brian",
         "email": "codingbrian58@gmail.com",
-        "password": "password"
+        "password": "password12#B"
     },
     "sign_up_url": "/api/v1/users/sign-up",
     "log_in_url": "/api/v1/users/log-in"

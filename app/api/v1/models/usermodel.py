@@ -19,6 +19,9 @@ class User(BaseModel):
         self.is_admin = is_admin
         self.password = password
 
+    def __str__(self):
+        return self.first_name + " "+self.last_name
+
     def to_dictionary(self)->Dict:
         """Overrides the basemodel's method to present user object data in dictionary format"""
         dict_data = {
