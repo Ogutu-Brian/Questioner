@@ -261,7 +261,34 @@ class TestQuestion(unittest.TestCase):
 
     def test_unexsiting_upvote_question(self):
         """Tests for a patch to a question that does not exist"""
-        url = "/api/v1/questions/0/upvote"
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.post_data(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        data = user_data.get("sign_up")
+        url = user_data.get("sign_up_url")
+        user = self.post_data(url=url, data=data, headers=headers)
+        user_id = user.get("data")[0].get("id")
+        self.assertEqual(status.created, user.get("status"))
+        question_data = {
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": {
+                "title": "Responnsive Web design",
+                "createdBy": user_id,
+                "body": "What is the best way of getting around responsiveness of a website",
+                "meetup": meetup_id
+            },
+            "url": "/api/v1/questions"
+        }
+        question = self.post_data(url=question_data.get(
+            "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        self.assertEqual(status.created, question.get("status"))
+        #question_id = question.get("data")[0].get("id")
+        url = "/api/v1/questions/-1/upvote"
         result = json.loads(client().patch(url).get_data(as_text=True))
         db.tear_down()
         self.assertGreaterEqual(status.not_found, result.get("status"))
@@ -302,6 +329,34 @@ class TestQuestion(unittest.TestCase):
 
     def test_unexisting_downvote_question(self):
         """Tests if the question being downvotest is not existing"""
-        url = "/api/v1/questions/0/downvote"
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.post_data(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        data = user_data.get("sign_up")
+        url = user_data.get("sign_up_url")
+        user = self.post_data(url=url, data=data, headers=headers)
+        user_id = user.get("data")[0].get("id")
+        self.assertEqual(status.created, user.get("status"))
+        question_data = {
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": {
+                "title": "Responnsive Web design",
+                "createdBy": user_id,
+                "body": "What is the best way of getting around responsiveness of a website",
+                "meetup": meetup_id
+            },
+            "url": "/api/v1/questions"
+        }
+        question = self.post_data(url=question_data.get(
+            "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        self.assertEqual(status.created, question.get("status"))
+        #question_id = question.get("data")[0].get("id")
+        url = "/api/v1/questions/-1/downvote"
         result = json.loads(client().patch(url).get_data(as_text=True))
+        db.tear_down()
         self.assertEqual(status.not_found, result.get("status"))
