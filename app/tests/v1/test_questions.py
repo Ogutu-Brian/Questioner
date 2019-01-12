@@ -106,6 +106,7 @@ class TestQuestion(unittest.TestCase):
 
     def test_missing_body(self):
         """Tests for missing body during creation of a question"""
+        db.tear_down()
         data = meetup_data.get("data")
         headers = meetup_data.get("headers")
         url = meetup_data.get("url")
@@ -163,6 +164,66 @@ class TestQuestion(unittest.TestCase):
             "url"), data=question_data.get("data"), headers=question_data.get("headers"))
         db.tear_down()
         self.assertEqual(status.invalid_data, result.get("status"))
+
+    def test_invalid_user(self):
+        """Tests if a user with an id exists in the database"""
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.post_data(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        data = user_data.get("sign_up")
+        url = user_data.get("sign_up_url")
+        user = self.post_data(url=url, data=data, headers=headers)
+        user_id = user.get("data")[0].get("id")
+        self.assertEqual(status.created, user.get("status"))
+        question_data = {
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": {
+                "title": "Responnsive Web design",
+                "createdBy": -2,
+                "body": "What is the best way of getting around responsiveness of a website",
+                "meetup": meetup_id
+            },
+            "url": "/api/v1/questions"
+        }
+        result = self.post_data(url=question_data.get(
+            "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        self.assertEqual(status.invalid_data, result.get("status"))
+        db.tear_down()
+
+    def test_invalid_meetup(self):
+        """Tests if a meetup with the given id exists in the database"""
+        data = meetup_data.get("data")
+        headers = meetup_data.get("headers")
+        url = meetup_data.get("url")
+        meetup = self.post_data(url=url, data=data, headers=headers)
+        self.assertEqual(status.created, meetup.get("status"))
+        meetup_id = meetup.get("data")[0].get("id")
+        data = user_data.get("sign_up")
+        url = user_data.get("sign_up_url")
+        user = self.post_data(url=url, data=data, headers=headers)
+        user_id = user.get("data")[0].get("id")
+        self.assertEqual(status.created, user.get("status"))
+        question_data = {
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": {
+                "title": "Responnsive Web design",
+                "createdBy": user_id,
+                "body": "What is the best way of getting around responsiveness of a website",
+                "meetup": -2
+            },
+            "url": "/api/v1/questions"
+        }
+        result = self.post_data(url=question_data.get(
+            "url"), data=question_data.get("data"), headers=question_data.get("headers"))
+        self.assertEqual(status.invalid_data, result.get("status"))
+        db.tear_down()
 
     def test_successful_upvote(self):
         """Tests the endpoint for upvoting a question in questioner"""
