@@ -36,6 +36,7 @@ nav a{
     text-decoration: none;
     margin-top: 0.5em;
 }
+
 nav .right{
     float: right;
     margin-right: 1em;
@@ -81,16 +82,18 @@ footer text{
     padding-top: 1em;
     padding-bottom: 0em;
 }
+.cntent{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
 content{
-    float: left;
-    border-style: solid;
     border-radius: 1em;
     width: 50%;
     padding: 0.5em;
-    border-color: wheat;
     text-align: center;
     margin-top: 4em;
     margin-left: 4em;
+    font-weight: bolder;
 }
 button{
     background-color: teal;
@@ -303,4 +306,9 @@ textarea{
     margin-left: 1.5em;
     font-weight: bolder;
     text-decoration: underline;
+}
+.title{
+    font-weight: bolder;
+    font-size: 1.5em;
+    color:black;
 }
