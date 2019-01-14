@@ -288,7 +288,7 @@ textarea{
 }
 .feed{
     margin-top: 2em;
-    float: left;
+    float: right;
     margin-right: 1em;
     width: 55%;
     margin-left: 1em;
@@ -306,6 +306,16 @@ textarea{
 }
 .avatar{
     width: 8em;
-    height: 8em;
+    height: 6em;
+    float: left;
+}
+.prof-card{
+    margin-top: 3em;
+    width: 30%;
+    background-color: #f1f1f1;
+    border-radius: 1em;
+    padding: 0.5em;
+    color: black;
+    margin-left: 4em;
     float: left;
 }
