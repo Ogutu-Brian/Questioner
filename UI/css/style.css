@@ -43,7 +43,6 @@ nav a:hover{
 nav .right{
     float: right;
     margin-right: 1em;
-    /* margin-left: 2em; */
 }
 nav ul{
     list-style-type: none;
@@ -67,7 +66,6 @@ nav .active{
 }
 nav .left{
     float: left;
-    /* margin-right: 0em; */
     margin-left: 1em;
 }
 footer{
@@ -150,9 +148,13 @@ form textarea{
     }
 }
 .button{
+    font-weight:bolder;
     color: white;
+    background-color:teal;
+    cursor: pointer
+    /* color: white;
     background-color: rgb(0,112,129);;
-    cursor: pointer;
+    cursor: pointer; */
 }
 .meetups{
     width: 80%;
@@ -181,8 +183,6 @@ form textarea{
     font-size: 2em;
 }
 table{
-    /* border-color: wheat;
-    border-style:solid; */
     column-gap: 2em;
     border-collapse: collapse;
     width: 60%;
@@ -193,14 +193,8 @@ th{
     font-size: 1em;
 }
 td,th{
-    /* border-style: solid;
-    border-color: wheat; */
     height: 2em;
     padding: 0.5em;
-}
-tr{
-    /* border-style: solid;
-    border-color: wheat; */
 }
 td .button{
     text-align: center;
@@ -238,11 +232,6 @@ td .button{
     border-color: #ccc;
     background-color: #dedede;
 }
-/* .comment::after{
-    content:"";
-    clear: both;
-    display: table;
-} */
 .comment-btn{
     font-weight:bolder;
     color: white;
@@ -256,9 +245,6 @@ textarea{
 .meetup_form{
     font-weight: bolder;
     margin-right: 3em;
-    /* float:left;
-    margin-left: 1em;
-    margin-top: 2em */
 }
 .admin-panel{
     font-weight:bolder;
