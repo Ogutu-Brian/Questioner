@@ -18,7 +18,6 @@ def create_app():
             "message": "The requested url was not found, plese double check",
             "status": status.not_found
         }), status.not_found
-    return app
 
     @app.errorhandler(405)
     def method_not_allowed_handler(error):
@@ -33,8 +32,7 @@ def create_app():
                 "message": "You could be doing a get request instead of a post",
                 "status": status.method_not_allowed
             }), status.method_not_allowed
-
-
+    return app
 app = create_app()
 if __name__ == "__main__":
     app.run()
