@@ -213,26 +213,51 @@ class QuestionData(object):
         "url": "/api/v1/questions"
     }
     unexisting_downvote_query_data = {
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": {
-                "title": "Responnsive Web design",
-                "createdBy": 1,
-                "body": "What is the best way of getting around responsiveness of a website",
-                "meetup": 1
-            },
-            "url": "/api/v1/questions"
-        }
-
-rsvp_data = {
-    "headers": {
-        "Content-Type": "application/json"
-    },
-    "data": {
-        "user": 1,
-        "response": "yes"
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
     }
-}
+
+
+class RsvpData(object):
+    """Defines test data for Rsvp"""
+    valid_rsvp_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "user": 1,
+            "response": "yes",
+            "url": ""
+        }
+    }
+    missing_user_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "response": "yes",
+            "url": ""
+        }
+    }
+    missing_response_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "user":1,
+            "url": ""
+        }
+    }
+
+
+rsvp_data = RsvpData()
 meetup_data = MeetupData()
 question_data = QuestionData()
