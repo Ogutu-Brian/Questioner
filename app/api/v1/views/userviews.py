@@ -6,10 +6,11 @@ import bcrypt
 @user_view.route('/sign-up', methods=['POST'])
 def sign_up():
     """A post endpoint for creating a user or for sign up"""
+    response = None
     if request.is_json:
         valid, errors = db.users.is_valid(request.json)
         if not valid:
-            return jsonify({
+            response = jsonify({
                 "message": "You encountered {} errors".format(len(errors)),
                 "status": status.invalid_data,
                 "data": errors
@@ -29,16 +30,17 @@ def sign_up():
             user = User(first_name=first_name, last_name=last_name,
                         other_name=other_name, email=email, phone_number=phone_number, user_name=user_name, password=password)
             db.users.insert(user)
-            return jsonify({
+            response = jsonify({
                 "message": "Successuflly signed up",
                 "status": status.created,
                 "data": [user.to_dictionary()]
             }), status.created
     else:
-        return jsonify({
+        response = jsonify({
             "message": "The data needs to be in JSON",
             "status": status.not_json
         }), status.not_json
+    return response
 
 
 @user_view.route('/log-in', methods=["POST"])
@@ -49,18 +51,18 @@ def login():
         email = request.json.get("email")
         password = request.json.get("password")
         if not email and not username:
-            return jsonify({
+            response = jsonify({
                 "message": "Provide your username or email in order to log in",
                 "status": status.invalid_data
             }), status.invalid_data
-        if not password:
-            return jsonify({
+        elif not password:
+            response = jsonify({
                 "message": "Plase provide password in order to log in",
                 "status": status.invalid_data
             }), status.invalid_data
-        if username:
+        elif username:
             if not db.users.query_by_field("username", username):
-                return jsonify({
+                response = jsonify({
                     "message": "A user with that username does not exist",
                     "status": status.denied_access
                 }), status.denied_access
@@ -68,18 +70,18 @@ def login():
                 user = db.users.query_by_field("username", username)
                 if bcrypt.checkpw(password.encode('utf8'), user.password.encode('utf8')):
                     session["email"] = user.email
-                    return jsonify({
+                    response = jsonify({
                         "message": "successfully logged into Questioner",
                         "status": status.success
                     }), status.success
                 else:
-                    return jsonify({
+                    response = jsonify({
                         "message": "Invalid password",
                         "status": status.denied_access
                     }), status.denied_access
         else:
             if not db.users.query_by_field("email", email):
-                return jsonify({
+                response = jsonify({
                     "message": "A user with that email address does not exist",
                     "status": status.denied_access
                 }), status.denied_access
@@ -87,17 +89,18 @@ def login():
                 user = db.users.query_by_field("email", email)
                 if bcrypt.checkpw(password.encode('utf'), user.password.encode('utf8')):
                     session["email"] = user.email
-                    return jsonify({
+                    response = jsonify({
                         "message": "successfully logged into Questioner",
                         "status": status.success
                     }), status.success
                 else:
-                    return jsonify({
+                    response = jsonify({
                         "message": "Invalid password",
                         "status": status.denied_access
                     }), status.denied_access
     else:
-        return jsonify({
+        response = jsonify({
             "message": "The data needs to be JSON",
             "status": status.not_json
         }), status.not_json
+    return response

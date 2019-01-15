@@ -16,17 +16,12 @@ class Meetup(BaseModel):
         self.images = images
         self.created_by = creaed_by
 
-    def __str__(self):
-        return self.topic + " happening on " + self.happening_on
-
     def to_dictionary(self)->Dict:
         """
         Overrides the method from Basemodel to convert object properties into a dictionary
         data structure
         """
-        # if self.happening_on:
-        #     self.happening_on = self.happening_on.strftime('%d-%m-%Y')
-        dictionary_data = {
+        return {
             "id": self.id,
             "createdOn": self.created_date(),
             "location": self.location,
@@ -34,6 +29,4 @@ class Meetup(BaseModel):
             "topic": self.topic,
             "happendingOn": self.happening_on,
             "tags": self.tags,
-            # "creatdBy": self.created_by
         }
-        return dictionary_data

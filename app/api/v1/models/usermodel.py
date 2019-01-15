@@ -24,7 +24,7 @@ class User(BaseModel):
 
     def to_dictionary(self)->Dict:
         """Overrides the basemodel's method to present user object data in dictionary format"""
-        dict_data = {
+        return {
             "id": self.id,
             "firstname": self.first_name,
             "lastname": self.last_name,
@@ -35,4 +35,3 @@ class User(BaseModel):
             "regustered": self.registred,
             "isAdmin": self.is_admin
         }
-        return dict_data
