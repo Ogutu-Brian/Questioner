@@ -204,6 +204,7 @@ td .button{
 .question{
     width: 100%;
     position: absolute;
+    left: 20%;
 }
 .question .post{
     float:left;
