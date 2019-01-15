@@ -10,6 +10,83 @@ def client():
     return client
 
 
+class MeetupData(object):
+    """Defines the test objects for meetup tests"""
+    missing_tag_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "location": "Andela Campus",
+            "images": ["/images/important", "/images/meetup"],
+            "topic": "Responsive Web Design",
+            "happeningOn": "2018-04-23T18:25:43.511Z"
+        },
+        "url": "/api/v1/meetups"
+    }
+    missing_location_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "images": ["/images/important", "/images/meetup"],
+            "topic": "Responsive Web Design",
+            "Tags": ["User Interface", "Responsive Design"],
+            "happeningOn": "2018-04-23T18:25:43.511Z"
+        },
+        "url": "/api/v1/meetups"
+    }
+    missing_meetup_date_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "location": "Andela Campus",
+            "images": ["/images/important", "/images/meetup"],
+            "topic": "Responsive Web Design",
+            "Tags": ["User Interface", "Responsive Design"],
+        },
+        "url": "/api/v1/meetups"
+    }
+    missing_image_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "location": "Andela Campus",
+            "topic": "Responsive Web Design",
+            "Tags": ["User Interface", "Responsive Design"],
+            "happeningOn": "2018-04-23T18:25:43.511Z"
+        },
+        "url": "/api/v1/meetups"
+    }
+    invalid_post_object_data = {
+        "headers": {
+        },
+        "data": {
+            "location": "Andela Campus",
+            "images": ["/images/important", "/images/meetup"],
+            "topic": "Responsive Web Design",
+            "Tags": ["User Interface", "Responsive Design"],
+            "happeningOn": "2018-04-23T18:25:43.511Z"
+        },
+        "url": "/api/v1/meetups"
+    }
+    valid_meetup_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "location": "Andela Campus",
+            "images": ["/images/important", "/images/meetup"],
+            "topic": "Responsive Web Design",
+            "Tags": ["User Interface", "Responsive Design"],
+            "happeningOn": "2018-04-23T18:25:43.511Z"
+        },
+        "url": "/api/v1/meetups"
+    }
+
+
 user_data = {
     "headers": {
         "Content-Type": "application/json"
@@ -25,19 +102,6 @@ user_data = {
     },
     "sign_up_url": "/api/v1/users/sign-up",
     "log_in_url": "/api/v1/users/log-in"
-}
-meetup_data = {
-    "headers": {
-        "Content-Type": "application/json"
-    },
-    "data": {
-        "location": "Andela Campus",
-        "images": ["/images/important", "/images/meetup"],
-        "topic": "Responsive Web Design",
-        "Tags": ["User Interface", "Responsive Design"],
-        "happeningOn": "2018-04-23T18:25:43.511Z"
-    },
-    "url": "/api/v1/meetups"
 }
 question_data = {
     "headers": {
@@ -60,3 +124,4 @@ rsvp_data = {
         "response": "yes"
     }
 }
+meetup_data = MeetupData()
