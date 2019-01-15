@@ -23,7 +23,7 @@ class Question(BaseModel):
         Overrides the BaseModel's method to return a dictionary representation of question
         object
         """
-        dictionary_data = {
+        return {
             "id": self.id,
             "createdOn": self.created_on,
             "createdBy": self.created_by,
@@ -32,4 +32,3 @@ class Question(BaseModel):
             "body": self.body,
             "votes": self.votes
         }
-        return dictionary_data

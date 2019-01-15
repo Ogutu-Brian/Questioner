@@ -13,16 +13,12 @@ class Rsvp(BaseModel):
         self.response = response
         self.primary = (self.meetup, self.user)
 
-    def __str__(self):
-        return self.response
-
     def to_dictionary(self)->Dict:
         """Overrides the basemodel method to represent an Rsvp object in a dictionary format"""
-        dict_data = {
+        return {
             "id": self.id,
             "primaryKey": self.primary,
             "meetup": self.meetup,
             "user": self.user,
             "response": self.response
         }
-        return dict_data

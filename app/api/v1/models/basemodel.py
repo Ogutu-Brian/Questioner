@@ -1,6 +1,7 @@
 from typing import Dict
 from datetime import date
 
+
 class BaseModel(object):
     """Contains properties shared accorss all the models"""
 
