@@ -13,11 +13,8 @@ class BaseModel(object):
         """Method to be overriden by child classes to return object properties in to dictionary
         format
         """
-        return {
-            "id": self.id,
-            "createdOn": self.created_on
-        }
-
+        pass
+        
     def created_date(self):
         """Reeturns date created as a formatted string (day-month-year) if date is provided"""
         if self.created_on:
