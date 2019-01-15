@@ -222,10 +222,24 @@ form textarea{
 }
 .meetupview{
     background-color: wheat;
-    width: 60%;
+    width: 50%;
     float: right;
     margin-top: 2em;
     margin-right: 1em;
+}
+.meetupview table{
+    width: 100%;
+}
+.main-meetup{
+    background-color: wheat;
+    width: 50%;
+    float: left;
+    margin-left: 25%;
+    margin-top: 2em;
+    margin-right: 1em;
+}
+.main-meetup table{
+    width: 100%;
 }
 @media only screen and (max-width:600px){
     .meetups{
