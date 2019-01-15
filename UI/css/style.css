@@ -97,7 +97,7 @@ content{
     font-weight: bolder;
 }
 button{
-    background-color: teal;
+    background-color: rgb(0,112,129);
     color: white;
     border: none;
     border-radius: 0.5em;
@@ -133,31 +133,59 @@ form textarea{
     width: 60%;
 }
 .form-container{
-    background-color: rgb(0,112,129);
-    color: white;
+    border-color: #ccc;
+    background-color: #dedede;
+    color: Black;
     width: 30%;
     position: absolute;
     margin-top: 5%;
     text-align: center;
-    height: 80%;
+    height: 100%;
     left: 35%;
 }
 .form-container form{
-    color:white;
+    color:black;
     left: 2em;
     padding-left: 1em;
     padding-right: 1em;
 }
 .form-container .button{
-    background-color: wheat;
-    color: black;
+    background-color: rgb(0,112,129);
+    color: white;
     margin-bottom: 1em;
-}
-.form-container #formlogin{
-    margin-top: 10%;
 }
 @media only screen and (max-width:600px){
     .form-container{
+        width: 10em;
+    }
+    .login-text{
+        font-size: 2em;
+    }
+}
+.log-in-container{
+    border-color: #ccc;
+    background-color: #dedede;
+    color: Black;
+    width: 30%;
+    position: absolute;
+    margin-top: 5%;
+    text-align: center;
+    height: 70%;
+    left: 35%;
+}
+.log-in-container form{
+    color:black;
+    left: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.log-in-container .button{
+    background-color: rgb(0,112,129);
+    color: white;
+    margin-bottom: 1em;
+}
+@media only screen and (max-width:600px){
+    .log-in-container{
         width: 10em;
     }
     .login-text{
@@ -176,7 +204,8 @@ form textarea{
     position:relative;
     left: 1%;
     float: left;
-    background-color: #f1f1f1;
+    border-color: #ccc;
+    background-color: #dedede;
     height:20em;
     margin-left: 1em;
 }
@@ -343,12 +372,14 @@ textarea{
     float: left;
 }
 .prof-card{
-    margin-top: 3em;
     width: 30%;
-    background-color: #f1f1f1;
-    border-radius: 1em;
-    padding: 0.5em;
-    color: black;
-    margin-left: 4em;
+    margin-top: 2em;
+    position:relative;
+    left: 1%;
     float: left;
+    border-color: #ccc;
+    background-color: #dedede;
+    height:20em;
+    margin-left: 1em;
+    height: 20%;
 }
