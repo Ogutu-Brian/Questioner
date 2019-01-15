@@ -3,13 +3,6 @@ import pytest
 from app.api.v1.views import db, status
 from app.tests.v1.base_test import BaseTest
 
-app.config['TESTING'] = True
-
-
-def client():
-    client = app.test_client()
-    return client
-
 
 class MeetupData(object):
     """Defines the test objects for meetup tests"""

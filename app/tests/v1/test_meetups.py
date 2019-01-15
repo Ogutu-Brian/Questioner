@@ -1,4 +1,4 @@
-from .import (client, db, meetup_data, status, user_data, rsvp_data, BaseTest)
+from .import (db, meetup_data, status, user_data, rsvp_data, BaseTest)
 import unittest
 import json
 
@@ -72,7 +72,7 @@ class TestMeetup(BaseTest):
         self.assertEqual(status.created, meetup.get("status"))
         meetup_id = meetup.get("data")[0].get("id")
         get_url = "/api/v1/meetups/{}".format(meetup_id)
-        result = json.loads(client().get(get_url).get_data(as_text=True))
+        result = json.loads(self.client().get(get_url).get_data(as_text=True))
         self.assertEqual(status.success, result.get("status"))
 
     def test_get_all_meetup_records(self):
@@ -85,13 +85,13 @@ class TestMeetup(BaseTest):
         meetup2 = self.post_data(url=url, data=data, headers=headers)
         self.assertEqual(status.created, meetup2.get("status"))
         get_url = "/api/v1/meetups/upcoming/"
-        result = json.loads(client().get(get_url).get_data(as_text=True))
+        result = json.loads(self.client().get(get_url).get_data(as_text=True))
         self.assertEqual(status.success, result.get("status"))
 
     def test_nill_result(self):
         """tests for nill result when fetching all upcoming meetup records"""
         url = "/api/v1/meetups/upcoming/"
-        result = client().get(url)
+        result = self.client().get(url)
         self.assertEqual(status.no_content, result.status_code)
 
     def test_successful_rsvp_response(self):
