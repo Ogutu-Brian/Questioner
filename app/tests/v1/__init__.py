@@ -87,24 +87,6 @@ class MeetupData(object):
     }
 
 
-user_data = {
-    "headers": {
-        "Content-Type": "application/json"
-    },
-    "sign_up": {
-        "firstname": "Ogutu",
-        "lastname": "Brian",
-        "othername": "Okinyi",
-        "phoneNumber": "0703812914",
-        "username": "Brian",
-        "email": "codingbrian58@gmail.com",
-        "password": "password12#B"
-    },
-    "sign_up_url": "/api/v1/users/sign-up",
-    "log_in_url": "/api/v1/users/log-in"
-}
-
-
 class QuestionData(object):
     """Defines Question data used for testing"""
     valid_question_data = {
@@ -252,12 +234,141 @@ class RsvpData(object):
             "Content-Type": "application/json"
         },
         "data": {
-            "user":1,
+            "user": 1,
             "url": ""
         }
     }
 
 
+class UserData(object):
+    """Defines a blueprint for user test data"""
+    valid_user_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "sign_up": {
+            "firstname": "Ogutu",
+            "lastname": "Brian",
+            "othername": "Okinyi",
+            "phoneNumber": "0703812914",
+            "username": "Brian",
+            "email": "codingbrian58@gmail.com",
+            "password": "password12#B"
+        },
+        "sign_up_url": "/api/v1/users/sign-up",
+        "log_in_url": "/api/v1/users/log-in"
+    }
+    missing_mail_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "firstname": "Ogutu",
+        "lastname": "Brian",
+        "othername": "Okinyi",
+        "phoneNumber": "0703812914",
+        "username": "Brian",
+        "password": "password12#B"
+    }
+    missing_password_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "firstname": "Ogutu",
+        "lastname": "Brian",
+        "othername": "Okinyi",
+        "phoneNumber": "0703812914",
+        "username": "Brian",
+    }
+    invalid_password_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "sign_up": {
+            "firstname": "Ogutu",
+            "lastname": "Brian",
+            "othername": "Okinyi",
+            "phoneNumber": "0703812914",
+            "username": "Brian",
+            "email": "codingbrian58@gmail.com",
+            "password": ""
+        },
+        "sign_up_url": "/api/v1/users/sign-up",
+        "log_in_url": "/api/v1/users/log-in"
+    }
+    missing_first_name_data = {
+        "lastname": "Brian",
+        "othername": "Okinyi",
+        "phoneNumber": "0703812914",
+        "username": "Brian",
+        "email": "codingbrian58@gmail.com",
+        "password": "password12#B"
+    }
+    missing_last_name_data = {
+        "firstname": "Ogutu",
+        "othername": "Okinyi",
+        "phoneNumber": "0703812914",
+        "username": "Brian",
+        "email": "codingbrian58@gmail.com",
+        "password": "password12#B"
+    }
+    missing_phone_number_data = {
+        "firstname": "Ogutu",
+        "lastname": "Brian",
+        "othername": "Okinyi",
+        "username": "Brian",
+        "email": "codingbrian58@gmail.com",
+        "password": "password12#B"
+    }
+    missing_user_name_data = {
+        "firstname": "Ogutu",
+        "lastname": "Brian",
+        "othername": "Okinyi",
+        "phoneNumber": "0703812914",
+        "email": "codingbrian58@gmail.com",
+        "password": "password12#B"
+    }
+    complete_data = {
+        "firstname": "Ogutu",
+        "lastname": "Brian",
+        "othername": "Okinyi",
+        "phoneNumber": "0703812914",
+        "username": "Brian",
+        "email": "codingbrian58@gmail.com",
+        "password": "password12#B"
+    }
+    valid_login_data = {
+        "firstname": "Ogutu",
+        "lastname": "Brian",
+        "othername": "Okinyi",
+        "phoneNumber": "0703812914",
+        "username": "Brian",
+        "email": "codingbrian58@gmail.com",
+        "password": "password12#B"
+    }
+    missing_user_name_and_mail_data = {
+        "password": "password12#B"
+    }
+    missing_log_in_password_data = {
+        "email": "codingbrian58@gmail.com",
+    }
+    log_in_data = {
+        "email": "codingbrian58@gmail.com",
+        "password": "password12#B4"
+    }
+    wrong_log_password_data={
+        "email": "codingbrian58@gmail.com",
+        "password": "passwoeoefoen"
+    }
+    unexisting_user_name_data={
+        "username":"TeSTm",
+        "password": "password12#B4"
+    }
+    unexsiting_mail_data = {
+            "email": "testmaiddl.@gmail.com",
+            "password": "password12#B"
+        }
+
+user_data = UserData()
 rsvp_data = RsvpData()
 meetup_data = MeetupData()
 question_data = QuestionData()
