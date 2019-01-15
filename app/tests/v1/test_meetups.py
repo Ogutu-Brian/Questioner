@@ -242,7 +242,3 @@ class TestMeetup(unittest.TestCase):
         result = self.post_data(url=rsvp_data.missing_response_data.get(
             "url"), data=rsvp_data.missing_response_data.get("data"), headers=headers)
         self.assertEqual(status.invalid_data, result.get("status"))
-
-
-if __name__ == "__main__":
-    unittest.main(exit=False)

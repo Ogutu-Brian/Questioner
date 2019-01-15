@@ -244,7 +244,3 @@ class TestQuestion(unittest.TestCase):
         url = "/api/v1/questions/-1/downvote"
         result = json.loads(client().patch(url).get_data(as_text=True))
         self.assertEqual(status.not_found, result.get("status"))
-
-
-if __name__ == "__main__":
-    unittest.main(exit=False)

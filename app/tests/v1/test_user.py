@@ -188,7 +188,3 @@ class TestUser(unittest.TestCase):
         result = self.post_data(url=user_data.valid_user_data.get(
             "log_in_url"), data=user_data.valid_login_data, headers={})
         self.assertEqual(status.not_json, result.get("status"))
-
-
-if __name__ == "__main__":
-    unittest.main(exit=False)
