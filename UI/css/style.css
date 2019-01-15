@@ -3,8 +3,8 @@ html,body{
     margin-left: 0em;
     margin-right: 0em;
     margin-top: 0em;
-    color: white;
-    background-color: #00b3b3;
+    color: black;
+    background-color:rgb(7,210,205);
     font-size: 95%;
 }
 body{
@@ -25,28 +25,51 @@ body{
 }
 nav{
     width: 100%;
-    background-color: teal;
+    background-color: rgb(0,112,129);
     color: white;
-    font-size: 1em;
-    height: 3.5em;
+    font-size: 1.5em;
+    height: 2.5em;
+    font-weight: bolder;
 }
 nav a{
     color: white;
     text-decoration: none;
     margin-top: 0.5em;
 }
+nav a:hover{
+    color:rgb(16,178,133);
+}
+
 nav .right{
     float: right;
     margin-right: 1em;
-    /* margin-left: 2em; */
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+nav li{
+    float: left;
+}
+nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav .active{
+    background: white;
 }
 nav .left{
     float: left;
-    /* margin-right: 0em; */
     margin-left: 1em;
 }
 footer{
-    background-color: teal;
+    background-color: rgb(0,112,129);
     height: 2em;
     margin-top: 100%;
     left: 0;
@@ -60,16 +83,18 @@ footer text{
     padding-top: 1em;
     padding-bottom: 0em;
 }
+.cntent{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
 content{
-    float: left;
-    border-style: solid;
     border-radius: 1em;
     width: 50%;
     padding: 0.5em;
-    border-color: wheat;
     text-align: center;
     margin-top: 4em;
     margin-left: 4em;
+    font-weight: bolder;
 }
 button{
     background-color: teal;
@@ -110,8 +135,9 @@ form textarea{
 .form-container{
     width: 30%;
     position: absolute;
-    left: 30%;
-    margin-top: 2em;
+    margin-top: 5%;
+    text-align: center;
+    left: 35%;
 }
 @media only screen and (max-width:600px){
     .form-container{
@@ -122,9 +148,13 @@ form textarea{
     }
 }
 .button{
+    font-weight:bolder;
     color: white;
-    background-color: teal;
-    cursor: pointer;
+    background-color:teal;
+    cursor: pointer
+    /* color: white;
+    background-color: rgb(0,112,129);;
+    cursor: pointer; */
 }
 .meetups{
     width: 80%;
@@ -153,8 +183,6 @@ form textarea{
     font-size: 2em;
 }
 table{
-    /* border-color: wheat;
-    border-style:solid; */
     column-gap: 2em;
     border-collapse: collapse;
     width: 60%;
@@ -165,14 +193,8 @@ th{
     font-size: 1em;
 }
 td,th{
-    /* border-style: solid;
-    border-color: wheat; */
     height: 2em;
     padding: 0.5em;
-}
-tr{
-    /* border-style: solid;
-    border-color: wheat; */
 }
 td .button{
     text-align: center;
@@ -182,6 +204,7 @@ td .button{
 .question{
     width: 100%;
     position: absolute;
+    left: 20%;
 }
 .question .post{
     float:left;
@@ -210,11 +233,6 @@ td .button{
     border-color: #ccc;
     background-color: #dedede;
 }
-/* .comment::after{
-    content:"";
-    clear: both;
-    display: table;
-} */
 .comment-btn{
     font-weight:bolder;
     color: white;
@@ -228,9 +246,6 @@ textarea{
 .meetup_form{
     font-weight: bolder;
     margin-right: 3em;
-    /* float:left;
-    margin-left: 1em;
-    margin-top: 2em */
 }
 .admin-panel{
     font-weight:bolder;
@@ -262,17 +277,19 @@ textarea{
 }
 .profile{
     float: right; 
-    width:90%;
+    width:100%;
     height: 100%;
 }
 .profile table{
+    margin-top: 2em;
     margin-left: 1em;
     float: left;
-    width: 40%;
+    width: 30%;
     height: 100%
 }
 .feed{
-    float: left;
+    margin-top: 2em;
+    float: right;
     margin-right: 1em;
     width: 55%;
     margin-left: 1em;
@@ -282,4 +299,24 @@ textarea{
     margin-left: 1.5em;
     font-weight: bolder;
     text-decoration: underline;
+}
+.title{
+    font-weight: bolder;
+    font-size: 1.5em;
+    color:black;
+}
+.avatar{
+    width: 8em;
+    height: 6em;
+    float: left;
+}
+.prof-card{
+    margin-top: 3em;
+    width: 30%;
+    background-color: #f1f1f1;
+    border-radius: 1em;
+    padding: 0.5em;
+    color: black;
+    margin-left: 4em;
+    float: left;
 }
