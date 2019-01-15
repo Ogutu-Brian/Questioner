@@ -355,18 +355,19 @@ class UserData(object):
         "email": "codingbrian58@gmail.com",
         "password": "password12#B4"
     }
-    wrong_log_password_data={
+    wrong_log_password_data = {
         "email": "codingbrian58@gmail.com",
         "password": "passwoeoefoen"
     }
-    unexisting_user_name_data={
-        "username":"TeSTm",
+    unexisting_user_name_data = {
+        "username": "TeSTm",
         "password": "password12#B4"
     }
     unexsiting_mail_data = {
-            "email": "testmaiddl.@gmail.com",
-            "password": "password12#B"
-        }
+        "email": "testmaiddl.@gmail.com",
+        "password": "password12#B"
+    }
+
 
 user_data = UserData()
 rsvp_data = RsvpData()
