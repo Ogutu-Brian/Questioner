@@ -220,6 +220,10 @@ form textarea{
 .meetups p{
     margin-left: 0.2em;
 }
+.meetups textarea{
+    margin-left: 0.2em;
+    width: 90%;
+}
 .meetupview{
     background-color: wheat;
     width: 50%;
