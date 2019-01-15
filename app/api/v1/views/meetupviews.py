@@ -5,11 +5,11 @@ from flask import jsonify, request, make_response
 @meetup_view.route('/meetups', methods=['POST'])
 def create_meetup():
     """A post endpoint for creating a meetup"""
-    cummulative_errors = []
+    response = None
     if request.is_json:
         valid, errors = db.meetups.is_valid(request.json)
         if not valid:
-            cummulative_errors.append({
+            response = jsonify({
                 "message": "You encountered {} errors".format(len(errors)),
                 "data": errors,
                 "status": status.invalid_data
@@ -24,22 +24,16 @@ def create_meetup():
             meetup = Meetup(location=location, images=images,
                             topic=topic, happening_on=happening_on, tags=tags)
             db.meetups.insert(meetup)
-    else:
-        cummulative_errors.append({
-            "mesaage": "The data must be in JSON",
-            "status": status.not_json
-        }), status.not_json
-    response = None
-    if not cummulative_errors:
-        response = jsonify({
+            response = jsonify({
             "message": "Successfully created a meetup",
             "data": [meetup.to_dictionary()],
             "status": status.created
         }), status.created
     else:
-        response = jsonify(
-            cummulative_errors[0]
-        ), cummulative_errors[0].get("status")
+        response= jsonify({
+            "mesaage": "The data must be in JSON",
+            "status": status.not_json
+        }), status.not_json
     return response
 
 
@@ -88,27 +82,26 @@ def get_all_meetups():
 def create_svp(meetup_id):
     """Endpoint that allows a user to respond to a meetup"""
     response = None
-    cummulative_errors = []
     if request.is_json:
         valid, errors = db.rsvps.is_valid(request.json)
         if not valid:
-            cummulative_errors.append({
+            response=jsonify({
                 "message": "You encountered {} errors".format(len(errors)),
                 "status": status.invalid_data
-            })
+            }),status.invalid_data
         else:
             meetup = db.meetups.query_by_field("id", int(meetup_id))
             data = request.json
             if not meetup:
-                cummulative_errors.append({
+                response=jsonify({
                     "message": "meetup with that id does not exist",
                     "status": status.not_found
-                })
+                }),status.not_found
             elif not db.users.query_by_field("id", data.get("user")):
-                cummulative_errors.append({
+                response = jsonify({
                     "message": "a user with that id does not exist",
                     "status": status.invalid_data
-                })
+                }),status.invalid_data
             else:
                 rsvp = Rsvp(meetup=meetup_id, user=data.get(
                     "user"), response=data.get("response"))
@@ -127,7 +120,4 @@ def create_svp(meetup_id):
             "message": "The data must be in JSOn",
             "status": status.not_json
         }), status.not_json
-    if cummulative_errors:
-        response = jsonify(
-            cummulative_errors[0]), cummulative_errors[0].get("status")
     return response
