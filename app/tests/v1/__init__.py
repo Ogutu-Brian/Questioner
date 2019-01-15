@@ -103,18 +103,128 @@ user_data = {
     "sign_up_url": "/api/v1/users/sign-up",
     "log_in_url": "/api/v1/users/log-in"
 }
-question_data = {
-    "headers": {
-        "Content-Type": "application/json"
-    },
-    "data": {
-        "title": "Responnsive Web design",
-        "createdBy": 1,
-        "body": "What is the best way of getting around responsiveness of a website",
-        "meetup": 1
-    },
-    "url": "/api/v1/questions"
-}
+
+
+class QuestionData(object):
+    """Defines Question data used for testing"""
+    valid_question_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
+    }
+    missing_creator_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
+    }
+    missing_body_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
+    }
+    missing_meetup_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "body": "What is the best way of getting around responsiveness of a website",
+        },
+        "url": "/api/v1/questions"
+    }
+    invalid_user_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": -2,
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
+    }
+    invalid_meetup_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": -2
+        },
+        "url": "/api/v1/questions"
+    }
+    valid_upvote_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
+    }
+    unexsiting_query_upvote_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
+    }
+    valid_downvote_data = {
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": {
+            "title": "Responnsive Web design",
+            "createdBy": 1,
+            "body": "What is the best way of getting around responsiveness of a website",
+            "meetup": 1
+        },
+        "url": "/api/v1/questions"
+    }
+    unexisting_downvote_query_data = {
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": {
+                "title": "Responnsive Web design",
+                "createdBy": 1,
+                "body": "What is the best way of getting around responsiveness of a website",
+                "meetup": 1
+            },
+            "url": "/api/v1/questions"
+        }
+
 rsvp_data = {
     "headers": {
         "Content-Type": "application/json"
@@ -125,3 +235,4 @@ rsvp_data = {
     }
 }
 meetup_data = MeetupData()
+question_data = QuestionData()

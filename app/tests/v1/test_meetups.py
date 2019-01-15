@@ -265,3 +265,5 @@ class TestMeetup(unittest.TestCase):
             "url"), data=rsvp_data.get("data"), headers=headers)
         self.assertEqual(status.invalid_data, result.get("status"))
         db.tear_down()
+if __name__ == "__main__":
+    unittest.main(exit=False)
