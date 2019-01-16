@@ -1,13 +1,7 @@
 from app.run import app
 import pytest
 from app.api.v1.views import db, status
-
-app.config['TESTING'] = True
-
-
-def client():
-    client = app.test_client()
-    return client
+from app.tests.v1.base_test import BaseTest
 
 
 class MeetupData(object):
