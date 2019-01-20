@@ -233,6 +233,8 @@ form textarea{
     float: right;
     margin-top: 2em;
     margin-right: 1em;
+    padding-top: 1em;
+    padding-left: 2em;
 }
 .meetupview table{
     width: 100%;
