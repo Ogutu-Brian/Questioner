@@ -406,3 +406,12 @@ textarea{
     margin-left: 1em;
     height: 20%;
 }
+.prof-card table{
+    margin-top: 10em;
+    width: 100%;
+}
+.prof-card img{
+    margin-left: 9em;
+    margin-top: 2em;
+    border-radius: 4em;
+}
