@@ -1,0 +1,46 @@
+html,body{
+    background-color:#0069ff;
+    font-family: "proxima-nova";
+    padding: 0px;
+    margin: 0;
+}
+.form-container{
+    background: white;
+    margin-top: auto;
+    width: 20em;
+    padding: 40px;
+    margin-left: 33%;
+    margin-top: 6%;
+}
+.form-container input{
+    width: 100%;
+    padding-left: 0.4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    margin-right: 0.5em;
+    border-width: 2px;
+}
+.btn{
+    background-color:#00b359;
+    width: 103%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    border-radius: 0.5em;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+}
+.form-container p{
+    text-align: center;
+    font-size: 130%;
+}
+.login-prompt{
+    color: white;
+    margin-left: 33%;
+}
+.login-prompt a{
+    color: white;
+}
