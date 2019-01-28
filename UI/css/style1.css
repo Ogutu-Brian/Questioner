@@ -92,3 +92,24 @@ nav button:hover{
     color: #666666;
     cursor: pointer;
 }
+.questions{
+    margin-top: 2em;
+    margin-left: 18em;
+    width: 60%;
+}
+.questions .actions{
+    display: block;
+    margin-left: 2em;
+    width: 100%;
+}
+.actions table{
+    color:#0069ff;
+    
+}
+
+button{
+    background-color: #666666;
+    border-radius: 1em;
+    color: white;
+    cursor: pointer;
+}
