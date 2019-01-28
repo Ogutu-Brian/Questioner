@@ -95,13 +95,13 @@ nav button:hover{
     height: 25em;
 }
 .form-container input{
-    width: 60%;
+    width: 70%;
     padding-left: 0.4em;
     padding-top: 0.5em;
     padding-bottom: 1em;
     margin-top: 0.5em;
     margin-right: 1em;
-    margin-left: 6em;
+    margin-left: 4em;
     background: #fcfcfc;;
     border: 2px solid #e7e7e7;
     display: block;
@@ -113,7 +113,7 @@ nav button:hover{
 }
 .btn{
     background-color:#0069ff;
-    width: 62%;
+    width: 72%;
     padding-top: 1em;
     padding-bottom: 1em;
     margin-top: 1em;
@@ -122,7 +122,7 @@ nav button:hover{
     cursor: pointer;
     color: white;
     font-weight: bolder;
-    margin-left: 6.8em;
+    margin-left: 4.8em;
 }
 .form-container p{
     margin-top: 2em;
@@ -130,6 +130,9 @@ nav button:hover{
     font-size: 130%;
 }
 .form-container .main{
+    display: block;
+    margin-left: 3em;
+    width: 70%;
     color: black;
     font-weight: bolder;
     font-size: 130%;
