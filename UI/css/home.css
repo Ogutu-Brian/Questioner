@@ -63,3 +63,65 @@ nav button{
 nav button:hover{
     background-color:hsl(204, 100%, 50%);
 }
+.home-container .info{
+    color: white;
+    font-weight: bolder;
+    font-size: 2em;
+    margin-left: 2em;
+    float: left;
+    width: 40%;
+}
+.info .small{
+    font-size: 0.5em;
+    color: hsl(0, 0%, 85%);
+}
+.home-container{
+    display: block;
+    height: 30em;
+    margin-top: 2em;
+}
+.home-container .form-container{
+    background-color: white;
+    width: 33%;
+    float: right;
+    margin-top:1em;
+    border-radius: 4px;
+    margin-right: 1em;
+    border-radius: 0.4em;
+    height: 25em;
+}
+.form-container input{
+    width: 60%;
+    padding-left: 0.4em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    margin-top: 0.5em;
+    margin-right: 1em;
+    margin-left: 6em;
+    background: #fcfcfc;;
+    border: 2px solid #e7e7e7;
+    display: block;
+    border-radius: 3px;
+    font-size: 15px;
+    transition: opacity 0.4s;
+    text-align: left;
+    height: auto;
+}
+.btn{
+    background-color:#0069ff;
+    width: 62%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    border-radius: 0.4em;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    margin-left: 6.8em;
+}
+.form-container p{
+    margin-top: 2em;
+    text-align: center;
+    font-size: 130%;
+}
