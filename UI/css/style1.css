@@ -64,3 +64,23 @@ nav button:hover{
     background-color:#b3b3b3;
     color: white;
 }
+.meetup-container{
+    margin-top: 2em;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 10em;
+    height: auto;
+}
+.meetup-container .card{
+    background-color:white;
+    width: 24.69%;
+    height: 15em;
+    border-style: solid;
+    border-width: thin;
+    border-color:#cccccc;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    border-radius: 4px;
+}
