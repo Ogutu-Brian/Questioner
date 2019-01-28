@@ -1,0 +1,66 @@
+html,body{
+    background-color:white;
+    font-family:sans-serif;
+    padding: 0px;
+    margin: 0;
+}
+nav{
+    margin-right: 3em;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+}
+nav li{
+    display: block;
+    float: left;
+    margin-top: 2.5em;
+}
+nav li a{
+    color:#666666;
+    font-weight: bolder;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav .logo{
+    margin-top:0;
+    font-size: 130%;
+    float: left;
+    display: block;
+    margin-top: 1.7em;
+}
+nav .logo a{
+    color:#0069ff;
+    margin-right: 3em;
+    margin-left: 2em;
+}
+nav .login{
+    float: right;
+}
+nav .signup{
+    float: right;
+}
+nav button{
+    float: right;
+    background-color:#0069ff;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    margin-left: 1em;
+    margin-right: 2em;
+    height: 2em;
+    border-radius: 0.5em;
+    width: 7em;
+    font-weight: bolder;
+    border-width: thin;
+    margin-top: 2.5em;
+    cursor: pointer;
+    height: 3em;
+}
+nav button:hover{
+    background-color:#b3b3b3;
+    color: white;
+}
