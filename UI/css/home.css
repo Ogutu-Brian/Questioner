@@ -1,0 +1,19 @@
+html,body{
+    background-color:white;
+    font-family:sans-serif;
+    padding: 0px;
+    margin: 0;
+}
+.nav{
+    -webkit-box-flex: 1;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    letter-spacing: normal;
+    font-size: 15px;
+}
