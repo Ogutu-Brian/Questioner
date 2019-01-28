@@ -101,15 +101,40 @@ nav button:hover{
     display: block;
     margin-left: 2em;
     width: 100%;
+    border-style: solid;
+    border-bottom: none;
+    border-top: none;
+    border-right-color: #666666;
+    border-width: thin;
 }
 .actions table{
     color:#0069ff;
-    
 }
-
 button{
     background-color: #666666;
     border-radius: 1em;
     color: white;
     cursor: pointer;
+    border: none;
+}
+.actions .comment-text{
+    width: 59%;
+    height: 2em;
+    border-radius: 0.5em;
+}
+.btn{
+    background-color: #0069ff;
+    width: 8em;
+    height: 2em;
+    border-radius: 0.5em;
+    font-weight: bolder;
+    border: none;
+}
+.actions .btn{
+    float: right;
+    margin-right: 1em;
+}
+.btn:hover{
+    background-color:#b3b3b3;
+    color: white;
 }
