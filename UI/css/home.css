@@ -1,19 +1,40 @@
 html,body{
-    background-color:white;
+    background-color:#0069ff;
     font-family:sans-serif;
     padding: 0px;
     margin: 0;
 }
-.nav{
-    -webkit-box-flex: 1;
-    flex: 1;
+nav ul{
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    letter-spacing: normal;
-    font-size: 15px;
+    overflow: hidden;
+    background-color:#0069ff;
+    display: block;
+}
+nav li{
+    display: block;
+    float: left;
+    margin-top: 2.5em;
+}
+nav li a{
+    color:hsl(0, 0%, 85%);
+    font-weight: bolder;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav li a:hover{
+    color: white;
+}
+nav .logo{
+    margin-top:0;
+    font-size: 130%;
+    float: left;
+    display: block;
+    margin-top: 1.7em;
+}
+nav .logo a{
+    color: white;
+    margin-right: 3em;
+    margin-left: 2em;
 }
