@@ -84,3 +84,11 @@ nav button:hover{
     margin-bottom: 1px;
     border-radius: 4px;
 }
+.card-info{
+    margin-left: 3px;
+    margin-right: 3px;
+    text-align: center;
+    font-weight: bolder;
+    color: #666666;
+    cursor: pointer;
+}
