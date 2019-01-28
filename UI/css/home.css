@@ -4,6 +4,9 @@ html,body{
     padding: 0px;
     margin: 0;
 }
+nav{
+    margin-right: 3em;
+}
 nav ul{
     list-style-type: none;
     margin: 0;
@@ -79,6 +82,7 @@ nav button:hover{
     display: block;
     height: 30em;
     margin-top: 2em;
+    margin-right: 3em;
 }
 .home-container .form-container{
     background-color: white;
@@ -124,4 +128,14 @@ nav button:hover{
     margin-top: 2em;
     text-align: center;
     font-size: 130%;
+}
+.form-container .main{
+    color: black;
+    font-weight: bolder;
+    font-size: 130%;
+    margin-bottom: 0em;
+    padding-bottom: 0em;
+}
+.form-container .small{
+    color:#0069ff;
 }
