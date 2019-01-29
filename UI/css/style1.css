@@ -107,8 +107,9 @@ nav button:hover{
     border-right-color: #666666;
     border-width: thin;
 }
-.actions table{
+.actions table a{
     color:#0069ff;
+    text-decoration: none;
 }
 button{
     background-color: #666666;
