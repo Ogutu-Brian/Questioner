@@ -183,3 +183,19 @@ button{
 .question-form .btn:hover{
     background-color:#33adff;
 }
+.question-view{
+    display: block;
+    margin-top: 2em;
+    margin-left: 1em;
+    border-bottom:#666666;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-right: 1em;
+    border-width: thin;
+}
+.question-view .title{
+    font-size: 130%;
+    font-weight: bold;
+}
