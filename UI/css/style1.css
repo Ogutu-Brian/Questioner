@@ -139,3 +139,47 @@ button{
     background-color:#b3b3b3;
     color: white;
 }
+.container{
+    margin-top: 2em;
+    margin-left: 10em;
+    width: 70%;
+    height: auto;
+}
+.question-form{
+    display: block;
+    margin-left:25%;
+    width: 90;
+    margin-right: 10%;
+}
+.question-form label{
+    font-weight: bold;
+    color: black;
+}
+.question-form p{
+    font-size: 170%;
+    color: black;
+}
+.question-form input{
+    border-style: solid;
+    border-width: thin;
+    border-color: #666666;
+    width: 100%;
+    border-radius: 0.4em;
+    height: 2em;
+    margin-bottom: 4em;
+    padding-left: 0.4em;
+}
+.question-form textarea{
+    width: 100%;
+    border-radius: 0.4em;
+}
+.question-form .btn{
+    width: 25%;
+    text-align: left;
+    margin-top: 2em;
+    height: 3em;
+    padding-left: 1em;
+}
+.question-form .btn:hover{
+    background-color:#33adff;
+}
