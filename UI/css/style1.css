@@ -1,0 +1,269 @@
+html,body{
+    background-color:white;
+    font-family:sans-serif;
+    padding: 0px;
+    margin: 0;
+}
+nav{
+    margin-right: 3em;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+}
+nav li{
+    display: block;
+    float: left;
+    margin-top: 2.5em;
+}
+nav li a{
+    color:#666666;
+    font-weight: bolder;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav .logo{
+    margin-top:0;
+    font-size: 130%;
+    float: left;
+    display: block;
+    margin-top: 1.7em;
+}
+nav .logo a{
+    color:#0069ff;
+    margin-right: 3em;
+    margin-left: 2em;
+}
+nav .login{
+    float: right;
+}
+nav .signup{
+    float: right;
+}
+nav button{
+    float: right;
+    background-color:#0069ff;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    margin-left: 1em;
+    margin-right: 2em;
+    height: 2em;
+    border-radius: 0.5em;
+    width: 7em;
+    font-weight: bolder;
+    border-width: thin;
+    margin-top: 2.5em;
+    cursor: pointer;
+    height: 3em;
+}
+nav button:hover{
+    background-color:#b3b3b3;
+    color: white;
+}
+.meetup-container{
+    margin-top: 2em;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 10em;
+    height: auto;
+}
+.meetup-container .card{
+    width: 24.69%;
+    height: 15em;
+    border-style: solid;
+    border-width: thin;
+    border-color:#cccccc;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    border-radius: 4px;
+    background-color: #3399ff;
+}
+.card-info{
+    margin-left: 3px;
+    margin-right: 3px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+.questions{
+    margin-top: 2em;
+    margin-left: 18em;
+    width: 60%;
+}
+.questions .actions{
+    display: block;
+    margin-left: 2em;
+    width: 100%;
+    border-style: solid;
+    border-bottom: none;
+    border-top: none;
+    border-right-color: #666666;
+    border-width: thin;
+}
+.actions table a{
+    color:#0069ff;
+    text-decoration: none;
+}
+button{
+    background-color: #666666;
+    border-radius: 1em;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+.actions .comment-text{
+    width: 59%;
+    height: 2em;
+    border-radius: 0.5em;
+}
+.btn{
+    background-color: #0069ff;
+    width: 8em;
+    height: 2em;
+    border-radius: 0.5em;
+    font-weight: bolder;
+    border: none;
+}
+.actions .btn{
+    float: right;
+    margin-right: 1em;
+}
+.btn:hover{
+    background-color:#b3b3b3;
+    color: white;
+}
+.container{
+    margin-top: 2em;
+    margin-left: 10em;
+    width: 70%;
+    height: auto;
+}
+.question-form{
+    display: block;
+    margin-left:25%;
+    width: 90;
+    margin-right: 10%;
+}
+.question-form label{
+    font-weight: bold;
+    color: black;
+}
+.question-form p{
+    font-size: 170%;
+    color: black;
+}
+.question-form input{
+    border-style: solid;
+    border-width: thin;
+    border-color: #666666;
+    width: 100%;
+    border-radius: 0.4em;
+    height: 2em;
+    margin-bottom: 4em;
+    padding-left: 0.4em;
+}
+.question-form textarea{
+    width: 100%;
+    border-radius: 0.4em;
+}
+.question-form .btn{
+    width: 25%;
+    text-align: left;
+    margin-top: 2em;
+    height: 3em;
+    padding-left: 1em;
+}
+.question-form .btn:hover{
+    background-color:#33adff;
+}
+.question-view{
+    display: block;
+    margin-top: 2em;
+    margin-left: 1em;
+    border-bottom:#666666;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-right: 1em;
+    border-width: thin;
+    padding: 1em 1em 1em;
+}
+.question-view .title{
+    font-size: 130%;
+    font-weight: bold;
+}
+.comment{
+    background-color: #f2f2f2;
+    padding: 1em 1em 1em;
+    border-radius: 1em;
+}
+.actions textarea{
+    margin-left: 1em;
+    margin-top: 1em;
+    border-radius: 0.5em;
+    width: 95%;
+    height: 5em;
+    border-style: solid;
+    border-width: thin;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+.comment-btn{
+    background-color: #0069ff;
+    border-style: none;
+    font-weight: bold;
+    height: 3em;
+    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-left: 1em;
+    border-radius: 0.4em;
+}
+.comment-btn:hover{
+    background-color:#33adff;
+}
+.meetup-btn{
+    width: 9em;
+    float: left;
+}
+.meetup-form{
+    display: block;
+    margin-left:25%;
+    width: 90;
+    margin-right: 10%;
+}
+.meetup-form label{
+    font-weight: bold;
+    color: black;
+}
+.meetup-form p{
+    font-size: 170%;
+    color: black;
+}
+.meetup-form input{
+    border-style: solid;
+    border-width: thin;
+    border-color: #666666;
+    width: 100%;
+    border-radius: 0.4em;
+    height: 2em;
+    margin-bottom: 1em;
+    padding-left: 0.4em;
+}
+.meetup-form textarea{
+    width: 100%;
+    border-radius: 0.4em;
+}
+.meetup-form .btn{
+    width: 25%;
+    text-align: left;
+    margin-top: 2em;
+    height: 3em;
+    padding-left: 1em;
+}

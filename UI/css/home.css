@@ -1,0 +1,145 @@
+html,body{
+    background-color:#0069ff;
+    font-family:sans-serif;
+    padding: 0px;
+    margin: 0;
+}
+nav{
+    margin-right: 3em;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#0069ff;
+    display: block;
+}
+nav li{
+    display: block;
+    float: left;
+    margin-top: 2.5em;
+}
+nav li a{
+    color:hsl(0, 0%, 85%);
+    font-weight: bolder;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav li a:hover{
+    color: white;
+}
+nav .logo{
+    margin-top:0;
+    font-size: 130%;
+    float: left;
+    display: block;
+    margin-top: 1.7em;
+}
+nav .logo a{
+    color: white;
+    margin-right: 3em;
+    margin-left: 2em;
+}
+nav .login{
+    float: right;
+}
+nav .signup{
+    float: right;
+}
+nav button{
+    float: right;
+    background-color:#0069ff;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    margin-left: 1em;
+    margin-right: 2em;
+    height: 2em;
+    border-radius: 0.5em;
+    width: 7em;
+    font-weight: bolder;
+    border-width: thin;
+    margin-top: 2.5em;
+    cursor: pointer;
+    height: 3em;
+}
+nav button:hover{
+    background-color:hsl(204, 100%, 50%);
+}
+.home-container .info{
+    color: white;
+    font-weight: bolder;
+    font-size: 2em;
+    margin-left: 2em;
+    float: left;
+    width: 40%;
+}
+.info .small{
+    font-size: 0.5em;
+    color: hsl(0, 0%, 85%);
+}
+.home-container{
+    display: block;
+    height: 30em;
+    margin-top: 2em;
+    margin-right: 3em;
+}
+.home-container .form-container{
+    background-color: white;
+    width: 33%;
+    float: right;
+    margin-top:1em;
+    border-radius: 4px;
+    margin-right: 1em;
+    border-radius: 0.4em;
+    height: 25em;
+}
+.form-container input{
+    width: 70%;
+    padding-left: 0.4em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    margin-top: 0.5em;
+    margin-right: 1em;
+    margin-left: 4em;
+    background: #fcfcfc;
+    border: 2px solid #e7e7e7;
+    display: block;
+    border-radius: 3px;
+    font-size: 15px;
+    transition: opacity 0.4s;
+    text-align: left;
+    height: auto;
+}
+.btn{
+    background-color:#0069ff;
+    width: 72%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    border-radius: 0.4em;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    margin-left: 4.8em;
+}
+.form-container p{
+    margin-top: 2em;
+    text-align: center;
+    font-size: 130%;
+}
+.form-container .main{
+    display: block;
+    margin-left: 3em;
+    width: 70%;
+    color: black;
+    font-weight: bolder;
+    font-size: 130%;
+    margin-bottom: 0em;
+    padding-bottom: 0em;
+}
+.form-container .small{
+    color:#0069ff;
+}
