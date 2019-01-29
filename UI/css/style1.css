@@ -228,3 +228,42 @@ button{
 .comment-btn:hover{
     background-color:#33adff;
 }
+.meetup-btn{
+    width: 9em;
+    float: left;
+}
+.meetup-form{
+    display: block;
+    margin-left:25%;
+    width: 90;
+    margin-right: 10%;
+}
+.meetup-form label{
+    font-weight: bold;
+    color: black;
+}
+.meetup-form p{
+    font-size: 170%;
+    color: black;
+}
+.meetup-form input{
+    border-style: solid;
+    border-width: thin;
+    border-color: #666666;
+    width: 100%;
+    border-radius: 0.4em;
+    height: 2em;
+    margin-bottom: 1em;
+    padding-left: 0.4em;
+}
+.meetup-form textarea{
+    width: 100%;
+    border-radius: 0.4em;
+}
+.meetup-form .btn{
+    width: 25%;
+    text-align: left;
+    margin-top: 2em;
+    height: 3em;
+    padding-left: 1em;
+}
