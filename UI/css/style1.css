@@ -33,7 +33,7 @@ nav .logo{
     margin-top: 1.7em;
 }
 nav .logo a{
-    color:#0069ff;
+    color:dodgerblue;
     margin-right: 3em;
     margin-left: 2em;
 }
@@ -45,7 +45,7 @@ nav .signup{
 }
 nav button{
     float: right;
-    background-color:#0069ff;
+    background-color:dodgerblue;
     color: white;
     border-style: solid;
     border-color: white;
@@ -108,7 +108,7 @@ nav button:hover{
     border-width: thin;
 }
 .actions table a{
-    color:#0069ff;
+    color:dodgerblue;
     text-decoration: none;
 }
 button{
@@ -124,7 +124,7 @@ button{
     border-radius: 0.5em;
 }
 .btn{
-    background-color: #0069ff;
+    background-color:dodgerblue;
     width: 8em;
     height: 2em;
     border-radius: 0.5em;
@@ -216,7 +216,7 @@ button{
     padding: 0.5em 0.5em 0.5em 0.5em;
 }
 .comment-btn{
-    background-color: #0069ff;
+    background-color: dodgerblue;
     border-style: none;
     font-weight: bold;
     height: 3em;

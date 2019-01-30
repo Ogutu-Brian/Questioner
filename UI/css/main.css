@@ -1,5 +1,5 @@
 html,body{
-    background-color:#0069ff;
+    background-color:dodgerblue;
     font-family:sans-serif;
     padding: 0px;
     margin: 0;
@@ -33,7 +33,7 @@ html,body{
     height: auto;
 }
 .btn{
-    background-color:#0069ff;
+    background-color:dodgerblue;
     width: 103%;
     padding-top: 1em;
     padding-bottom: 1em;
