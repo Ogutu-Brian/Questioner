@@ -9,7 +9,7 @@ function signUp(event) {
     let confirmPassword = document.getElementById('confirmPassword').value;
     let phoneNumber = document.getElementById('phone').value;
     let userName = document.getElementById('username').value;
-    fetch('http://127.0.0.1:5000/api/v2/auth/signup', {
+    fetch('http://questioner-api-v2.herokuapp.com/api/v2/auth/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
