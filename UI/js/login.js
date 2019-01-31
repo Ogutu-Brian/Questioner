@@ -25,33 +25,26 @@ class FormHandler {
         return document.getElementById(name).value;
     }
 }
-const signupButton = 'postSignUp';
-const signupUrl = 'http://127.0.0.1:5000/api/v2/auth/signup';
-let singupFieldNames = [
-    'firstname',
-    'lastname',
-    'password',
-    'confirmpassword',
+const loginButton = 'loginButton';
+const loginUrl = 'http://127.0.0.1:5000/api/v2/auth/login';
+let loginFields = [
     'email',
-    'username',
-    'phoneNumber'
+    'password'
 ];
-const signUp = new FormHandler(signupUrl, singupFieldNames);
-document.getElementById(signupButton).addEventListener('click', signup);
-function signup(event) {
+let loginHandler = new FormHandler(loginUrl, loginFields);
+document.getElementById(loginButton).addEventListener('click', login);
+function login(event) {
     event.preventDefault();
-    fetch(signUp.getUrl, {
+    fetch(loginHandler.getUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: signUp.Data
+        body: loginHandler.Data
     }).then(response => response.json())
         .then(data => {
-            if (data.status != 201) {
-                window.alert(data.error[0].message);
-            } else {
-                window.location.href = "../user/login.html";
+            if (data.status != 200) {
+                window.alert(data.error[0])
             }
         })
 }
