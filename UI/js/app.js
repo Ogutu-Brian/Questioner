@@ -1,36 +1,57 @@
 "use strict"
-document.getElementById("postSingup").addEventListener('click', signUp)
-function signUp(event) {
+//Class that handles forms on click of buttons
+class FormHandler {
+    constructor(url, fieldNames) {
+        this.data = {};
+        this.url = url;
+        this.fieldNames = fieldNames;
+    }
+    //gets url
+    get getUrl() {
+        return this.url;
+    }
+    //creates the object to be posted
+    createFormData() {
+        for (let name of this.fieldNames) {
+            this.data[name] = this.getFieldValue(name);
+        }
+    }
+    //gets the data being posted
+    get Data() {
+        this.createFormData()
+        return JSON.stringify(this.data);
+    }
+    getFieldValue(name) {
+        return document.getElementById(name).value;
+    }
+}
+const signupButton = 'postSignUp';
+const signupUrl = 'http://127.0.0.1:5000/api/v2/auth/signup';
+let fieldNames = [
+    'firstname',
+    'lastname',
+    'password',
+    'confirmpassword',
+    'email',
+    'username',
+    'phoneNumber'
+];
+const signUp = new FormHandler(signupUrl, fieldNames);
+document.getElementById("postSignUp").addEventListener('click', signup);
+function signup(event) {
     event.preventDefault()
-    let firstName = document.getElementById('firstName').value;
-    let lastName = document.getElementById('lastName').value;
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    let confirmPassword = document.getElementById('confirmPassword').value;
-    let phoneNumber = document.getElementById('phone').value;
-    let userName = document.getElementById('username').value;
-    fetch('http://questioner-api-v2.herokuapp.com/api/v2/auth/signup', {
+    fetch(signUp.getUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        cache: "force-cache",
-        body: JSON.stringify({
-            firstname: firstName,
-            lastname: lastName,
-            email: email,
-            password: password,
-            confirmpassword: confirmPassword,
-            username: userName,
-            phoneNumber: phoneNumber
-        })
+        body: signUp.Data
     }).then(response => response.json())
         .then(data => {
             if (data.status != 201) {
                 window.alert(data.error[0].message);
-            }
-            else {
-                window.location.href = "../user/signup.html";
+            } else {
+                window.location.href("../user/login.html");
             }
         })
 }
