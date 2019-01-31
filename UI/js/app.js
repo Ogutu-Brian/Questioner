@@ -51,7 +51,7 @@ function signup(event) {
             if (data.status != 201) {
                 window.alert(data.error[0].message);
             } else {
-                window.location.href("../user/login.html");
+                window.location.href = "../user/login.html";
             }
         })
 }
