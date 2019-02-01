@@ -43,8 +43,10 @@ function login(event) {
         body: loginHandler.Data
     }).then(response => response.json())
         .then(data => {
-            if (data.status != 200) {
-                window.alert(data.error[0])
+            if (data.status == 200) {
+                window.location.href = '../user/profile.html';
+            } else {
+                window.alert(data.error);
             }
         })
 }
