@@ -44,7 +44,7 @@ function login(event) {
     }).then(response => response.json())
         .then(data => {
             if (data.status == 200) {
-                window.location.href = '../user/profile.html';
+                window.location.href = '../user/meetups.html';
             } else {
                 window.alert(data.error);
             }
