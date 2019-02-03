@@ -44,6 +44,7 @@ function login(event) {
     }).then(response => response.json())
         .then(data => {
             if (data.status == 200) {
+                localStorage.setItem("token", data.data[0].token);
                 window.location.href = '../user/meetups.html';
             } else {
                 window.alert(data.error);

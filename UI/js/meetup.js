@@ -50,6 +50,8 @@ function createMeetup(event) {
                     window.alert("Please log in in order to create a meetup");
                 } else if (data.error[0].message == "Your token has expired") {
                     window.location.href = "../user/login.html";
+                } else {
+                    window.alert(data.error[0].message);
                 }
             }
         })
