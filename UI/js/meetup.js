@@ -37,9 +37,11 @@ let fieldNames = [
 let meetupHandler = new FormHandler(endpointUrl, fieldNames)
 function createMeetup(event) {
     event.preventDefault()
+    let authToken = 'Bearer '+localStorage.getItem('token');
     fetch(meetupHandler.getUrl, {
         method: 'POST',
         headers: {
+            'Authorization':authToken,
             'Content-Type': 'application/json'
         },
         body: meetupHandler.Data
