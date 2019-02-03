@@ -25,27 +25,28 @@ class FormHandler {
         return document.getElementById(name).value;
     }
 }
-let endpointUrl = 'http://127.0.0.1:5000/api/v2//meetups';
-document.getElementById('postMeetup').addEventListener('click',createMeetup);
-fieldNames = [
+let endpointUrl = 'http://127.0.0.1:5000/api/v2/meetups';
+let meetupButton = 'postMeeup';
+document.getElementById(meetupButton).addEventListener('click', createMeetup);
+let fieldNames = [
     'location',
     'topic',
     'happeningOn',
     'body'
 ]
-meetupHandler = new FormHandler(endpointUrl,)
-function createMeetup(event){
+let meetupHandler = new FormHandler(endpointUrl, fieldNames)
+function createMeetup(event) {
     event.preventDefault()
-    fetch(meetupHandler.getUrl{
-        method:'POST',
-        headers:{
-            'Content-Type':'application/json'
+    fetch(meetupHandler.getUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
         },
-        body:meetupHandler.Data
-    }).then(response=>response.json())
-    .then(data=>{
-        if(data.status!=201){
-            window.alert(data.error[0].message)
-        }
-    })
+        body: meetupHandler.Data
+    }).then(response => response.json())
+        .then(data => {
+            if (data.status != 201) {
+                window.alert(data.error[0].message)
+            }
+        })
 }
