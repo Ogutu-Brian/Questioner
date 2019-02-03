@@ -46,7 +46,11 @@ function createMeetup(event) {
     }).then(response => response.json())
         .then(data => {
             if (data.status != 201) {
-                window.alert(data.error[0].message)
+                if (data.error[0].message == "Token Bearer not given") {
+                    window.alert("Please log in in order to create a meetup");
+                } else if (data.error[0].message == "Your token has expired") {
+                    window.location.href = "../user/login.html";
+                }
             }
         })
 }
