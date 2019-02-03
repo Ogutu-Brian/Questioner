@@ -83,6 +83,7 @@ nav button:hover{
     margin-bottom: 1px;
     border-radius: 4px;
     background-color: #3399ff;
+    cursor: pointer;
 }
 .card-info{
     margin-left: 3px;
@@ -90,7 +91,6 @@ nav button:hover{
     text-align: center;
     font-weight: bolder;
     color: white;
-    cursor: pointer;
 }
 .questions{
     margin-top: 2em;

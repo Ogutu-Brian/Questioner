@@ -26,7 +26,7 @@ class FormHandler {
     }
 }
 const signupButton = 'postSignUp';
-const signupUrl = 'https://Questioner-api-v2.herokuapp.com/api/v2/auth/signup';
+const signupUrl = 'http://127.0.0.1:5000/api/v2/auth/signup';
 let singupFieldNames = [
     'firstname',
     'lastname',
