@@ -293,7 +293,7 @@ button {
 .meetup-form input {
     border-style: solid;
     border-width: thin;
-    border-color: #666666;
+    border-color: dodgerblue;
     width: 100%;
     border-radius: 0.4em;
     height: 2em;
@@ -304,6 +304,7 @@ button {
 .meetup-form textarea {
     width: 100%;
     border-radius: 0.4em;
+    border-color: dodgerblue;
 }
 
 .meetup-form .btn {
