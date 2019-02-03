@@ -1,4 +1,4 @@
-html,body{
+html, body {
     position: relative;
     margin-left: 0em;
     margin-right: 0em;
@@ -7,31 +7,36 @@ html,body{
     background-color: white;
     font-size: 95%;
 }
-body{
+
+body {
     min-height: 30em;
     margin-bottom: 30em;
     clear: both;
 }
-@media only screen and (min-width:600px){
+
+@media only screen and (min-width:600px) {
     /*hide scroll bar*/
-    ::-webkit-scrollbar{
+    ::-webkit-scrollbar {
         display: none;
     }
 }
-@media only screen and (max-width:600px){
-    body{
+
+@media only screen and (max-width:600px) {
+    body {
         font-size: 90%;
     }
 }
-nav{
+
+nav {
     width: 100%;
-    background-color: rgb(0,112,129);
+    background-color: rgb(0, 112, 129);
     color: white;
     font-size: 1.5em;
     overflow: hidden;
     font-weight: bolder;
 }
-nav a{
+
+nav a {
     display: block;
     text-align: center;
     padding-bottom: 0.5em;
@@ -39,25 +44,29 @@ nav a{
     padding-top: 0.5em;
     color: white;
 }
-nav a:hover{
-    background-color:#dedede;
+
+nav a:hover {
+    background-color: #dedede;
     color: black;
 }
 
-nav .right{
+nav .right {
     float: right;
     padding-right: 0.5em;
     padding-left: 0.5em;
 }
-nav .left{
+
+nav .left {
     float: left;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
-nav li{
+
+nav li {
     float: left;
 }
-nav li a{
+
+nav li a {
     display: block;
     color: white;
     text-align: center;
@@ -65,11 +74,12 @@ nav li a{
     text-decoration: none;
 }
 
-nav .active{
+nav .active {
     background: white;
 }
-footer{
-    background-color: rgb(0,112,129);
+
+footer {
+    background-color: rgb(0, 112, 129);
     height: 2em;
     margin-top: 100%;
     left: 0;
@@ -79,15 +89,18 @@ footer{
     color: white;
     text-align: center;
 }
-footer text{
+
+footer text {
     padding-top: 1em;
     padding-bottom: 0em;
 }
-.cntent{
+
+.cntent {
     display: grid;
     grid-template-columns: auto auto auto;
 }
-content{
+
+content {
     border-radius: 1em;
     width: 50%;
     padding: 0.5em;
@@ -96,8 +109,9 @@ content{
     margin-left: 4em;
     font-weight: bolder;
 }
-button{
-    background-color: rgb(0,112,129);
+
+button {
+    background-color: rgb(0, 112, 129);
     color: white;
     border: none;
     border-radius: 0.5em;
@@ -107,25 +121,30 @@ button{
     font-size: 100%;
     cursor: pointer;
 }
-.container{
+
+.container {
     width: 100%;
     height: 20%;
 }
-form label{
+
+form label {
     float: left;
 }
-form input{
+
+form input {
     width: 100%;
     border-radius: 0.5em;
     height: 2em;
     border-style: none;
     left: 2em;
 }
-form textarea{
+
+form textarea {
     border-radius: 0.5em;
     width: 60%;
 }
-.form-container{
+
+.form-container {
     border-color: #ccc;
     background-color: #dedede;
     color: Black;
@@ -136,26 +155,30 @@ form textarea{
     height: 100%;
     left: 35%;
 }
-.form-container form{
-    color:black;
+
+.form-container form {
+    color: black;
     left: 2em;
     padding-left: 1em;
     padding-right: 1em;
 }
-.form-container .button{
-    background-color: rgb(0,112,129);
+
+.form-container .button {
+    background-color: rgb(0, 112, 129);
     color: white;
     margin-bottom: 1em;
 }
-@media only screen and (max-width:600px){
-    .form-container{
+
+@media only screen and (max-width:600px) {
+    .form-container {
         width: 10em;
     }
-    .login-text{
+    .login-text {
         font-size: 2em;
     }
 }
-.log-in-container{
+
+.log-in-container {
     border-color: #ccc;
     background-color: #dedede;
     color: Black;
@@ -166,43 +189,49 @@ form textarea{
     height: 70%;
     left: 35%;
 }
-.log-in-container form{
-    color:black;
+
+.log-in-container form {
+    color: black;
     left: 2em;
     padding-left: 1em;
     padding-right: 1em;
 }
-.log-in-container .button{
-    background-color: rgb(0,112,129);
+
+.log-in-container .button {
+    background-color: rgb(0, 112, 129);
     color: white;
     margin-bottom: 1em;
 }
-@media only screen and (max-width:600px){
-    .log-in-container{
+
+@media only screen and (max-width:600px) {
+    .log-in-container {
         width: 10em;
     }
-    .login-text{
+    .login-text {
         font-size: 2em;
     }
 }
-.button{
-    font-weight:bolder;
+
+.button {
+    font-weight: bolder;
     color: white;
-    background-color:rgb(0,112,129);
+    background-color: rgb(0, 112, 129);
     cursor: pointer
 }
-.meetups{
+
+.meetups {
     width: 30%;
     margin-top: 2em;
-    position:relative;
+    position: relative;
     left: 1%;
     float: left;
     border-color: #ccc;
     background-color: #dedede;
-    height:20em;
+    height: 20em;
     margin-left: 1em;
 }
-.meetups form{
+
+.meetups form {
     float: left;
     padding-left: 2%;
     margin-left: 1em;
@@ -210,14 +239,17 @@ form textarea{
     margin-right: 1em;
     margin-left: 0em;
 }
-.meetups p{
+
+.meetups p {
     margin-left: 0.2em;
 }
-.meetups textarea{
+
+.meetups textarea {
     margin-left: 0.2em;
     width: 90%;
 }
-.meetupview{
+
+.meetupview {
     background-color: wheat;
     width: 50%;
     float: right;
@@ -226,10 +258,12 @@ form textarea{
     padding-top: 1em;
     padding-left: 2em;
 }
-.meetupview table{
+
+.meetupview table {
     width: 100%;
 }
-.main-meetup{
+
+.main-meetup {
     background-color: wheat;
     width: 50%;
     float: left;
@@ -237,60 +271,72 @@ form textarea{
     margin-top: 2em;
     margin-right: 1em;
 }
-.main-meetup table{
+
+.main-meetup table {
     width: 100%;
 }
-@media only screen and (max-width:600px){
-    .meetups{
+
+@media only screen and (max-width:600px) {
+    .meetups {
         left: 1em;
     }
-    form textarea{
+    form textarea {
         width: 100%;
         height: 5em;
     }
-    .butn{
+    .butn {
         width: 100%;
     }
 }
-.meetups p{
+
+.meetups p {
     font-weight: bolder;
     font-size: 2em;
 }
-table{
+
+table {
     column-gap: 2em;
     border-collapse: collapse;
     width: 60%;
     text-align: left;
 }
-th{
+
+th {
     font-weight: bolder;
     font-size: 1em;
 }
-td,th{
+
+td, th {
     height: 2em;
     padding: 0.5em;
 }
-td .button{
+
+td .button {
     text-align: center;
     font-weight: bolder;
     cursor: pointer;
 }
-.question{
+
+.question {
     width: 100%;
     position: absolute;
     left: 20%;
 }
-.question .post{
-    float:left;
+
+.question .post {
+    float: left;
     margin-top: 1em;
     margin-left: 1em;
 }
-.question .queries{
-    float:right;
+
+.question .queries {
+    float: right;
     width: 80%;
 }
+
 /*Comment containers*/
-.comment{
+
+.comment {
     width: 60%;
     background-color: #f1f1f1;
     border-radius: 1em;
@@ -302,67 +348,82 @@ td .button{
     float: left;
     position: relative;
 }
+
 /*Darker comment container*/
-.darker-comment{
+
+.darker-comment {
     border-color: #ccc;
     background-color: #dedede;
 }
-.comment-btn{
-    font-weight:bolder;
+
+.comment-btn {
+    font-weight: bolder;
     color: white;
-    background-color:rgb(0,112,129);
+    background-color: rgb(0, 112, 129);
     width: 5em;
     cursor: pointer;
 }
-textarea{
+
+textarea {
     height: 3em;
 }
-.meetup_form{
+
+.meetup_form {
     font-weight: bolder;
     margin-right: 3em;
 }
-.admin-panel{
-    font-weight:bolder;
-    margin-left:1em
+
+.admin-panel {
+    font-weight: bolder;
+    margin-left: 1em
 }
-.create-meetup-btn{
-    background-color:rgb(0, 112, 129);
-    color:white;
+
+.create-meetup-btn {
+    background-color: rgb(0, 112, 129);
+    color: white;
     font-weight: bolder;
     cursor: pointer;
 }
-.bold{
+
+.bold {
     font-weight: bolder;
 }
-.login-text{
-    font-weight:bolder;
+
+.login-text {
+    font-weight: bolder;
     font-size: 1em;
     left: 30%;
 }
-#post-btn{
+
+#post-btn {
     width: 60.5%;
 }
-.cell{
+
+.cell {
     width: 2em;
 }
-#login-msg{
-    font-weight:bolder;
+
+#login-msg {
+    font-weight: bolder;
     font-size: 2em;
     left: 10%;
 }
-.profile{
-    float: right; 
-    width:100%;
+
+.profile {
+    float: right;
+    width: 100%;
     height: 100%;
 }
-.profile table{
+
+.profile table {
     margin-top: 2em;
     margin-left: 1em;
     float: left;
     width: 30%;
     height: 100%
 }
-.feed{
+
+.feed {
     margin-top: 2em;
     float: right;
     margin-right: 1em;
@@ -370,38 +431,44 @@ textarea{
     margin-left: 1em;
     overflow: visible;
 }
-.feed p{
+
+.feed p {
     margin-left: 1.5em;
     font-weight: bolder;
     text-decoration: underline;
 }
-.title{
+
+.title {
     font-weight: bolder;
     font-size: 1.5em;
-    color:black;
+    color: black;
 }
-.avatar{
+
+.avatar {
     width: 8em;
     height: 6em;
     float: left;
 }
-.prof-card{
+
+.prof-card {
     width: 30%;
     margin-top: 2em;
-    position:relative;
+    position: relative;
     left: 1%;
     float: left;
     border-color: #ccc;
     background-color: #dedede;
-    height:20em;
+    height: 20em;
     margin-left: 1em;
     height: 20%;
 }
-.prof-card table{
+
+.prof-card table {
     margin-top: 10em;
     width: 70%;
 }
-.prof-card img{
+
+.prof-card img {
     margin-left: 19%;
     margin-top: 2em;
     border-radius: 4em;

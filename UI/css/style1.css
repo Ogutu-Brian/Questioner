@@ -1,51 +1,60 @@
-html,body{
-    background-color:white;
-    font-family:sans-serif;
+html, body {
+    background-color: white;
+    font-family: sans-serif;
     padding: 0px;
     margin: 0;
 }
-nav{
+
+nav {
     margin-right: 3em;
 }
-nav ul{
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     display: block;
 }
-nav li{
+
+nav li {
     display: block;
     float: left;
     margin-top: 2.5em;
 }
-nav li a{
-    color:#666666;
+
+nav li a {
+    color: #666666;
     font-weight: bolder;
     padding: 14px 16px;
     text-decoration: none;
 }
-nav .logo{
-    margin-top:0;
+
+nav .logo {
+    margin-top: 0;
     font-size: 130%;
     float: left;
     display: block;
     margin-top: 1.7em;
 }
-nav .logo a{
-    color:dodgerblue;
+
+nav .logo a {
+    color: dodgerblue;
     margin-right: 3em;
     margin-left: 2em;
 }
-nav .login{
+
+nav .login {
     float: right;
 }
-nav .signup{
+
+nav .signup {
     float: right;
 }
-nav button{
+
+nav button {
     float: right;
-    background-color:dodgerblue;
+    background-color: dodgerblue;
     color: white;
     border-style: solid;
     border-color: white;
@@ -60,44 +69,54 @@ nav button{
     cursor: pointer;
     height: 3em;
 }
-nav button:hover{
-    background-color:#b3b3b3;
+
+nav button:hover {
+    background-color: #b3b3b3;
     color: white;
 }
-.meetup-container{
+
+.meetup-container {
     margin-top: 2em;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     flex-wrap: wrap;
     width: 80%;
     margin-left: 10em;
     height: auto;
 }
-.meetup-container .card{
+
+.meetup-container .card {
     width: 24.69%;
     height: 15em;
     border-style: solid;
     border-width: thin;
-    border-color:#cccccc;
+    border-color: #cccccc;
     margin-left: 1px;
     margin-bottom: 1px;
     border-radius: 4px;
     background-color: #3399ff;
+    cursor: pointer;
 }
-.card-info{
+
+.meetup-container .card:hover {
+    background-color: #3f90e2;
+}
+
+.card-info {
     margin-left: 3px;
     margin-right: 3px;
     text-align: center;
     font-weight: bolder;
     color: white;
-    cursor: pointer;
 }
-.questions{
+
+.questions {
     margin-top: 2em;
     margin-left: 18em;
     width: 60%;
 }
-.questions .actions{
+
+.questions .actions {
     display: block;
     margin-left: 2em;
     width: 100%;
@@ -107,59 +126,70 @@ nav button:hover{
     border-right-color: #666666;
     border-width: thin;
 }
-.actions table a{
-    color:dodgerblue;
+
+.actions table a {
+    color: dodgerblue;
     text-decoration: none;
 }
-button{
+
+button {
     background-color: #666666;
     border-radius: 1em;
     color: white;
     cursor: pointer;
     border: none;
 }
-.actions .comment-text{
+
+.actions .comment-text {
     width: 59%;
     height: 2em;
     border-radius: 0.5em;
 }
-.btn{
-    background-color:dodgerblue;
+
+.btn {
+    background-color: dodgerblue;
     width: 8em;
     height: 2em;
     border-radius: 0.5em;
     font-weight: bolder;
     border: none;
 }
-.actions .btn{
+
+.actions .btn {
     float: right;
     margin-right: 1em;
 }
-.btn:hover{
-    background-color:#b3b3b3;
+
+.btn:hover {
+    background-color: #b3b3b3;
     color: white;
 }
-.container{
+
+.container {
     margin-top: 2em;
     margin-left: 10em;
     width: 70%;
     height: auto;
 }
-.question-form{
+
+.question-form {
     display: block;
-    margin-left:25%;
+    margin-left: 25%;
     width: 90;
     margin-right: 10%;
 }
-.question-form label{
+
+.question-form label {
     font-weight: bold;
     color: black;
 }
-.question-form p{
+
+.question-form p {
     font-size: 170%;
     color: black;
 }
-.question-form input{
+
+.question-form input {
     border-style: solid;
     border-width: thin;
     border-color: #666666;
@@ -169,25 +199,29 @@ button{
     margin-bottom: 4em;
     padding-left: 0.4em;
 }
-.question-form textarea{
+
+.question-form textarea {
     width: 100%;
     border-radius: 0.4em;
 }
-.question-form .btn{
+
+.question-form .btn {
     width: 25%;
     text-align: left;
     margin-top: 2em;
     height: 3em;
     padding-left: 1em;
 }
-.question-form .btn:hover{
-    background-color:#33adff;
+
+.question-form .btn:hover {
+    background-color: #33adff;
 }
-.question-view{
+
+.question-view {
     display: block;
     margin-top: 2em;
     margin-left: 1em;
-    border-bottom:#666666;
+    border-bottom: #666666;
     border-style: solid;
     border-top: none;
     border-left: none;
@@ -196,16 +230,19 @@ button{
     border-width: thin;
     padding: 1em 1em 1em;
 }
-.question-view .title{
+
+.question-view .title {
     font-size: 130%;
     font-weight: bold;
 }
-.comment{
+
+.comment {
     background-color: #f2f2f2;
     padding: 1em 1em 1em;
     border-radius: 1em;
 }
-.actions textarea{
+
+.actions textarea {
     margin-left: 1em;
     margin-top: 1em;
     border-radius: 0.5em;
@@ -215,7 +252,8 @@ button{
     border-width: thin;
     padding: 0.5em 0.5em 0.5em 0.5em;
 }
-.comment-btn{
+
+.comment-btn {
     background-color: dodgerblue;
     border-style: none;
     font-weight: bold;
@@ -225,42 +263,51 @@ button{
     margin-left: 1em;
     border-radius: 0.4em;
 }
-.comment-btn:hover{
-    background-color:#33adff;
+
+.comment-btn:hover {
+    background-color: #33adff;
 }
-.meetup-btn{
+
+.meetup-btn {
     width: 9em;
     float: left;
 }
-.meetup-form{
+
+.meetup-form {
     display: block;
-    margin-left:25%;
+    margin-left: 25%;
     width: 90;
     margin-right: 10%;
 }
-.meetup-form label{
+
+.meetup-form label {
     font-weight: bold;
     color: black;
 }
-.meetup-form p{
+
+.meetup-form p {
     font-size: 170%;
     color: black;
 }
-.meetup-form input{
+
+.meetup-form input {
     border-style: solid;
     border-width: thin;
-    border-color: #666666;
+    border-color: dodgerblue;
     width: 100%;
     border-radius: 0.4em;
     height: 2em;
     margin-bottom: 1em;
     padding-left: 0.4em;
 }
-.meetup-form textarea{
+
+.meetup-form textarea {
     width: 100%;
     border-radius: 0.4em;
+    border-color: dodgerblue;
 }
-.meetup-form .btn{
+
+.meetup-form .btn {
     width: 25%;
     text-align: left;
     margin-top: 2em;

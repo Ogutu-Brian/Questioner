@@ -26,7 +26,7 @@ class FormHandler {
     }
 }
 const signupButton = 'postSignUp';
-const signupUrl = 'https://Questioner-api-v2.herokuapp.com/api/v2/auth/signup';
+const signupUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/auth/signup';
 let singupFieldNames = [
     'firstname',
     'lastname',
@@ -39,6 +39,7 @@ let singupFieldNames = [
 const signUp = new FormHandler(signupUrl, singupFieldNames);
 document.getElementById(signupButton).addEventListener('click', signup);
 function signup(event) {
+    //Function that handles sign up event
     event.preventDefault();
     fetch(signUp.getUrl, {
         method: 'POST',
