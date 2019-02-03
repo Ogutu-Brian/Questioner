@@ -36,6 +36,7 @@ let fieldNames = [
 ]
 let meetupHandler = new FormHandler(endpointUrl, fieldNames)
 function createMeetup(event) {
+    //Function that handles creation of meetup event
     event.preventDefault()
     let authToken = 'Bearer ' + localStorage.getItem('token');
     fetch(meetupHandler.getUrl, {
@@ -56,7 +57,7 @@ function createMeetup(event) {
                     window.alert(data.error[0].message);
                 }
             } else {
-                window.location.href = "../users/meetups.html";
+                window.location.href = "../user/meetups.html";
             }
         })
 }

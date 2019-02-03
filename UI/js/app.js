@@ -39,6 +39,7 @@ let singupFieldNames = [
 const signUp = new FormHandler(signupUrl, singupFieldNames);
 document.getElementById(signupButton).addEventListener('click', signup);
 function signup(event) {
+    //Function that handles sign up event
     event.preventDefault();
     fetch(signUp.getUrl, {
         method: 'POST',

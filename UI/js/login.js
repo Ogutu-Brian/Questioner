@@ -34,6 +34,7 @@ let loginFields = [
 let loginHandler = new FormHandler(loginUrl, loginFields);
 document.getElementById(loginButton).addEventListener('click', login);
 function login(event) {
+    //function that handles login event
     event.preventDefault();
     fetch(loginHandler.getUrl, {
         method: 'POST',
