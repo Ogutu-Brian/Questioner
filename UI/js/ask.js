@@ -60,7 +60,7 @@ function postQuestion(event) {
                 }
             }
             else {
-                window.href = "../user/qustions.html";
+                window.location.href = "../user/questions.html";
             }
         })
 }
