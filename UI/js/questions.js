@@ -1,5 +1,6 @@
+"use strict"
 let meetupId = localStorage.getItem("meetupId");
-questionsUrl = 'http://127.0.0.1:5000/api/v2/questions/' + meetupId + '/';
+let questionsUrl = 'http://127.0.0.1:5000/api/v2/questions/' + meetupId + '/';
 window.onload = fetch(questionsUrl, {
     method: 'GET',
     headers: {
@@ -7,8 +8,7 @@ window.onload = fetch(questionsUrl, {
     }
 }).then(response => response.json())
     .then(data => {
-        if (data.status != 200) {
-        } else {
+        if (data.status == 200) {
             let result = '';
             for (let item of data.data) {
                 result += `<tr>

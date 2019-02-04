@@ -1,3 +1,4 @@
+"use strict"
 let meetupUrl = 'http://127.0.0.1:5000/api/v2/meetups/upcoming/';
 window.onload = fetch(meetupUrl, {
     method: 'GET',
