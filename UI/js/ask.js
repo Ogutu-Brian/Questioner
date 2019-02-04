@@ -19,33 +19,31 @@ class FormHandler {
     //gets the data being posted
     get Data() {
         this.createFormData()
+        this.data['meetup'] = localStorage.getItem('meetupId');
         return JSON.stringify(this.data);
     }
     getFieldValue(name) {
         return document.getElementById(name).value;
     }
 }
-let endpointUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups';
-let meetupButton = 'postMeeup';
-document.getElementById(meetupButton).addEventListener('click', createMeetup);
+let questionUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/questions';
+let questionButton = 'postQuestion';
 let fieldNames = [
-    'location',
-    'topic',
-    'happeningOn',
-    'body'
+    "title",
+    "body"
 ]
-let meetupHandler = new FormHandler(endpointUrl, fieldNames)
-function createMeetup(event) {
-    //Function that handles creation of meetup event
-    event.preventDefault()
+let questionHandler = new FormHandler(questionUrl, fieldNames);
+document.getElementById(questionButton).addEventListener('click', postQuestion);
+function postQuestion(event) {
+    event.preventDefault();
     let authToken = 'Bearer ' + localStorage.getItem('token');
-    fetch(meetupHandler.getUrl, {
+    fetch(questionHandler.getUrl, {
         method: 'POST',
         headers: {
             'Authorization': authToken,
             'Content-Type': 'application/json'
         },
-        body: meetupHandler.Data
+        body: questionHandler.Data
     }).then(response => response.json())
         .then(data => {
             if (data.status != 201) {
@@ -55,11 +53,14 @@ function createMeetup(event) {
                 } else if (data.error[0].message == "Your token has expired") {
                     window.alert("Your session has expired please log in");
                     window.location.href = '../user/login.html';
-                } else {
+                } else if (data.status = 406) {
                     window.alert(data.error[0].message);
+                } else {
+                    window.alert(data.error);
                 }
-            } else {
-                window.location.href = "../user/meetups.html";
+            }
+            else {
+                window.location.href = "../user/questions.html";
             }
         })
 }
