@@ -1,4 +1,4 @@
-let meetupUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups/upcoming/';
+let meetupUrl = 'http://127.0.0.1:5000/api/v2/meetups/upcoming/';
 window.onload = fetch(meetupUrl, {
     method: 'GET',
     headers: {
@@ -10,7 +10,7 @@ window.onload = fetch(meetupUrl, {
         for (let item of data.data) {
             result +=
                 `<div class="card" onclick="location.href='questions.html'">
-                    <div class="card-info">
+                    <div class="card-info" id=${item.id}>
                         <p>${item.topic}</p>
                         <p class="location">${item.location}</p>
                         <p class="date">${item.happeningOn}</p>
