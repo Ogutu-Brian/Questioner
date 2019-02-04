@@ -53,7 +53,7 @@ function postQuestion(event) {
                 } else if (data.error[0].message == "Your token has expired") {
                     window.alert("Your session has expired please log in");
                     window.location.href = '../user/login.html';
-                } else if (data.status = 406) {
+                } else if (data.status == 406) {
                     window.alert(data.error[0].message);
                 } else {
                     window.alert(data.error);
