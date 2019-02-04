@@ -9,7 +9,7 @@ window.onload = fetch(meetupUrl, {
         let result = ''
         for (let item of data.data) {
             result +=
-                `<div class="card" id=id=${item.id}>
+                `<div class="card" id=${item.id}>
                     <div class="card-info">
                         <p>${item.topic}</p>
                         <p class="location">${item.location}</p>
@@ -19,4 +19,11 @@ window.onload = fetch(meetupUrl, {
                 </div>`;
         }
         document.getElementById('result').innerHTML = result;
+        for (let item of data.data) {
+            document.getElementById(item.id).addEventListener('click', questions);
+        }
+        var questions = (event) => {
+            event.preventDefault();
+            localStorage.setItem("meetupId", item.id);
+        }
     })
