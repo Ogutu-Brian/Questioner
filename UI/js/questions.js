@@ -1,6 +1,6 @@
 "use strict"
 let meetupId = localStorage.getItem("meetupId");
-let questionsUrl = 'http://127.0.0.1:5000/api/v2/questions/' + meetupId + '/';
+let questionsUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/questions/' + meetupId + '/';
 window.onload = fetch(questionsUrl, {
     method: 'GET',
     headers: {

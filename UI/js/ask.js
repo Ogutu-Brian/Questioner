@@ -26,7 +26,7 @@ class FormHandler {
         return document.getElementById(name).value;
     }
 }
-let questionUrl = 'http://127.0.0.1:5000/api/v2/questions';
+let questionUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/questions';
 let questionButton = 'postQuestion';
 let fieldNames = [
     "title",
