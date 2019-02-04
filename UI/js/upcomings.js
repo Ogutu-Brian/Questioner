@@ -21,9 +21,9 @@ window.onload = fetch(meetupUrl, {
         document.getElementById('result').innerHTML = result;
         for (let item of data.data) {
             document.getElementById(item.id).addEventListener('click', questions);
-        }
-        var questions = (event) => {
-            event.preventDefault();
-            localStorage.setItem("meetupId", item.id);
+            var questions = (event) => {
+                event.preventDefault();
+                localStorage.setItem("meetupId", item.id);
+            }
         }
     })
