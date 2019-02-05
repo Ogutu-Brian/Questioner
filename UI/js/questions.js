@@ -1,6 +1,6 @@
 "use strict"
 let meetupId = localStorage.getItem("meetupId");
-let questionsUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/questions/' + meetupId + '/';
+let questionsUrl = 'http://127.0.0.1:5000/api/v2/questions/' + meetupId + '/';
 window.onload = fetch(questionsUrl, {
     method: 'GET',
     headers: {
@@ -13,7 +13,7 @@ window.onload = fetch(questionsUrl, {
             for (let item of data.data) {
                 result += `<tr>
                 <td colspan="3">
-                <a href="questionview.html">
+                <a id=${item.id}>
                     ${item.title}
                 </a>
                 </td>
@@ -30,5 +30,11 @@ window.onload = fetch(questionsUrl, {
             </tr>`
             }
             document.getElementById('result').innerHTML = result;
+            for (let item of data.data) {
+                document.getElementById(item.id).addEventListener('click', comments);
+            }
         }
     })
+var comments = (event) => {
+    localStorage.setItem('questionId', event.target.id);
+}

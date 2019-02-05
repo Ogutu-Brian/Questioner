@@ -1,5 +1,5 @@
 "use strict"
-let meetupUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups/upcoming/';
+let meetupUrl = 'http://127.0.0.1:5000/api/v2/meetups/upcoming/';
 window.onload = fetch(meetupUrl, {
     method: 'GET',
     headers: {
@@ -7,10 +7,11 @@ window.onload = fetch(meetupUrl, {
     }
 }).then(response => response.json())
     .then(data => {
-        let result = ''
-        for (let item of data.data) {
-            result +=
-                `<div class="card" id=${item.id}>
+        if (data.status == 200) {
+            let result = ''
+            for (let item of data.data) {
+                result +=
+                    `<div class="card" id=${item.id}>
                     <div class="card-info" id=${item.id}>
                         <p id=${item.id}>${item.topic}</p>
                         <p class="location" id=${item.id}>${item.location}</p>
@@ -18,10 +19,11 @@ window.onload = fetch(meetupUrl, {
                         <p class="info" id=${item.id}>${item.body}</p>
                     </div>
                 </div>`;
-        }
-        document.getElementById('result').innerHTML = result;
-        for (let item of data.data) {
-            document.getElementById(item.id).addEventListener('click', questions);
+            }
+            document.getElementById('result').innerHTML = result;
+            for (let item of data.data) {
+                document.getElementById(item.id).addEventListener('click', questions);
+            }
         }
     })
 var questions = (event) => {
