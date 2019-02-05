@@ -26,7 +26,7 @@ window.onload = fetch(questionsUrl, {
                     <button class="fa fa-thumbs-up button button-margin"> 1</button>
                 </td>
                 <td>
-                    <button class="fas fa-comments" onclick="location.href='questionview.html'"> 1</button></td>
+                    <button class="fas fa-comments" onclick="location.href='questionview.html'"> ${item.comments}</button></td>
             </tr>`
             }
             document.getElementById('result').innerHTML = result;
