@@ -51,7 +51,7 @@ window.onload = fetch(questionUrl, {
                 if (commentsData.status == 200) {
                     for (let item of commentsData.data) {
                         result += `<div class="question-view comment">
-                    <p class="fas fa-user"> Brian</p>
+                    <p class="fas fa-user"> ${item.user}</p>
                     <p>${item.comment}</p>
                 </div>`
                     }
