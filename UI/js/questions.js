@@ -20,10 +20,10 @@ window.onload = fetch(questionsUrl, {
             </tr>
             <tr>
                 <td class="cell">
-                    <button class="fa fa-thumbs-down button button-margin"> 4</button>
+                    <button class="fa fa-thumbs-down button button-margin"> 0</button>
                 </td>
                 <td>
-                    <button class="fa fa-thumbs-up button button-margin"> 1</button>
+                    <button class="fa fa-thumbs-up button button-margin"> 0</button>
                 </td>
                 <td>
                     <button class="fas fa-comments" onclick="location.href='questionview.html'"> ${item.comments}</button></td>
