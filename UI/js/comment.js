@@ -27,8 +27,8 @@ class FormHandler {
     }
 }
 let questionId = localStorage.getItem('questionId');
-let questionUrl = 'http://127.0.0.1:5000/api/v2/questions/' + questionId;
-let commentUrl = 'http://127.0.0.1:5000/api/v2/comments/' + questionId;
+let questionUrl = `http://127.0.0.1:5000/api/v2/questions/${questionId}`;
+let commentUrl = `http://127.0.0.1:5000/api/v2/comments/${questionId}`;
 window.onload = fetch(questionUrl, {
     method: 'GET',
     headers: {
