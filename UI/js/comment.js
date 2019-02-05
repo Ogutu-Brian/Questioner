@@ -55,7 +55,10 @@ window.onload = fetch(questionUrl, {
                     <p>${item.comment}</p>
                 </div>`
                     }
-                    document.getElementById('result').innerHTML = result;
+
                 }
+                result += `<textarea name="" id="" cols="30" rows="10"></textarea><br>
+                <button class="comment-btn">Post Your Comment</button>`
+                document.getElementById('result').innerHTML = result;
             })
     })
