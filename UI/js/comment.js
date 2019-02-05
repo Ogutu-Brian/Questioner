@@ -27,8 +27,8 @@ class FormHandler {
     }
 }
 let questionId = localStorage.getItem('questionId');
-let questionUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/questions/' + questionId;
-let commentUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/comments/' + questionId;
+let questionUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${questionId}`;
+let commentUrl = `https://questioner-api-v2.herokuapp.com/api/v2/comments/${questionId}`;
 window.onload = fetch(questionUrl, {
     method: 'GET',
     headers: {

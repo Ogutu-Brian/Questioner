@@ -128,13 +128,17 @@ nav button:hover {
 }
 
 .actions table a {
-    color: dodgerblue;
+    color: #666666;
     text-decoration: none;
     cursor: pointer;
 }
 
+.actions table a:hover {
+    color: dodgerblue;
+}
+
 button {
-    background-color: #666666;
+    background-color: dodgerblue;
     border-radius: 1em;
     color: white;
     cursor: pointer;
