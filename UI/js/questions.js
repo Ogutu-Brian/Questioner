@@ -37,4 +37,5 @@ window.onload = fetch(questionsUrl, {
     })
 var comments = (event) => {
     localStorage.setItem('questionId', event.target.id);
+    window.location.href = '../user/questionview.html';
 }

@@ -25,4 +25,37 @@ class FormHandler {
         return document.getElementById(name).value;
     }
 }
-let commentUrl = '';
+let questionId = localStorage.getItem('questionId');
+let questionUrl = 'http://127.0.0.1:5000/api/v2/questions/' + questionId;
+let commentUrl = 'http://127.0.0.1:5000/api/v2/comments/' + questionId;
+window.onload = fetch(questionUrl, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}).then(response => response.json())
+    .then(data => {
+        let result = `<button onclick="location.href='question.html'" class="btn">Ask Question</button>
+            <div class="question-view">
+                <p class="title">${data.data[0].title}</p>
+                <p>${data.data[0].body}</p>
+            </div>`
+        document.getElementById('result').innerHTML = result;
+        fetch(commentUrl, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(commentResponse => commentResponse.json())
+            .then(commentsData => {
+                if (commentsData.status == 200) {
+                    for (let item in data.data) {
+                        result += `<div class="question-view comment">
+                    <p class="fas fa-user"> Brian</p>
+                    <p>We shoulsssd look into the union and finite intersections of sets</p>
+                </div>`
+                    }
+                    document.getElementById('result').innerHTML = result;
+                }
+            })
+    })
