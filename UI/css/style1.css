@@ -130,6 +130,7 @@ nav button:hover {
 .actions table a {
     color: dodgerblue;
     text-decoration: none;
+    cursor: pointer;
 }
 
 button {
@@ -313,4 +314,10 @@ button {
     margin-top: 2em;
     height: 3em;
     padding-left: 1em;
+}
+
+.question-meetup {
+    color: dodgerblue;
+    font-weight: bolder;
+    font-size: 120%;
 }
