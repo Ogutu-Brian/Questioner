@@ -49,10 +49,10 @@ window.onload = fetch(questionUrl, {
         }).then(commentResponse => commentResponse.json())
             .then(commentsData => {
                 if (commentsData.status == 200) {
-                    for (let item in data.data) {
+                    for (let item of commentsData.data) {
                         result += `<div class="question-view comment">
                     <p class="fas fa-user"> Brian</p>
-                    <p>We shoulsssd look into the union and finite intersections of sets</p>
+                    <p>${item.comment}</p>
                 </div>`
                     }
                     document.getElementById('result').innerHTML = result;
