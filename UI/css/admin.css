@@ -10,7 +10,8 @@ html, body {
     float: left;
     height: 100%;
     width: 20%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: fixed;
     margin-left: 0%;
     margin-top: 0%;
@@ -20,11 +21,47 @@ html, body {
 
 .nav-title {
     color: white;
-    background-color: pink;
-    height: 9%;
+    height: 8%;
+    padding-top: 5%;
 }
 
 .nav-title a {
     text-decoration: none;
     color: white;
+    font-weight: bolder;
+    font-size: 150%;
+}
+
+.profile {
+    height: 15%;
+    border-style: solid;
+    border-color: wheat;
+    border-width: thin;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 20%;
+    float: left;
+    margin-top: 2%;
+}
+
+.profile p {
+    float: left;
+    margin-right: 4%;
+    margin-top: 10%;
+    font-size: 110%;
+    margin-left: 3%;
+}
+.home{
+    margin-left: 3%;
+    margin-top: 6%;
+    height: 4%;
+    font-family: sans-serif;
+}
+.meetups{
+    font-weight: bold;
 }
