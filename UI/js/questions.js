@@ -107,6 +107,7 @@ var downvoteQuestion = (event) => {
 }
 let radioButtons = document.rsvpForm.rsvp;
 window.onload = (event) => {
+    event.preventDefault();
     for (let button of radioButtons) {
         button.addEventListener('change', () => {
             let buttonValue = button.value;
