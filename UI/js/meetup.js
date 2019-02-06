@@ -59,7 +59,7 @@ function createMeetup(event) {
                     window.alert(data.error[0].message);
                 }
             } else {
-                window.location.href = "../user/meetups.html";
+                window.location.href = "../admin/admin.html";
             }
         })
 }
