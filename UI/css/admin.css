@@ -1,0 +1,30 @@
+html, body {
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0;
+}
+
+.side-nav {
+    background-color: #243a51;
+    color: white;
+    float: left;
+    height: 100%;
+    width: 20%;
+    display: block;
+    position: fixed;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    overflow: auto;
+}
+
+.nav-title {
+    color: white;
+    background-color: pink;
+    height: 9%;
+}
+
+.nav-title a {
+    text-decoration: none;
+    color: white;
+}
