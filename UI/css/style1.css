@@ -325,3 +325,15 @@ button {
     font-weight: bolder;
     font-size: 120%;
 }
+
+.meetup-detail {
+    margin-bottom: 1.5em;
+}
+
+.meetup-detail p {
+    font-weight: bolder;
+}
+
+.meetup-detail input {
+    cursor: pointer;
+}

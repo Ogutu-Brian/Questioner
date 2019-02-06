@@ -21,15 +21,15 @@ window.onload = fetch(meetupUrl, {
                     <table>
                         <tr>
                             <td>YES</td>
-                            <td>10</td>
+                            <td>${item.yes}</td>
                         </tr>
                         <tr>
                             <td>MAYBE</td>
-                            <td>5</td>
+                            <td>${item.maybe}</td>
                         </tr>
                         <tr>
                             <td>NO</td>
-                            <td>45</td>
+                            <td>${item.no}</td>
                         </tr>
                     </table>
                 </div>
@@ -65,11 +65,11 @@ var deleteMeetup = (event) => {
             if (data.status == 200) {
                 window.location = window.location;
             }
-            else if (data.error[0].message=="Your token has expired") {
+            else if (data.error[0].message == "Your token has expired") {
                 window.alert("Your session has expired please log in");
-                window.location.href='../user/login.html';
+                window.location.href = '../user/login.html';
             }
-            else{
+            else {
                 window.alert(data.error[0].message);
             }
         })

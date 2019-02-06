@@ -1,6 +1,7 @@
 "use strict"
 let meetupId = localStorage.getItem("meetupId");
 let questionsUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${meetupId}/`;
+let rsvpUrl = `https://questioner-api-v2.herokuapp.com/api/v2/meetups/${meetupId}/rsvps`;
 let authToken = 'Bearer ' + localStorage.getItem('token');
 window.onload = fetch(questionsUrl, {
     method: 'GET',
@@ -103,4 +104,35 @@ var downvoteQuestion = (event) => {
                 }
             }
         })
+}
+let radioButtons = document.rsvpForm.rsvp;
+window.onload = (event) => {
+    event.preventDefault();
+    for (let button of radioButtons) {
+        button.addEventListener('change', () => {
+            let buttonValue = button.value;
+            fetch(rsvpUrl, {
+                method: 'POST',
+                headers: {
+                    'Authorization': authToken,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "response": buttonValue
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.status != 401) {
+                        window.alert("Response received");
+                    } else if (data.error[0].message == "Your token has expired") {
+                        window.alert("Your session has expired please log in");
+                        window.location.href = '../user/login.html';
+                    } else if (data.error[0].message == "Token Bearer not given") {
+                        window.alert("Please log in to give rsvp");
+                        window.location.href = '../user/login.html';
+                    }
+                })
+        })
+    }
 }
