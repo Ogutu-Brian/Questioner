@@ -26,7 +26,7 @@ class FormHandler {
     }
 }
 const loginButton = 'loginButton';
-const loginUrl = 'http://127.0.0.1:5000/api/v2/auth/login';
+const loginUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/auth/login';
 let loginFields = [
     'email',
     'password'
