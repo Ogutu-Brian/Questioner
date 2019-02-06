@@ -25,7 +25,7 @@ class FormHandler {
         return document.getElementById(name).value;
     }
 }
-let endpointUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups';
+let endpointUrl = 'http://127.0.0.1:5000/api/v2/meetups';
 let meetupButton = 'postMeeup';
 document.getElementById(meetupButton).addEventListener('click', createMeetup);
 let fieldNames = [

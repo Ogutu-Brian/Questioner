@@ -1,6 +1,6 @@
 "use strict"
 let meetupId = localStorage.getItem("meetupId");
-let questionsUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${meetupId}/`;
+let questionsUrl = `http://127.0.0.1:5000/api/v2/questions/${meetupId}/`;
 let authToken = 'Bearer ' + localStorage.getItem('token');
 window.onload = fetch(questionsUrl, {
     method: 'GET',
@@ -49,7 +49,7 @@ var commentButton = (event) => {
 }
 var upvoteQuestion = (event) => {
     let questionId = event.target.id.slice(6);
-    let votingUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${questionId}/upvote`;
+    let votingUrl = `http://127.0.0.1:5000/api/v2/questions/${questionId}/upvote`;
     fetch(votingUrl, {
         method: 'PATCH',
         mode: "cors",
@@ -78,7 +78,7 @@ var upvoteQuestion = (event) => {
 }
 var downvoteQuestion = (event) => {
     let questionId = event.target.id.slice(8);
-    let votingUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${questionId}/downvote`;
+    let votingUrl = `http://127.0.0.1:5000/api/v2/questions/${questionId}/downvote`;
     fetch(votingUrl, {
         method: 'PATCH',
         mode: "cors",
