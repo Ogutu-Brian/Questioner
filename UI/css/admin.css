@@ -115,7 +115,6 @@ html, body {
     margin-left: 1px;
     margin-bottom: 1px;
     border-radius: 4px;
-    cursor: pointer;
     display: flex;
     flex-direction: row;
 }
@@ -130,6 +129,7 @@ html, body {
     margin-bottom: 1px;
     border-radius: 4px;
     color: white;
+    cursor: pointer;
 }
 
 .meetup-info p {
@@ -145,7 +145,7 @@ html, body {
     margin-left: 1px;
     margin-bottom: 1px;
     border-radius: 4px;
-    background-color: #3399ff;
+    background-color: #59a5f1;
     color: white;
     font-weight: bolder;
 }
