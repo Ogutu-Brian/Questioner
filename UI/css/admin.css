@@ -4,6 +4,13 @@ html, body {
     margin: 0;
 }
 
+.container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+}
+
 .side-nav {
     background-color: #243a51;
     color: white;
@@ -23,6 +30,7 @@ html, body {
     color: white;
     height: 8%;
     padding-top: 5%;
+    margin-left: 1%;
 }
 
 .nav-title a {
@@ -56,12 +64,60 @@ html, body {
     font-size: 110%;
     margin-left: 3%;
 }
-.home{
+
+.home {
     margin-left: 3%;
     margin-top: 6%;
     height: 4%;
     font-family: sans-serif;
 }
-.meetups{
+
+.meetups {
     font-weight: bold;
+}
+
+.content {
+    margin-left: 20%;
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+
+.top-bar {
+    background-color: #e6e6e6;
+    width: 100%;
+    padding-bottom: 1em;
+    padding-top: 0.5em;
+    margin-top: 0em;
+    height: 2em;
+}
+
+.top-bar img {
+    border-radius: 50%;
+    width: 3%;
+    float: right;
+    margin-right: 1em;
+}
+
+.meetup-list {
+    margin-left: 2%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.meetup-card {
+    width: 100%;
+    height: 5em;
+    border-style: solid;
+    border-width: thin;
+    border-color: #cccccc;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    border-radius: 4px;
+    background-color: #3399ff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
 }
