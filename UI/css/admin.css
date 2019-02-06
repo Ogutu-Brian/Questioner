@@ -94,11 +94,10 @@ html, body {
     height: 2em;
 }
 
-.top-bar img {
-    border-radius: 50%;
-    width: 3%;
+.top-bar p {
+    cursor: pointer;
     float: right;
-    margin-right: 1em;
+    margin-right: 2em;
 }
 
 .meetup-list {
