@@ -70,10 +70,12 @@ html, body {
     margin-top: 6%;
     height: 4%;
     font-family: sans-serif;
+    cursor: pointer;
 }
 
 .meetups {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .content {
@@ -109,7 +111,35 @@ html, body {
 
 .meetup-card {
     width: 100%;
-    height: 5em;
+    height: 10em;
+    border-color: #cccccc;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.meetup-info {
+    width: 60%;
+    background-color: #3399ff;
+    border-style: solid;
+    border-width: thin;
+    border-color: #cccccc;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    border-radius: 4px;
+    color: white;
+}
+
+.meetup-info p {
+    font-weight: bolder;
+    margin-left: 10%;
+}
+
+.rsvp-info {
+    width: 30%;
     border-style: solid;
     border-width: thin;
     border-color: #cccccc;
@@ -117,7 +147,51 @@ html, body {
     margin-bottom: 1px;
     border-radius: 4px;
     background-color: #3399ff;
+    color: white;
+    font-weight: bolder;
+}
+
+.delete-btn {
+    width: 10%;
+    margin-left: 4px;
+}
+
+.delete-btn button {
+    background-color: red;
+    border-radius: 0.5em;
+    color: white;
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
+    border: none;
+    width: 100%;
+    height: 20%;
+    font-weight: bold;
+}
+
+table {
+    border-spacing: 1em;
+    margin-left: 20%;
+}
+
+td {
+    border-radius: 0.5em;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+button {
+    background-color: dodgerblue;
+    border-radius: 0.5em;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.meetup-btn {
+    width: 9em;
+    float: left;
+    height: 2.5em;
+    margin-left: 1em;
+    font-weight: bold;
 }
