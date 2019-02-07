@@ -1,9 +1,7 @@
 "use strict"
 let authToken = 'Bearer ' + localStorage.getItem('token');
 let logOutUrl = 'http://127.0.0.1:5000/api/v2/auth/logout';
-document.getElementById('logout-btn').addEventListener('click', logout);
-var logout = (event) => {
-    event.preventDefault();
+var logout = () => {
     fetch(logOutUrl, {
         method: 'DELETE',
         headers: {
@@ -13,7 +11,14 @@ var logout = (event) => {
     }).then(response => response.json())
         .then(data => {
             if (data.status == 200) {
-                window.location.href = '../user/logoin.html';
+                window.alert("Successfully Logged out");
+                window.location.href = '../index.html';
+            } else if (data.error[0].message == "Token Bearer not given") {
+                window.alert("You are not logged in");
+                window.location.href = '../user/login.html';
+            } else if (data.error[0].message == "Your token has expired") {
+                window.alert("Your session has expired,please log in");
+                window.location.href = '../user/login.html';
             }
         })
 }
