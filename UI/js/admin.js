@@ -8,7 +8,7 @@ window.onload = fetch(meetupUrl, {
 }).then(response => response.json())
     .then(data => {
         if (data.status == 200) {
-            let result = ''
+            let result = '';
             for (let item of data.data) {
                 result += `<div class="meetup-card"=id=${item.id}>
                 <div class="meetup-info" id=${item.id}>
