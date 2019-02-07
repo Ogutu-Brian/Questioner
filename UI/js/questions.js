@@ -122,8 +122,13 @@ window.onload = (event) => {
                 })
             }).then(response => response.json())
                 .then(data => {
-                    console.log(data);
-                    if (data.status != 401) {
+                    if (data.error == "The token provided is not valid") {
+                        window.alert("Please log in to submit rsvp");
+                        window.location.href = '../user/login.html';
+                    } else if (data.msg == "Token has been revoked") {
+                        window.alert("Please login to submit rsvp");
+                        window.location.href = "../user/login.html";
+                    } else if (data.status == 201) {
                         window.alert("Response received");
                     } else if (data.error[0].message == "Your token has expired") {
                         window.alert("Your session has expired please log in");

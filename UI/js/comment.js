@@ -80,7 +80,13 @@ window.onload = fetch(questionUrl, {
                         body: postCommentHandler.Data
                     }).then(newCommentResponse => newCommentResponse.json())
                         .then(newCommentData => {
-                            if (newCommentData.status == 201) {
+                            if (newCommentData.error == "The token provided is not valid") {
+                                window.alert("Please log in to submit your comment");
+                                window.location.href = '../user/login.html';
+                            } else if (newCommentData.msg == "Token has been revoked") {
+                                window.alert("Please login to submit your comment");
+                                window.location.href = "../user/login.html";
+                            } else if (newCommentData.status == 201) {
                                 window.location = window.location;
                             } else if (newCommentData.status == 406) {
                                 window.alert(newCommentData.error[0].message);
