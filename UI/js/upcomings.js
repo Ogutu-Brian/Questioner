@@ -1,5 +1,5 @@
 "use strict"
-let meetupUrl = 'http://127.0.0.1:5000/api/v2/meetups/upcoming/';
+let meetupUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups/upcoming/';
 window.onload = fetch(meetupUrl, {
     method: 'GET',
     headers: {

@@ -1,6 +1,6 @@
 "use strict"
 let authToken = 'Bearer ' + localStorage.getItem('token');
-let logOutUrl = 'http://127.0.0.1:5000/api/v2/auth/logout';
+let logOutUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/auth/logout';
 var logout = () => {
     //Function to log out and clear local storage
     fetch(logOutUrl, {
