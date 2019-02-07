@@ -28,6 +28,7 @@ nav li a {
     font-weight: bolder;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 nav .logo {
