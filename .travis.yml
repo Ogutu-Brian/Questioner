@@ -17,10 +17,9 @@ install:
   - npm install 
   - npm install --save-dev babel-plugin-transform-es2015-modules-commonjs
   - npm i jest puppeteer faker --save-dev
+  - npm install coveralls --save-dev
 script:
-  - npm start &
   - npm test
-after_success:
   - npm run coveralls
 services:
   - http-server
