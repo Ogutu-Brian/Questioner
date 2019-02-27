@@ -1,4 +1,7 @@
 "use strict"
+import {
+    urls
+} from './urls.js';
 //Class that handles forms on click of buttons
 class FormHandler {
     constructor(url, fieldNames) {
@@ -26,7 +29,6 @@ class FormHandler {
     }
 }
 const signupButton = 'postSignUp';
-const signupUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/auth/signup';
 let singupFieldNames = [
     'firstname',
     'lastname',
@@ -36,18 +38,19 @@ let singupFieldNames = [
     'username',
     'phoneNumber'
 ];
-const signUp = new FormHandler(signupUrl, singupFieldNames);
+const signUp = new FormHandler(urls.signupUrl, singupFieldNames);
 document.getElementById(signupButton).addEventListener('click', signup);
+
 function signup(event) {
     //Function that handles sign up event
     event.preventDefault();
     fetch(signUp.getUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: signUp.Data
-    }).then(response => response.json())
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: signUp.Data
+        }).then(response => response.json())
         .then(data => {
             if (data.status != 201) {
                 window.alert(data.error[0].message);
