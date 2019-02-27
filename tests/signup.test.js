@@ -1,7 +1,7 @@
 'use strict'
 import puppeteer from 'puppeteer';
 import faker from 'faker';
-const app = 'http://127.0.0.1:5500/UI/user/signup.html';
+const app = 'https://ogutu-brian.github.io/Questioner/UI/user/signup.html';
 const leadData = {
     firstname: 'brian',
     lastname: 'ogutu',

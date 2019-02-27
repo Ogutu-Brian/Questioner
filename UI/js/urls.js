@@ -1,5 +1,5 @@
 const urls = {
-    signupUrl: 'http://127.0.0.1:5000/api/v2/auth/signup',
+    signupUrl: 'http://questioner-api-v2.herokuapp.com/api/v2/auth/signup',
 }
 export {
     urls
