@@ -1,7 +1,6 @@
 'use strict'
 ///tests for functionality of the login page in the index page
 import puppeteer from 'puppeteer';
-import faker from 'faker';
 import {
     pageUrls
 } from '../UI/js/urls.js';
@@ -16,8 +15,6 @@ const height = 1080;
 beforeAll(async () => {
     browser = await puppeteer.launch({
         headless: true,
-        // slowMo: 80,
-        // args: [`--window-size=${width},${height}`]
     });
     page = await browser.newPage();
     await page.setViewport({
@@ -36,5 +33,6 @@ describe("Login Form", () => {
         await page.type('input[id=email]', leadData.email);
         await page.click('input[id=password]');
         await page.type('input[id=password]', leadData.password);
-    }, 160000);
+        await page.click('button[id=loginButton]');
+    }, 16000);
 });

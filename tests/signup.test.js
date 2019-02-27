@@ -21,9 +21,7 @@ const width = 1920;
 const height = 1080;
 beforeAll(async () => {
     browser = await puppeteer.launch({
-        headless: true,
-        // slowMo: 80,
-        // args: [`--window-size=${width},${height}`]
+        headless: true
     })
     page = await browser.newPage();
     await page.setViewport({
@@ -56,7 +54,7 @@ describe('signup form', () => {
         // page.on('dialog',dialog=>{
         //     expect(dialog.message()).toEqual("Signedup")
         // })
-    }, 1600000);
+    }, 16000);
 });
 export {
     leadData
