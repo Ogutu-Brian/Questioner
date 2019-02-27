@@ -7,8 +7,8 @@ const leadData = {
     lastname: 'ogutu',
     password: 'Pod#23@A',
     confirmpassword: 'Pod#23@A',
-    email: 'codingbrian58@gmail.com',
-    username: 'brian',
+    email: faker.internet.email(),
+    username: faker.name.firstName(),
     phoneNumber: '+254703812914'
 };
 let page;
@@ -17,9 +17,9 @@ const width = 1920;
 const height = 1080;
 beforeAll(async () => {
     browser = await puppeteer.launch({
-        headless: false,
-        slowMo: 80,
-        args: [`--window-size=${width},${height}`]
+        headless: true,
+        // slowMo: 80,
+        // args: [`--window-size=${width},${height}`]
     })
     page = await browser.newPage();
     await page.setViewport({
@@ -49,5 +49,8 @@ describe('signup form', () => {
         await page.click('input[id=email]');
         await page.type('input[id=email]', leadData.email);
         await page.click('button[id=postSignUp]');
+        // page.on('dialog',dialog=>{
+        //     expect(dialog.message()).toEqual("Signedup")
+        // })
     }, 1600000);
 });
