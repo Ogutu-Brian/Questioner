@@ -4,8 +4,7 @@
   "description": "Questioner helps the meetup organizer prioritize questions to be answered    ## Built with * [HTML](https://www.w3schools.com/html/) - The markup language used * [CSS](https://www.w3schools.com/css/default.asp) - The style sheet used * [JS](https://www.w3schools.com/js/default.asp) - The scripting language * [FLASK](http://flask.pocoo.org/) - The backend framework used    ## Authors * **Ogutu Brian** - *Initial work* - [Ogutu Brian](https://github.com/Ogutu-Brian)    ## Acknowledgements * Hat tip to w3schools for the guide on html,css and Javascript * Inspiration by Andela workshop session    * Hat tip to **Munira Omar** for help with git work flow - [Munira](https://github.com/munniomer)",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,5 +23,8 @@
     "jest": "^24.1.0",
     "mocha": "^6.0.2",
     "puppeteer": "^1.12.2"
+  },
+  "jest": {
+    "collectCoverage": true
   }
 }

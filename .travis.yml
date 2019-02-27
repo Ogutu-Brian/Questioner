@@ -20,6 +20,6 @@ install:
   - npm install coveralls --save-dev
 script:
   - npm test
-  - npm run coveralls
+  - coveralls < coverage/lcov.info
 services:
   - http-server
