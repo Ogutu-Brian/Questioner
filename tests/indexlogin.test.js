@@ -1,5 +1,5 @@
 'use strict'
-///tests for functionality of the login page
+///tests for functionality of the login page in the index page
 import puppeteer from 'puppeteer';
 import faker from 'faker';
 import {
@@ -8,7 +8,7 @@ import {
 import {
     leadData
 } from './signup.test.js';
-const app = pageUrls.loginPage;
+const app = pageUrls.indexpage;
 let page;
 let browser;
 const width = 1920;

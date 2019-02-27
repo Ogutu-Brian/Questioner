@@ -1,4 +1,5 @@
 'use strict'
+//tests for the functionality of the signup page
 import puppeteer from 'puppeteer';
 import faker from 'faker';
 import {
