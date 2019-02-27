@@ -40,7 +40,6 @@ let singupFieldNames = [
 ];
 const signUp = new FormHandler(urls.signupUrl, singupFieldNames);
 document.getElementById(signupButton).addEventListener('click', signup);
-
 function signup(event) {
     //Function that handles sign up event
     event.preventDefault();
@@ -59,3 +58,7 @@ function signup(event) {
             }
         })
 }
+export {
+    FormHandler,
+    signup
+};
