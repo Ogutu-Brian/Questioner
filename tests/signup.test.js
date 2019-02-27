@@ -1,7 +1,10 @@
 'use strict'
 import puppeteer from 'puppeteer';
 import faker from 'faker';
-const app = 'https://ogutu-brian.github.io/Questioner/UI/user/signup.html';
+import {
+    pageUrls
+} from '../UI/js/urls.js';
+const app = pageUrls.signupPage;
 const leadData = {
     firstname: 'brian',
     lastname: 'ogutu',
@@ -54,3 +57,6 @@ describe('signup form', () => {
         // })
     }, 1600000);
 });
+export {
+    leadData
+}
