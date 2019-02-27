@@ -22,6 +22,7 @@ install:
   - npm i jest puppeteer faker --save-dev
 
 script:
+  - npm start &
   - npm test
 after_success:
   - npm run test-with-coverage --token
