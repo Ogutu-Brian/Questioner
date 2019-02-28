@@ -6,12 +6,12 @@ import {
     pageUrls
 } from '../UI/js/urls.js';
 const leadData = {
-    firstname: 'brian',
-    lastname: 'ogutu',
+    firstname: faker.name.firstName(),
+    lastname: faker.name.lastName(),
     password: 'Pod#23@A',
     confirmpassword: 'Pod#23@A',
     email: faker.internet.email(),
-    username: faker.name.firstName(),
+    username: faker.name.findName(),
     phoneNumber: '+254703812914',
     location: faker.lorem.word(),
     topic: faker.commerce.productName(),
@@ -101,20 +101,27 @@ describe('Login as an admin and create meetup', () => {
         await page.click('textarea[id=body]');
         await page.type('textarea[id=body]', leadData.body);
         await page.click('button[id=postMeeup]');
+        page.on('dialog', dialog => {
+            expect(dialog.message()).toEqual('Please log in to create a meetup');
+            dialog.accept();
+        });
     });
 });
 describe('A user should be able to ask questions on a given meetup', () => {
     test('A user should be able to post questions', async () => {
+        await page.goto(pageUrls.loginPage);
+        await page.waitForSelector('#login-form');
+        await page.click('input[id=email]');
+        await page.type('input[id=email]', adminData.email);
+        await page.click('input[id=password]');
+        await page.type('input[id=password]', adminData.password);
+        await page.click('button[id=loginButton]');
         await page.goto(pageUrls.postQuestionPage);
         await page.waitForSelector('#post-qstn-frm');
         await page.click('input[id=title]');
         await page.type('input[id=title]', questionData.title);
-        await page.click('textarea[id=body]', questionData.body);
+        await page.click('textarea[id=body]');
+        await page.type('textarea[id=body]', questionData.body);
         await page.click('button[id=postQuestion');
-    });
-});
-describe('A user should be able to give comments to a question',()=>{
-    test('A user should be able to give comments to questions',async()=>{
-        await page
     });
 });
