@@ -101,9 +101,8 @@ describe('Login as an admin and create meetup', () => {
         await page.click('textarea[id=body]');
         await page.type('textarea[id=body]', leadData.body);
         await page.click('button[id=postMeeup]');
-        page.on('dialog', dialog => {
-            expect(dialog.message()).toEqual('Please log in to create a meetup');
-            dialog.accept();
+        page.on('dialog', dialogInfo => {
+            dialogInfo.accept();
         });
     });
 });

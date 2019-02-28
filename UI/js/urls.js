@@ -13,7 +13,7 @@ const pageUrls = {
     indexpage: 'http://127.0.0.1:5500/UI/index.html',
     createMeetupPage: 'http://127.0.0.1:5500/UI/user/meetupform.html',
     postQuestionPage: 'http://127.0.0.1:5500/UI/user/question.html',
-    commentsPage: 'http://127.0.0.1:5500/UI/user/questionview.html'
+    commentsPage: 'http://127.0.0.1:5500/UI/user/questionview.html',
 }
 export {
     urls,
