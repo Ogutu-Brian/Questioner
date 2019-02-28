@@ -5,10 +5,10 @@ const urls = {
     postMeetupUrl: 'https://questioner-api-v2.herokuapp.com/api/v2/meetups'
 }
 const pageUrls = {
-    signupPage: 'https://ogutu-brian.github.io/Questioner/UI/user/signup.html',
-    loginPage: 'https://ogutu-brian.github.io/Questioner/UI/user/login.html',
-    indexpage: 'https://ogutu-brian.github.io/Questioner/UI/index.html',
-    createMeetupPage: 'https://ogutu-brian.github.io/Questioner/UI/user/meetupform.html'
+    signupPage: 'http://127.0.0.1:5500/UI/user/signup.html',
+    loginPage: 'http://127.0.0.1:5500/UI/user/login.html',
+    indexpage: 'http://127.0.0.1:5500/UI/index.html',
+    createMeetupPage: 'http://127.0.0.1:5500/UI/user/meetupform.html'
 }
 export {
     urls,
