@@ -5,10 +5,6 @@ import faker from 'faker';
 import {
     pageUrls
 } from '../UI/js/urls.js';
-const signupPage = pageUrls.signupPage;
-const loginPage = pageUrls.loginPage;
-const indexPage = pageUrls.indexpage;
-const meetupForm = pageUrls.createMeetupPage;
 const leadData = {
     firstname: 'brian',
     lastname: 'ogutu',
@@ -20,13 +16,18 @@ const leadData = {
     location: faker.lorem.word(),
     topic: faker.commerce.productName(),
     happeningOn: '24-08-2019',
-    body: faker.lorem.text()
+    body: faker.lorem.text(),
 };
-//jest.setTimeout(30000);
 const adminData = {
     email: 'admin@gmail.com',
     password: 'password12#B'
 }
+const questionData = {
+    title: faker.commerce.productMaterial(),
+    body: faker.lorem.text()
+
+}
+jest.setTimeout(30000);
 let page;
 let browser;
 const width = 1920;
@@ -46,7 +47,7 @@ afterAll(() => {
 });
 describe('signup form', () => {
     test('Submit signup request', async () => {
-        await page.goto(signupPage);
+        await page.goto(pageUrls.signupPage);
         await page.waitForSelector('#signupForm');
         await page.click('input[id=firstname]');
         await page.type('input[id=firstname]', leadData.firstname);
@@ -67,7 +68,7 @@ describe('signup form', () => {
 });
 describe("Login Form", () => {
     test("A user with an account can log in", async () => {
-        await page.goto(loginPage);
+        await page.goto(pageUrls.loginPage);
         await page.waitForSelector('#login-form');
         await page.click('input[id=email]');
         await page.type('input[id=email]', adminData.email);
@@ -76,9 +77,9 @@ describe("Login Form", () => {
         await page.click('button[id=loginButton]');
     });
 });
-describe("Login Form", () => {
-    test("A user with an account can log in", async () => {
-        await page.goto(indexPage);
+describe("Index Page Form", () => {
+    test("A user with an account should be able to log in", async () => {
+        await page.goto(pageUrls.indexpage);
         await page.waitForSelector('#login-form');
         await page.click('input[id=email]');
         await page.type('input[id=email]', leadData.email);
@@ -89,7 +90,7 @@ describe("Login Form", () => {
 });
 describe("Login as an admin and create meetup", () => {
     test("An admin should be able to create meetup", async () => {
-        await page.goto(meetupForm);
+        await page.goto(pageUrls.createMeetupPage);
         await page.waitForSelector('#meetup-form');
         await page.click('input[id=location]');
         await page.type('input[id=location]', leadData.location);
@@ -100,5 +101,15 @@ describe("Login as an admin and create meetup", () => {
         await page.click('textarea[id=body]');
         await page.type('textarea[id=body]', leadData.body);
         await page.click('button[id=postMeeup]');
+    });
+});
+describe("A user should be able to ask questions on a given meetup", () => {
+    test('A logged in user should be able to post comments', async () => {
+        await page.goto(pageUrls.postQuestionPage);
+        await page.waitForSelector('#post-qstn-frm');
+        await page.click('input[id=title]');
+        await page.type('input[id=title]', questionData.title);
+        await page.click('textarea[id=body]', questionData.body);
+        await page.click('button[id=postQuestion');
     });
 });
