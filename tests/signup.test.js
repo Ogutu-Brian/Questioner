@@ -51,9 +51,6 @@ describe('signup form', () => {
         await page.click('input[id=email]');
         await page.type('input[id=email]', leadData.email);
         await page.click('button[id=postSignUp]');
-        // page.on('dialog',dialog=>{
-        //     expect(dialog.message()).toEqual("Signedup")
-        // })
     }, 16000);
 });
 export {

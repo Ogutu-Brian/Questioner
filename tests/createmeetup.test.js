@@ -34,13 +34,6 @@ afterAll(() => {
 });
 describe("Login as an admin and create meetup", () => {
     test("An admin should be able to create meetup", async () => {
-        await page.goto(loginApp);
-        await page.waitForSelector('#login-form');
-        await page.click('input[id=email]');
-        await page.type('input[id=email]', leadData.email);
-        await page.click('input[id=password]');
-        await page.type('input[id=password]', leadData.password);
-        await page.click('button[id=loginButton]');
         await page.goto(meetupForm);
         await page.waitForSelector('#meetup-form');
         await page.click('input[id=location]');
