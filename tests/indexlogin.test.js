@@ -34,5 +34,5 @@ describe("Login Form", () => {
         await page.click('input[id=password]');
         await page.type('input[id=password]', leadData.password);
         await page.click('button[id=loginButton]');
-    }, 16000);
+    }, 160000);
 });

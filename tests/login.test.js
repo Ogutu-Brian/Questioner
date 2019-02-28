@@ -4,9 +4,10 @@ import puppeteer from 'puppeteer';
 import {
     pageUrls
 } from '../UI/js/urls.js';
-import {
-    leadData
-} from './signup.test.js';
+const leadData = {
+    email: 'admin@gmail.com',
+    password: 'password12#B'
+}
 const app = pageUrls.loginPage;
 let page;
 let browser;

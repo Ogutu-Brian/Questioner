@@ -52,5 +52,5 @@ describe("Login as an admin and create meetup", () => {
         await page.click('textarea[id=body]');
         await page.type('textarea[id=body]', leadData.body);
         await page.click('button[id=postMeeup]');
-    }, 16000);
+    }, 160000);
 });
