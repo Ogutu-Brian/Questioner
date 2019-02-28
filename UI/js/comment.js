@@ -41,7 +41,7 @@ window.onload = fetch(questionUrl, {
                 result += `<textarea name="" id='comment' cols="30" rows="10"></textarea><br>
                 <button class="comment-btn" id='postComment'>Post Your Comment</button>`
                 document.getElementById('result').innerHTML = result;
-                let newCommentUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/comments/';
+                let newCommentUrl = urls.commentUrl;
                 let postButton = 'postComment';
                 let fieldNames = [
                     'comment'

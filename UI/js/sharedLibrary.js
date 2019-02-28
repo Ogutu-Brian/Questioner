@@ -20,6 +20,7 @@ class FormHandler {
     get Data() {
         this.createFormData()
         this.data['meetup'] = localStorage.getItem('meetupId');
+        this.data['question'] = localStorage.getItem('questionId');
         return JSON.stringify(this.data);
     }
     getFieldValue(name) {
