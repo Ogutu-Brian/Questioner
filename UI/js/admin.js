@@ -1,5 +1,6 @@
 "use strict"
-let meetupUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups/upcoming/';
+import {urls} from './urls.js';
+let meetupUrl = `${urls.postMeetupUrl}/upcoming/`;
 window.onload = fetch(meetupUrl, {
     method: 'GET',
     headers: {

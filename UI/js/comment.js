@@ -8,7 +8,7 @@ import {
 } from './urls.js';
 let questionId = localStorage.getItem('questionId');
 let questionUrl = `${urls.postQuestionUrl}/${questionId}`;
-let commentUrl = `${urls.commentUrl}/${questionId}`;
+let commentUrl = `${urls.commentUrl}${questionId}`;
 window.onload = fetch(questionUrl, {
         method: 'GET',
         headers: {
