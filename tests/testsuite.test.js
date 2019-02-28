@@ -66,8 +66,8 @@ describe('signup form', () => {
         await page.click('button[id=postSignUp]');
     });
 });
-describe("Login Form", () => {
-    test("A user with an account can log in", async () => {
+describe('Login Form', () => {
+    test('A user with an account can log in', async () => {
         await page.goto(pageUrls.loginPage);
         await page.waitForSelector('#login-form');
         await page.click('input[id=email]');
@@ -77,8 +77,8 @@ describe("Login Form", () => {
         await page.click('button[id=loginButton]');
     });
 });
-describe("Index Page Form", () => {
-    test("A user with an account should be able to log in", async () => {
+describe('Index Page Form', () => {
+    test('A user with an account should be able to log in', async () => {
         await page.goto(pageUrls.indexpage);
         await page.waitForSelector('#login-form');
         await page.click('input[id=email]');
@@ -88,8 +88,8 @@ describe("Index Page Form", () => {
         await page.click('button[id=loginButton]');
     });
 });
-describe("Login as an admin and create meetup", () => {
-    test("An admin should be able to create meetup", async () => {
+describe('Login as an admin and create meetup', () => {
+    test('An admin should be able to create meetup', async () => {
         await page.goto(pageUrls.createMeetupPage);
         await page.waitForSelector('#meetup-form');
         await page.click('input[id=location]');
@@ -103,13 +103,18 @@ describe("Login as an admin and create meetup", () => {
         await page.click('button[id=postMeeup]');
     });
 });
-describe("A user should be able to ask questions on a given meetup", () => {
-    test('A logged in user should be able to post comments', async () => {
+describe('A user should be able to ask questions on a given meetup', () => {
+    test('A user should be able to post questions', async () => {
         await page.goto(pageUrls.postQuestionPage);
         await page.waitForSelector('#post-qstn-frm');
         await page.click('input[id=title]');
         await page.type('input[id=title]', questionData.title);
         await page.click('textarea[id=body]', questionData.body);
         await page.click('button[id=postQuestion');
+    });
+});
+describe('A user should be able to give comments to a question',()=>{
+    test('A user should be able to give comments to questions',async()=>{
+        await page
     });
 });
