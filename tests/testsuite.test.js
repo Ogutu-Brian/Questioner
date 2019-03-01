@@ -34,7 +34,7 @@ const width = 1920;
 const height = 1080;
 beforeAll(async () => {
     browser = await puppeteer.launch({
-        headless: false
+        headless: true
     })
     page = await browser.newPage();
     await page.setViewport({
@@ -102,7 +102,7 @@ describe('Login as an admin and create meetup', () => {
         await page.type('textarea[id=body]', leadData.body);
         await page.click('button[id=postMeeup]');
         page.on('dialog', dialogInfo => {
-            dialogInfo.accept();
+            dialogInfo.dismiss();
         });
     });
 });

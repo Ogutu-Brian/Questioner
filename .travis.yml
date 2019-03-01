@@ -7,7 +7,7 @@ node_js:
 dist: trusty
 branches:
   only:
-    - ch-add-tests-164252950
+    - gh-pages
 cache:
   directories:
     - node_modules
