@@ -8,12 +8,12 @@ const urls = {
     logoutUrl: 'https://questioner-api-v2.herokuapp.com/api/v2/auth/logout'
 }
 const pageUrls = {
-    signupPage: 'https://ogutu-brian.github.io/UI/user/signup.html',
-    loginPage: 'https://ogutu-brian.github.io/UI/user/login.html',
-    indexpage: 'https://ogutu-brian.github.io/UI/index.html',
-    createMeetupPage: 'https://ogutu-brian.github.io/UI/user/meetupform.html',
-    postQuestionPage: 'https://ogutu-brian.github.io/UI/user/question.html',
-    commentsPage: 'https://ogutu-brian.github.io/UI/user/questionview.html',
+    signupPage: 'https://ogutu-brian.github.io/Questioner/UI/user/signup.html',
+    loginPage: 'https://ogutu-brian.github.io/Questioner/UI/user/login.html',
+    indexpage: 'https://ogutu-brian.github.io/Questioner/UI/index.html',
+    createMeetupPage: 'https://ogutu-brian.github.io/Questioner/UI/user/meetupform.html',
+    postQuestionPage: 'https://ogutu-brian.github.io/Questioner/UI/user/question.html',
+    commentsPage: 'https://ogutu-brian.github.io/Questioner/UI/user/questionview.html',
 }
 export {
     urls,
