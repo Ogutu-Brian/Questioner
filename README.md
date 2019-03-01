@@ -1,5 +1,6 @@
 # Questioner
-Questioner helps the meetup organizer prioritize questions to be answered   
+Questioner helps the meetup organizer prioritize questions to be answered  
+[![Build Status](https://travis-ci.org/Ogutu-Brian/Questioner.svg?branch=gh-pages)](https://travis-ci.org/Ogutu-Brian/Questioner)
 ## Built with
 * [HTML](https://www.w3schools.com/html/) - The markup language used
 * [CSS](https://www.w3schools.com/css/default.asp) - The style sheet used
