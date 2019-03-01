@@ -7,7 +7,7 @@ node_js:
 dist: trusty
 branches:
   only:
-    - gh-pages
+    - ch-add-badges-164323642
 cache:
   directories:
     - node_modules
