@@ -1,7 +1,8 @@
 "use strict"
+import {urls} from './urls.js';
 let meetupId = localStorage.getItem("meetupId");
-let questionsUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${meetupId}/`;
-let rsvpUrl = `https://questioner-api-v2.herokuapp.com/api/v2/meetups/${meetupId}/rsvps`;
+let questionsUrl = `${urls.postQuestionUrl}/${meetupId}/`;
+let rsvpUrl = `${urls.postMeetupUrl}/${meetupId}/rsvps`;
 let authToken = 'Bearer ' + localStorage.getItem('token');
 window.onload = fetch(questionsUrl, {
     method: 'GET',
@@ -50,7 +51,7 @@ var commentButton = (event) => {
 }
 var upvoteQuestion = (event) => {
     let questionId = event.target.id.slice(6);
-    let votingUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${questionId}/upvote`;
+    let votingUrl = `${urls.postQuestionUrl}/${questionId}/upvote`;
     fetch(votingUrl, {
         method: 'PATCH',
         mode: "cors",
@@ -79,7 +80,7 @@ var upvoteQuestion = (event) => {
 }
 var downvoteQuestion = (event) => {
     let questionId = event.target.id.slice(8);
-    let votingUrl = `https://questioner-api-v2.herokuapp.com/api/v2/questions/${questionId}/downvote`;
+    let votingUrl = `${urls.postQuestionUrl}/${questionId}/downvote`;
     fetch(votingUrl, {
         method: 'PATCH',
         mode: "cors",

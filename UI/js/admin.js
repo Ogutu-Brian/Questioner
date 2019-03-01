@@ -1,5 +1,6 @@
 "use strict"
-let meetupUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups/upcoming/';
+import {urls} from './urls.js';
+let meetupUrl = `${urls.postMeetupUrl}/upcoming/`;
 window.onload = fetch(meetupUrl, {
     method: 'GET',
     headers: {
@@ -52,7 +53,7 @@ var questions = (event) => {
 }
 var deleteMeetup = (event) => {
     let meetupId = event.target.id.slice(6);
-    let deleteUrl = `https://questioner-api-v2.herokuapp.com/api/v2/meetups/${meetupId}`;
+    let deleteUrl = `${urls.postMeetupUrl}/${meetupId}`;
     let authToken = 'Bearer ' + localStorage.getItem('token');
     fetch(deleteUrl, {
         method: 'DELETE',

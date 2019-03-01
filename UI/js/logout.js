@@ -1,15 +1,18 @@
 "use strict"
+//logs out a user
+import {
+    urls
+} from './urls.js';
 let authToken = 'Bearer ' + localStorage.getItem('token');
-let logOutUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/auth/logout';
 var logout = () => {
     //Function to log out and clear local storage
-    fetch(logOutUrl, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': authToken,
-            'Content-Type': 'application/json'
-        }
-    }).then(response => response.json())
+    fetch(urls.logoutUrl, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': authToken,
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
         .then(data => {
             console.log(data);
             if (data.status == 200) {

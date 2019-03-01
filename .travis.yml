@@ -1,0 +1,25 @@
+sudo: false
+language: node_js
+
+node_js:
+  - "10.15"
+
+dist: trusty
+branches:
+  only:
+    - gh-pages
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm update
+install:
+  - npm install 
+  - npm install --save-dev babel-plugin-transform-es2015-modules-commonjs
+  - npm i jest puppeteer faker --save-dev
+  - npm install coveralls --save-dev
+script:
+  - npm test
+services:
+  - http-server
+  

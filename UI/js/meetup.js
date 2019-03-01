@@ -1,31 +1,10 @@
 "use strict"
-//Class that handles forms on click of buttons
-class FormHandler {
-    constructor(url, fieldNames) {
-        this.data = {};
-        this.url = url;
-        this.fieldNames = fieldNames;
-    }
-    //gets url
-    get getUrl() {
-        return this.url;
-    }
-    //creates the object to be posted
-    createFormData() {
-        for (let name of this.fieldNames) {
-            this.data[name] = this.getFieldValue(name);
-        }
-    }
-    //gets the data being posted
-    get Data() {
-        this.createFormData()
-        return JSON.stringify(this.data);
-    }
-    getFieldValue(name) {
-        return document.getElementById(name).value;
-    }
-}
-let endpointUrl = 'https://questioner-api-v2.herokuapp.com/api/v2/meetups';
+import {
+    urls
+} from './urls.js';
+import {
+    FormHandler
+} from './sharedLibrary.js';
 let meetupButton = 'postMeeup';
 document.getElementById(meetupButton).addEventListener('click', createMeetup);
 let fieldNames = [
@@ -34,29 +13,30 @@ let fieldNames = [
     'happeningOn',
     'body'
 ]
-let meetupHandler = new FormHandler(endpointUrl, fieldNames)
+let meetupHandler = new FormHandler(urls.postMeetupUrl, fieldNames)
+
 function createMeetup(event) {
     //Function that handles creation of meetup event
     event.preventDefault()
     let authToken = 'Bearer ' + localStorage.getItem('token');
     fetch(meetupHandler.getUrl, {
-        method: 'POST',
-        headers: {
-            'Authorization': authToken,
-            'Content-Type': 'application/json'
-        },
-        body: meetupHandler.Data
-    }).then(response => response.json())
+            method: 'POST',
+            headers: {
+                'Authorization': authToken,
+                'Content-Type': 'application/json'
+            },
+            body: meetupHandler.Data
+        }).then(response => response.json())
         .then(data => {
             if (data.status != 201) {
                 if (data.error == "The token provided is not valid") {
-                    window.alert("Please log in to submit your question");
+                    window.alert("Please log in to create a meetup");
                     window.location.href = '../user/login.html';
                 } else if (data.msg == "Token has been revoked") {
-                    window.alert("Please login to submit your question");
+                    window.alert("Please login to create a meetup");
                     window.location.href = "../user/login.html";
                 } else if (data.error[0].message == 'Token Bearer not given') {
-                    window.alert("Please log in in order to post a question");
+                    window.alert("Please log in to create a meetup");
                     window.location.href = '../user/login.html';
                 } else if (data.error[0].message == "Your token has expired") {
                     window.alert("Your session has expired please log in");
