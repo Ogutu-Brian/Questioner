@@ -24,7 +24,7 @@
     "faker": "^4.1.0",
     "jest": "^24.1.0",
     "mocha": "^6.0.2",
-    "puppeteer": "^1.12.2"
+    "puppeteer": "^1.13.0"
   },
   "jest": {
     "collectCoverage": true
